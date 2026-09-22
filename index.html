@@ -1,127 +1,874 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
-<head>
-    <meta charset="utf-8">
-    <title>關於松東營造 - 專業建築與工程專家</title>
-    <style>
-        body {
-            font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        header {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #1a365d;
-            color: white;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: #1a365d;
-            border-bottom: 2px solid #1a365d;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        .intro {
-            font-size: 1.1em;
-            font-weight: bold;
-            color: #4a5568;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #718096;
-            border-top: 1px solid #e2e8f0;
-        }
-        .btn-back {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #1a365d;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .btn-back:hover {
-            background-color: #2b6cb0;
-        }
-    </style>
-</head><!DOCTYPE html>
-<html lang="zh-Hing-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第一個網頁</title>
+
+```
+<title>關於松東營造｜松東營造有限公司</title>
+
+<meta name="description" content="松東營造有限公司，專業提供房屋建築、土木工程、廠房鋼結構及建築修繕改建服務。">
+
+<style>
+    /* =========================
+       基本設定
+    ========================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family:
+            "Noto Sans TC",
+            "Microsoft JhengHei",
+            "PingFang TC",
+            Arial,
+            sans-serif;
+
+        color: #222;
+        background: #f5f5f3;
+        line-height: 1.8;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+
+    /* =========================
+       導覽列
+    ========================= */
+
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 24px 7%;
+
+        color: #fff;
+        background: rgba(10, 22, 35, 0.35);
+        backdrop-filter: blur(8px);
+
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .logo {
+        font-size: 1.45rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+    }
+
+    .logo span {
+        color: #c9a45c;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #d2ae67;
+    }
+
+
+    /* =========================
+       Hero
+    ========================= */
+
+    .hero {
+        min-height: 520px;
+
+        display: flex;
+        align-items: center;
+
+        padding: 140px 7% 100px;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(6, 18, 30, 0.92),
+                rgba(6, 18, 30, 0.65),
+                rgba(6, 18, 30, 0.35)
+            ),
+            url("images/about-hero.jpg")
+            center / cover no-repeat;
+
+        position: relative;
+    }
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    .hero-label {
+        color: #d2ae67;
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        line-height: 1.2;
+        letter-spacing: 4px;
+        margin-bottom: 25px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        color: #e8e8e8;
+        max-width: 650px;
+    }
+
+
+    /* =========================
+       共用區塊
+    ========================= */
+
+    .section {
+        padding: 100px 7%;
+    }
+
+    .section-inner {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section-title {
+        margin-bottom: 55px;
+    }
+
+    .section-title small {
+        color: #b18a42;
+        font-weight: 700;
+        letter-spacing: 3px;
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+        font-size: 2.3rem;
+        color: #10283f;
+        letter-spacing: 2px;
+    }
+
+    .section-title h2::after {
+        content: "";
+        display: block;
+        width: 55px;
+        height: 3px;
+        background: #c49b52;
+        margin-top: 16px;
+    }
+
+
+    /* =========================
+       公司簡介
+    ========================= */
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .about-image {
+        min-height: 460px;
+
+        background:
+            linear-gradient(
+                rgba(10, 28, 45, 0.1),
+                rgba(10, 28, 45, 0.1)
+            ),
+            url("images/company.jpg")
+            center / cover no-repeat;
+
+        position: relative;
+    }
+
+    .about-image::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border: 1px solid #c49b52;
+        right: -25px;
+        bottom: -25px;
+        z-index: -1;
+    }
+
+    .about-text .lead {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #263b4e;
+        margin-bottom: 22px;
+    }
+
+    .about-text p {
+        color: #5c6268;
+        margin-bottom: 18px;
+    }
+
+
+    /* =========================
+       核心價值
+    ========================= */
+
+    .values {
+        background: #10283f;
+        color: white;
+    }
+
+    .values .section-title h2 {
+        color: white;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .value-card {
+        padding: 40px 32px;
+
+        background: rgba(255,255,255,0.06);
+
+        border: 1px solid rgba(255,255,255,0.12);
+
+        transition: 0.35s;
+    }
+
+    .value-card:hover {
+        transform: translateY(-8px);
+        background: rgba(255,255,255,0.1);
+        border-color: #c49b52;
+    }
+
+    .value-number {
+        color: #c49b52;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+        font-size: 1.35rem;
+        margin-bottom: 15px;
+    }
+
+    .value-card p {
+        color: #cbd3da;
+    }
+
+
+    /* =========================
+       核心服務
+    ========================= */
+
+    .services {
+        background: #fff;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .service-card {
+        padding: 38px;
+
+        border: 1px solid #e2e2df;
+        background: #fafafa;
+
+        transition: 0.35s;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 4px;
+        height: 100%;
+
+        background: #c49b52;
+
+        transform: scaleY(0);
+        transform-origin: bottom;
+
+        transition: 0.35s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    .service-card:hover::before {
+        transform: scaleY(1);
+    }
+
+    .service-icon {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+        color: #10283f;
+        margin-bottom: 12px;
+        font-size: 1.3rem;
+    }
+
+    .service-card p {
+        color: #666;
+    }
+
+
+    /* =========================
+       理念
+    ========================= */
+
+    .philosophy {
+        background: #eeeae2;
+    }
+
+    .philosophy-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .philosophy-item {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .philosophy-item .number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #c49b52;
+        margin-bottom: 10px;
+    }
+
+    .philosophy-item h3 {
+        color: #10283f;
+        margin-bottom: 12px;
+    }
+
+    .philosophy-item p {
+        color: #666;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+        padding: 90px 7%;
+
+        text-align: center;
+
+        color: white;
+
+        background:
+            linear-gradient(
+                rgba(9, 27, 43, 0.94),
+                rgba(9, 27, 43, 0.94)
+            ),
+            url("images/construction.jpg")
+            center / cover;
+    }
+
+    .cta h2 {
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        color: #d4dbe0;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+
+        padding: 13px 32px;
+
+        background: #c49b52;
+        color: #fff;
+
+        font-weight: 600;
+
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #a9813d;
+        transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+        background: #081725;
+        color: #9da8b1;
+        text-align: center;
+
+        padding: 30px 20px;
+
+        font-size: 0.9rem;
+    }
+
+    footer strong {
+        color: white;
+    }
+
+
+    /* =========================
+       手機版
+    ========================= */
+
+    @media (max-width: 800px) {
+
+        .navbar {
+            padding: 20px;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .hero {
+            min-height: 470px;
+            padding: 120px 25px 70px;
+        }
+
+        .section {
+            padding: 70px 22px;
+        }
+
+        .about-grid,
+        .values-grid,
+        .services-grid,
+        .philosophy-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .about-grid {
+            gap: 50px;
+        }
+
+        .about-image {
+            min-height: 320px;
+        }
+
+        .about-image::after {
+            display: none;
+        }
+
+        .section-title h2 {
+            font-size: 1.9rem;
+        }
+
+        .cta {
+            padding: 70px 25px;
+        }
+
+        .cta h2 {
+            font-size: 1.9rem;
+        }
+    }
+</style>
+```
+
 </head>
-<body>
-
-    <h1>Hello World!</h1>
-    <p>這是我的第一個網頁，下面是我放的圖片：</p>
-    
-    <!-- 插入同資料夾底下的 123.jpg 圖片 -->
-    <img src="123.jpg" alt="我的圖片" style="max-width: 100%; height: auto;">
-
-</body>
-</html>
 
 <body>
 
-    <header>
-        <h1>松東營造有限公司</h1>
-        <p>優質工程 • 誠信建構 • 安全至上</p>
-    </header>
+```
+<!-- =========================
+     導覽列
+========================== -->
 
-    <main>
-        <section>
-            <h2>公司簡介</h2>
-            <p class="intro">松東營造致力於提供最頂級的建築與土木工程服務。我們秉持著「誠信、品質、安全、創新」的核心價值，為客戶打造穩固、安全且具前瞻性的建築空間。</p>
-            <p>不論是住宅大樓、商業建築還是公共工程，松東營造都擁有經驗豐富的專業團隊，從規劃、施工到售後服務，每一個環節都嚴格把關，確保工程如期如質完成。</p>
-        </section>
+<nav class="navbar">
 
-        <section>
+    <a href="index.html" class="logo">
+        松東<span>營造</span>
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務項目</a></li>
+        <li><a href="projects.html">工程實績</a></li>
+        <li><a href="contact.html">聯絡我們</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     Hero
+========================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            ABOUT SUNG DONG
+        </div>
+
+        <h1>關於松東營造</h1>
+
+        <p>
+            以專業建築技術與誠信服務，
+            建構值得信賴的每一座建築。
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     公司簡介
+========================== -->
+
+<section class="section">
+
+    <div class="section-inner">
+
+        <div class="about-grid">
+
+            <div class="about-image"></div>
+
+            <div class="about-text">
+
+                <div class="section-title">
+                    <small>COMPANY PROFILE</small>
+                    <h2>公司簡介</h2>
+                </div>
+
+                <p class="lead">
+                    松東營造致力於提供專業、可靠且高品質的建築與土木工程服務。
+                </p>
+
+                <p>
+                    我們秉持「誠信、品質、安全、創新」的核心價值，
+                    將專業技術與嚴謹的工程管理融入每一項工程，
+                    為客戶打造穩固、安全且具前瞻性的建築空間。
+                </p>
+
+                <p>
+                    不論是住宅大樓、商業建築、廠房或公共工程，
+                    松東營造擁有經驗豐富的專業團隊，
+                    從規劃、施工到後續服務，每一個環節都嚴格把關，
+                    以專業態度確保工程品質。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     核心價值
+========================== -->
+
+<section class="section values">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+
+            <small>OUR VALUES</small>
+
+            <h2>我們重視的事</h2>
+
+        </div>
+
+
+        <div class="values-grid">
+
+            <div class="value-card">
+
+                <div class="value-number">01</div>
+
+                <h3>誠信</h3>
+
+                <p>
+                    以誠信作為企業經營的基礎，
+                    坦誠面對每一項工程與每一位客戶，
+                    建立長久且穩定的合作關係。
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-number">02</div>
+
+                <h3>品質</h3>
+
+                <p>
+                    嚴格控管施工品質與工程細節，
+                    從材料選擇到施工工法，
+                    每一個環節都不輕忽。
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-number">03</div>
+
+                <h3>安全</h3>
+
+                <p>
+                    落實工地安全管理，
+                    重視施工環境與人員安全，
+                    讓工程在穩健的基礎上順利完成。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     核心服務
+========================== -->
+
+<section class="section services">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+
+            <small>OUR SERVICES</small>
+
             <h2>核心服務</h2>
-            <ul>
-                <li><strong>房屋建築工程：</strong> 住宅大樓、透天別墅、商業辦公大樓之興建。</li>
-                <li><strong>土木工程：</strong> 道路、橋樑、基礎建設等公共與私人工程。</li>
-                <li><strong>廠房與鋼結構：</strong> 工業廠房、物流中心及大型鋼結構工程施工。</li>
-                <li><strong>建築修繕與改建：</strong> 舊屋翻新、結構補強與空間改造。</li>
-            </ul>
-        </section>
 
-        <section>
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">🏢</div>
+
+                <h3>房屋建築工程</h3>
+
+                <p>
+                    住宅大樓、透天別墅、商業辦公大樓等建築工程，
+                    提供完整且專業的施工服務。
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🏗️</div>
+
+                <h3>土木工程</h3>
+
+                <p>
+                    道路、橋樑、基礎建設等公共與私人工程，
+                    以專業施工技術完成各項工程需求。
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🏭</div>
+
+                <h3>廠房與鋼結構</h3>
+
+                <p>
+                    工業廠房、物流中心及大型鋼結構工程，
+                    重視結構安全與施工品質。
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🔧</div>
+
+                <h3>建築修繕與改建</h3>
+
+                <p>
+                    提供舊屋翻新、結構補強與空間改造等服務，
+                    協助建築重新展現使用價值。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     經營理念
+========================== -->
+
+<section class="section philosophy">
+
+    <div class="section-inner">
+
+        <div class="section-title">
+
+            <small>OUR PHILOSOPHY</small>
+
             <h2>經營理念</h2>
-            <ul>
-                <li><strong>品質第一：</strong> 嚴選建材，精準施工，追求完美的工藝品質。</li>
-                <li><strong>安全至上：</strong> 落實工地安全管理，保障所有施工人員與環境的安全。</li>
-                <li><strong>客戶信賴：</strong> 以誠信為本，建立長遠的合作夥伴關係。</li>
-            </ul>
-        </section>
-        
-        <center>
-            <a href="index.html" class="btn-back">返回首頁</a>
-        </center>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 松東營造 版權所有。保留所有權利。</p>
-    </footer>
+        </div>
+
+
+        <div class="philosophy-grid">
+
+            <div class="philosophy-item">
+
+                <div class="number">01</div>
+
+                <h3>品質第一</h3>
+
+                <p>
+                    嚴選建材、精準施工，
+                    追求穩定且值得信賴的工程品質。
+                </p>
+
+            </div>
+
+
+            <div class="philosophy-item">
+
+                <div class="number">02</div>
+
+                <h3>安全至上</h3>
+
+                <p>
+                    落實工地安全管理，
+                    重視每一位施工人員與工程環境。
+                </p>
+
+            </div>
+
+
+            <div class="philosophy-item">
+
+                <div class="number">03</div>
+
+                <h3>客戶信賴</h3>
+
+                <p>
+                    以專業與誠信服務客戶，
+                    建立長期且穩定的合作夥伴關係。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================== -->
+
+<section class="cta">
+
+    <h2>讓專業，成為建築最穩固的基礎</h2>
+
+    <p>
+        如果您有建築、土木、修繕或工程相關需求，
+        歡迎與松東營造聯繫。
+    </p>
+
+    <a href="contact.html" class="btn">
+        聯絡我們
+    </a>
+
+</section>
+
+
+<!-- =========================
+     Footer
+========================== -->
+
+<footer>
+
+    <p>
+        © 2026 <strong>松東營造有限公司</strong>
+        版權所有。保留所有權利。
+    </p>
+
+</footer>
+```
 
 </body>
 </html>
