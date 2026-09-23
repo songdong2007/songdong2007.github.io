@@ -1559,6 +1559,336 @@
       showSlide(0);
     });
   </script>
+<!-- ===== 松東營造：動態效果 ===== -->
+<style>
+  /* 導覽列 */
+  .site-header {
+    transition: box-shadow 0.25s ease;
+  }
 
+  .site-header.sd-scrolled {
+    box-shadow: 0 5px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  /* 導覽選單底線 */
+  .nav-links a:not(.nav-contact) {
+    position: relative;
+  }
+
+  .nav-links a:not(.nav-contact)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    height: 2px;
+    background: var(--gold, #c7a469);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .nav-links a:not(.nav-contact):hover::after,
+  .nav-links a:not(.nav-contact):focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* 按鈕及箭頭 */
+  .btn,
+  .slider-button {
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .btn span[aria-hidden="true"] {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  /* 僅在支援滑鼠懸停的裝置啟用 */
+  @media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn:hover span[aria-hidden="true"] {
+      transform: translateX(4px);
+    }
+
+    .slider-button:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .btn:active,
+  .slider-button:active {
+    transform: translateY(0);
+  }
+
+  /* 使用者選擇減少動態時停用 */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    .site-header,
+    .nav-links a::after,
+    .btn,
+    .btn span,
+    .slider-button {
+      transition: none !important;
+    }
+
+    .btn:hover,
+    .slider-button:hover,
+    .btn:hover span[aria-hidden="true"] {
+      transform: none !important;
+    }
+  }
+</style>
+
+<script>
+(function () {
+  "use strict";
+
+  // 防止重複加入時綁定多次。
+  if (window.songDongEffectsInitialized) {
+    return;
+  }
+
+  window.songDongEffectsInitialized = true;
+
+  const motionPreference = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  );
+
+  const runningAnimations = new Set();
+  const elementAnimations = new WeakMap();
+
+  /*
+   * 內容預設保持可見。
+   * 動畫未執行時，也不會讓文字或照片消失。
+   */
+  function animateElement(element, keyframes, options) {
+    if (
+      !element ||
+      motionPreference.matches ||
+      typeof element.animate !== "function"
+    ) {
+      return;
+    }
+
+    const previousAnimation = elementAnimations.get(element);
+
+    if (previousAnimation) {
+      previousAnimation.cancel();
+    }
+
+    const animation = element.animate(keyframes, options);
+
+    elementAnimations.set(element, animation);
+    runningAnimations.add(animation);
+
+    function cleanup() {
+      runningAnimations.delete(animation);
+
+      if (elementAnimations.get(element) === animation) {
+        elementAnimations.delete(element);
+      }
+    }
+
+    animation.addEventListener("finish", cleanup, { once: true });
+    animation.addEventListener("cancel", cleanup, { once: true });
+  }
+
+  /* 1. 首頁文字依序出現 */
+  const heroParts = document.querySelectorAll(
+    ".hero .eyebrow, .hero h1, .hero-description, .hero-actions"
+  );
+
+  heroParts.forEach(function (element, index) {
+    animateElement(
+      element,
+      [
+        {
+          opacity: 0,
+          transform: "translateY(18px)"
+        },
+        {
+          opacity: 1,
+          transform: "translateY(0)"
+        }
+      ],
+      {
+        duration: 650,
+        delay: index * 110,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        fill: "backwards"
+      }
+    );
+  });
+
+  /* 2. 滾動時區塊浮現，每個區塊只播放一次 */
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          revealObserver.unobserve(entry.target);
+
+          animateElement(
+            entry.target,
+            [
+              {
+                opacity: 0.25,
+                transform: "translateY(22px)"
+              },
+              {
+                opacity: 1,
+                transform: "translateY(0)"
+              }
+            ],
+            {
+              duration: 650,
+              easing: "cubic-bezier(0.22, 1, 0.36, 1)"
+            }
+          );
+        });
+      },
+      {
+        threshold: 0.08
+      }
+    );
+
+    document.querySelectorAll(
+      ".about-intro, " +
+      ".heading-row, " +
+      ".section-heading, " +
+      ".service-card, " +
+      ".values .section-title, " +
+      ".value, " +
+      ".contact-wrap"
+    ).forEach(function (element) {
+      revealObserver.observe(element);
+    });
+  }
+
+  /*
+   * 3. 相簿轉場
+   * 沿用原本上一張／下一張功能，
+   * 只觀察照片顯示狀態，不重複綁定切換按鈕。
+   */
+  document.querySelectorAll("[data-slider]").forEach(function (slider) {
+    const slides = Array.from(
+      slider.querySelectorAll(".slider-slide")
+    );
+
+    let currentSlide = slides.find(function (slide) {
+      return !slide.hidden;
+    });
+
+    function fadeInPhoto(slide) {
+      if (!slide || slide.hidden) {
+        return;
+      }
+
+      const img = slide.querySelector("img");
+
+      if (!img || !img.complete || img.naturalWidth === 0) {
+        return;
+      }
+
+      animateElement(
+        img,
+        [
+          { opacity: 0 },
+          { opacity: 1 }
+        ],
+        {
+          duration: 420,
+          easing: "ease-out"
+        }
+      );
+    }
+
+    slides.forEach(function (slide) {
+      const img = slide.querySelector("img");
+
+      if (!img) {
+        return;
+      }
+
+      // 圖片下載完成後，若正顯示這張才播放。
+      img.addEventListener("load", function () {
+        if (slide === currentSlide && !slide.hidden) {
+          fadeInPhoto(slide);
+        }
+      });
+    });
+
+    const slideObserver = new MutationObserver(function () {
+      const visibleSlide = slides.find(function (slide) {
+        return !slide.hidden;
+      });
+
+      if (!visibleSlide || visibleSlide === currentSlide) {
+        return;
+      }
+
+      currentSlide = visibleSlide;
+      fadeInPhoto(visibleSlide);
+    });
+
+    slides.forEach(function (slide) {
+      slideObserver.observe(slide, {
+        attributes: true,
+        attributeFilter: ["hidden"]
+      });
+    });
+  });
+
+  /* 4. 捲動後增加導覽列陰影 */
+  const header = document.querySelector(".site-header");
+  let scrollFramePending = false;
+
+  function updateHeader() {
+    if (header) {
+      header.classList.toggle("sd-scrolled", window.scrollY > 24);
+    }
+
+    scrollFramePending = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollFramePending) {
+        scrollFramePending = true;
+        window.requestAnimationFrame(updateHeader);
+      }
+    },
+    { passive: true }
+  );
+
+  updateHeader();
+
+  /* 即時尊重減少動態的裝置設定 */
+  motionPreference.addEventListener("change", function (event) {
+    if (event.matches) {
+      Array.from(runningAnimations).forEach(function (animation) {
+        animation.cancel();
+      });
+    }
+  });
+})();
+</script>
+<!-- ===== 動態效果結束 ===== -->
 </body>
 </html>
