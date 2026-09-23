@@ -1,717 +1,1545 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>關於松東營造｜SONG DONG</title>
-
-    <meta
-        name="description"
-        content="松東營造股份有限公司 SONG DONG，專業提供房屋建築、土木工程、廠房鋼結構及建築修繕改建服務。"
-    >
-
-    <style>
-        /* 基本設定 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family:
-                "Noto Sans TC",
-                "Microsoft JhengHei",
-                "PingFang TC",
-                Arial,
-                sans-serif;
-            color: #222;
-            background: #f5f5f3;
-            line-height: 1.8;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* 導覽列 */
-        .navbar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 7%;
-            color: #fff;
-            background: rgba(7, 18, 29, 0.45);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        /* Logo */
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            color: #fff;
-        }
-
-        .brand img {
-            width: 78px;
-            height: 55px;
-            object-fit: contain;
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .brand-text strong {
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .brand-text span {
-            margin-top: 5px;
-            color: #d2ae67;
-            font-size: 0.68rem;
-            letter-spacing: 4px;
-        }
-
-        /* 導覽選單 */
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            position: relative;
-            font-size: 0.95rem;
-            color: #fff;
-            transition: 0.3s;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 0;
-            height: 2px;
-            background: #d2ae67;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #d2ae67;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* 頂部主視覺 */
-        .hero {
-            min-height: 560px;
-            display: flex;
-            align-items: center;
-            padding: 150px 7% 100px;
-            color: #fff;
-            position: relative;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(6, 18, 30, 0.93),
-                    rgba(6, 18, 30, 0.68),
-                    rgba(6, 18, 30, 0.35)
-                ),
-                url("images/about-hero.jpg") center / cover no-repeat;
-        }
-
-        .hero-content {
-            max-width: 760px;
-        }
-
-        .hero-label {
-            color: #d2ae67;
-            font-size: 0.9rem;
-            letter-spacing: 5px;
-            margin-bottom: 18px;
-            font-weight: 600;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.6rem, 6vw, 5rem);
-            line-height: 1.2;
-            letter-spacing: 4px;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #e8e8e8;
-            max-width: 650px;
-        }
-
-        /* 共用區塊 */
-        .section {
-            padding: 100px 7%;
-        }
-
-        .section-inner {
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-title {
-            margin-bottom: 55px;
-        }
-
-        .section-title small {
-            display: block;
-            color: #b18a42;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-bottom: 8px;
-        }
-
-        .section-title h2 {
-            font-size: 2.3rem;
-            color: #10283f;
-            letter-spacing: 2px;
-        }
-
-        .section-title h2::after {
-            content: "";
-            display: block;
-            width: 55px;
-            height: 3px;
-            background: #c49b52;
-            margin-top: 16px;
-        }
-
-        /* 公司簡介 */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .about-image {
-            min-height: 460px;
-            background:
-                linear-gradient(
-                    rgba(10, 28, 45, 0.1),
-                    rgba(10, 28, 45, 0.1)
-                ),
-                url("images/company.jpg") center / cover no-repeat;
-            position: relative;
-        }
-
-        .about-image::after {
-            content: "";
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            border: 1px solid #c49b52;
-            right: -25px;
-            bottom: -25px;
-            z-index: -1;
-        }
-
-        .about-text .lead {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #263b4e;
-            margin-bottom: 22px;
-        }
-
-        .about-text p {
-            color: #5c6268;
-            margin-bottom: 20px;
-            font-size: 1.02rem;
-        }
-
-        /* 核心價值 */
-        .values {
-            background: #10283f;
-            color: #fff;
-        }
-
-        .values .section-title h2 {
-            color: #fff;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .value-card {
-            padding: 40px 32px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: 0.35s;
-        }
-
-        .value-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #c49b52;
-        }
-
-        .value-number {
-            color: #c49b52;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-
-        .value-card h3 {
-            font-size: 1.35rem;
-            margin-bottom: 15px;
-        }
-
-        .value-card p {
-            color: #cbd3da;
-        }
-
-        /* 核心服務 */
-        .services {
-            background: #fff;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .service-card {
-            padding: 38px;
-            border: 1px solid #e2e2df;
-            background: #fafafa;
-            transition: 0.35s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: #c49b52;
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: 0.35s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-        }
-
-        .service-card:hover::before {
-            transform: scaleY(1);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            color: #10283f;
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-        }
-
-        .service-card p {
-            color: #666;
-        }
-
-        /* 經營理念 */
-        .philosophy {
-            background: #eeeae2;
-        }
-
-        .philosophy-content {
-            max-width: 1050px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.55);
-            padding: 50px 60px;
-            border-left: 4px solid #c49b52;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-        }
-
-        .philosophy-content p {
-            color: #555;
-            font-size: 1.08rem;
-            line-height: 2.1;
-            text-align: justify;
-            margin-bottom: 0;
-        }
-
-        /* 聯絡我們 */
-        .cta {
-            padding: 90px 7%;
-            text-align: center;
-            color: #fff;
-            background:
-                linear-gradient(
-                    rgba(9, 27, 43, 0.94),
-                    rgba(9, 27, 43, 0.94)
-                ),
-                url("images/construction.jpg") center / cover;
-        }
-
-        .cta h2 {
-            font-size: 2.4rem;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: #d4dbe0;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 32px;
-            background: #c49b52;
-            color: #fff;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            background: #a9813d;
-            transform: translateY(-2px);
-        }
-
-        /* 頁尾 */
-        footer {
-            background: #081725;
-            color: #9da8b1;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-        }
-
-        footer strong {
-            color: #fff;
-        }
-
-        /* 手機版 */
-        @media (max-width: 800px) {
-            .navbar {
-                padding: 18px 20px;
-            }
-
-            .brand img {
-                width: 60px;
-                height: 45px;
-            }
-
-            .brand-text strong {
-                font-size: 1rem;
-            }
-
-            .brand-text span {
-                font-size: 0.58rem;
-                letter-spacing: 3px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                min-height: 470px;
-                padding: 120px 25px 70px;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .section {
-                padding: 70px 22px;
-            }
-
-            .about-grid,
-            .values-grid,
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-grid {
-                gap: 50px;
-            }
-
-            .about-image {
-                min-height: 320px;
-            }
-
-            .about-image::after {
-                display: none;
-            }
-
-            .section-title h2 {
-                font-size: 1.9rem;
-            }
-
-            .philosophy-content {
-                padding: 30px 25px;
-            }
-
-            .philosophy-content p {
-                font-size: 1rem;
-                line-height: 1.9;
-                text-align: left;
-            }
-
-            .cta {
-                padding: 70px 25px;
-            }
-
-            .cta h2 {
-                font-size: 1.9rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>松東營造｜SONG DONG</title>
+
+  <meta
+    name="description"
+    content="松東營造股份有限公司，以誠信、品質與安全為核心，投入道路、橋梁、水利及公共基礎建設。"
+  >
+  <meta name="theme-color" content="#10283f">
+
+  <style>
+    /* =========================
+       基本設定
+    ========================= */
+    :root {
+      --navy: #10283f;
+      --dark: #081725;
+      --gold: #c7a469;
+      --paper: #f6f5f1;
+      --text: #263746;
+      --muted: #65717b;
+      --line: #dedfdc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 95px;
+    }
+
+    body {
+      font-family:
+        "Noto Sans TC",
+        "Microsoft JhengHei",
+        "PingFang TC",
+        Arial,
+        sans-serif;
+      background: var(--paper);
+      color: var(--text);
+      line-height: 1.85;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .container {
+      width: min(1180px, 88%);
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      color: #88672f;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(28px, 3.4vw, 42px);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 2px;
+    }
+
+    .section-heading {
+      margin-bottom: 42px;
+    }
+
+    .section-heading p {
+      max-width: 580px;
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      min-height: 52px;
+      padding: 13px 25px;
+      background: var(--gold);
+      color: var(--dark);
+      border: 1px solid var(--gold);
+      font-size: 14px;
+      font-weight: 700;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn:hover {
+      background: #ddbd86;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* =========================
+       導覽列
+    ========================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--dark);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 86px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 62px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: block;
+      color: #fff;
+      font-size: 21px;
+      letter-spacing: 4px;
+      line-height: 1.4;
+    }
+
+    .brand-en {
+      display: block;
+      margin-top: 3px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: block;
+      color: #e1e6eb;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-links .nav-contact {
+      padding: 9px 18px;
+      border: 1px solid rgba(199, 164, 105, 0.65);
+      color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+      padding: 8px 12px;
+      border: 1px solid #64707b;
+      background: transparent;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* =========================
+       首頁主視覺
+    ========================= */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      min-height: 650px;
+      min-height: min(760px, 88svh);
+      padding: 100px 0 115px;
+      overflow: hidden;
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        90deg,
+        rgba(5, 19, 32, 0.94) 0%,
+        rgba(5, 19, 32, 0.79) 45%,
+        rgba(5, 19, 32, 0.35) 100%
+      );
+    }
+
+    .hero .eyebrow {
+      color: #e5c38b;
+      letter-spacing: 4px;
+    }
+
+    .hero h1 {
+      max-width: 800px;
+      margin: 22px 0;
+      font-size: clamp(38px, 5.8vw, 76px);
+      font-weight: 700;
+      line-height: 1.3;
+      letter-spacing: 4px;
+    }
+
+    .hero h1 span {
+      color: #e1bc7e;
+    }
+
+    .hero-description {
+      max-width: 540px;
+      color: #d9e0e6;
+      font-size: 17px;
+      line-height: 2;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-caption {
+      position: absolute;
+      right: 6%;
+      bottom: 28px;
+      color: #e1e6eb;
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    /* =========================
+       品牌重點
+    ========================= */
+    .highlights {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .highlight {
+      padding: 30px 26px;
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .highlight:last-child {
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .highlight small {
+      display: block;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .highlight strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 21px;
+      letter-spacing: 2px;
+    }
+
+    .highlight p {
+      margin-top: 5px;
+      color: #bdc8d2;
+      font-size: 13px;
+    }
+
+    /* =========================
+       公司簡介
+    ========================= */
+    .about-intro {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
+      align-items: start;
+      margin-bottom: 40px;
+    }
+
+    .about-copy p {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .about-copy .lead {
+      color: var(--text);
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .about-signature {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    /* =========================
+       手動切換相簿
+       公司與工程共用
+    ========================= */
+    .photo-slider {
+      padding: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+
+    .slider-slide {
+      margin: 0;
+    }
+
+    .slider-slide[hidden] {
+      display: none !important;
+    }
+
+    .slide-image-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: clamp(280px, 48vw, 580px);
+      background: #eeeee9;
+    }
+
+    .slide-image-link img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .slider-slide figcaption {
+      min-height: 60px;
+      padding: 16px 8px;
+      color: var(--navy);
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .slider-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 8px 4px;
+      border-top: 1px solid var(--line);
+    }
+
+    .slider-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 22px;
+      border: 1px solid var(--navy);
+      background: var(--navy);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .slider-button:hover {
+      background: #244966;
+    }
+
+    .slider-counter {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .gallery-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* =========================
+       服務項目
+    ========================= */
+    .services {
+      background: #fff;
+    }
+
+    .heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 42px;
+    }
+
+    .heading-row > p {
+      max-width: 390px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 32px 24px;
+      border: 1px solid var(--line);
+      background: #fbfbf9;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 34px;
+      color: #96733d;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: 20px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-en {
+      display: block;
+      margin-top: 28px;
+      color: #68737d;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* =========================
+       經營理念
+    ========================= */
+    .values {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .values .eyebrow {
+      color: var(--gold);
+    }
+
+    .values .section-title {
+      color: #fff;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .value {
+      padding-top: 24px;
+      border-top: 1px solid rgba(199, 164, 105, 0.6);
+    }
+
+    .value small {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .value h3 {
+      margin: 12px 0;
+      font-size: 25px;
+      letter-spacing: 3px;
+    }
+
+    .value p {
+      color: #c3cdd6;
+      font-size: 15px;
+    }
+
+    /* =========================
+       聯絡我們
+    ========================= */
+    .contact {
+      padding: 75px 0;
+      background: #ebe6dc;
+    }
+
+    .contact-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .contact h2 {
+      color: var(--navy);
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.5;
+    }
+
+    .contact p {
+      margin-top: 14px;
+      color: var(--muted);
+    }
+
+    .contact .btn {
+      flex-shrink: 0;
+      background: var(--navy);
+      border-color: var(--navy);
+      color: #fff;
+    }
+
+    .contact .btn:hover {
+      background: #1e405e;
+    }
+
+    /* =========================
+       頁尾
+    ========================= */
+    .footer {
+      padding: 35px 0;
+      background: var(--dark);
+      color: #aab6c1;
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .footer strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
+
+    .footer small {
+      font-size: 11px;
+    }
+
+    .footer a {
+      color: var(--gold);
+      font-size: 13px;
+    }
+
+    /* =========================
+       平板
+    ========================= */
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 18px;
+      }
+
+      .about-intro {
+        gap: 35px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* =========================
+       手機
+    ========================= */
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 78px;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .nav-wrap {
+        min-height: 74px;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .brand img {
+        width: 45px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: 18px;
+      }
+
+      .brand-en {
+        font-size: 9px;
+        letter-spacing: 3px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 0 18px;
+        max-height: calc(100svh - 74px);
+        overflow-y: auto;
+      }
+
+      .nav-links.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+      }
+
+      .nav-links .nav-contact {
+        margin-top: 8px;
+        padding: 10px 14px;
+        text-align: center;
+      }
+
+      .hero {
+        min-height: 570px;
+        padding: 75px 0 85px;
+      }
+
+      .hero::before {
+        background: linear-gradient(
+          90deg,
+          rgba(5, 19, 32, 0.92),
+          rgba(5, 19, 32, 0.6)
+        );
+      }
+
+      .hero h1 {
+        font-size: clamp(34px, 8.5vw, 52px);
+        letter-spacing: 2px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+
+      .hero-actions {
+        gap: 12px;
+      }
+
+      .hero-actions .btn {
+        padding: 12px 18px;
+        gap: 16px;
+      }
+
+      .hero-caption {
+        font-size: 8px;
+      }
+
+      .highlight {
+        padding: 24px 8px;
+        text-align: center;
+      }
+
+      .highlight small {
+        font-size: 8px;
+        letter-spacing: 1px;
+      }
+
+      .highlight strong {
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      .highlight p {
+        font-size: 11px;
+      }
+
+      .about-intro {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .photo-slider {
+        padding: 8px;
+      }
+
+      .slide-image-link {
+        height: clamp(230px, 65vw, 400px);
+      }
+
+      .slider-button {
+        min-height: 44px;
+        padding: 10px 14px;
+        font-size: 14px;
+      }
+
+      .slider-controls {
+        gap: 8px;
+        padding-inline: 0;
+      }
+
+      .slider-slide figcaption {
+        font-size: 14px;
+      }
+
+      .heading-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-top: 32px;
+      }
+
+      .contact-wrap,
+      .footer-wrap {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-number {
+        margin-bottom: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
-<body>
-    <!-- 導覽列 -->
-    <nav class="navbar">
-        <a href="index.html" class="brand">
-            <img
-                src="images/logo.png"
-                alt="SONG DONG 松東營造"
-            >
+<body id="top">
 
-            <div class="brand-text">
-                <strong>松東營造</strong>
-                <span>SONG DONG</span>
-            </div>
-        </a>
+  <!-- =========================
+       導覽列
+  ========================= -->
+  <header class="site-header">
+    <nav class="container nav-wrap" aria-label="主要導覽">
 
-        <ul class="nav-links">
-            <li><a href="index.html">首頁</a></li>
-            <li><a href="about.html">關於我們</a></li>
-            <li><a href="services.html">服務項目</a></li>
-            <li><a href="projects.html">工程實績</a></li>
-            <li><a href="contact.html">聯絡我們</a></li>
-        </ul>
+      <a href="./index.html" class="brand" aria-label="松東營造首頁">
+        <img
+          src="./images/logo.png"
+          alt=""
+          width="62"
+          height="50"
+        >
+
+        <span>
+          <strong class="brand-name">松東營造</strong>
+          <span class="brand-en">SONG DONG</span>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-menu"
+      >
+        選單 ☰
+      </button>
+
+      <ul class="nav-links" id="main-menu">
+        <li><a href="#top">首頁</a></li>
+        <li><a href="#about">關於松東</a></li>
+        <li><a href="#services">服務項目</a></li>
+        <li><a href="#gallery">工程影像</a></li>
+        <li><a href="#values">經營理念</a></li>
+        <li>
+          <a href="#contact" class="nav-contact">聯絡我們 ↗</a>
+        </li>
+      </ul>
+
     </nav>
+  </header>
 
-    <!-- 頂部主視覺 -->
-    <header class="hero">
-        <div class="hero-content">
-            <div class="hero-label">ABOUT SONG DONG</div>
+  <main>
 
-            <h1>關於松東營造</h1>
+    <!-- =========================
+         首頁主視覺
+    ========================= -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <img
+        class="hero-photo"
+        src="./images/about.jpg"
+        alt=""
+        fetchpriority="high"
+      >
+
+      <div class="container">
+        <span class="eyebrow">
+          SONG DONG CONSTRUCTION · SINCE 2007
+        </span>
+
+        <h1 id="hero-title">
+          以專業築基<br>
+          <span>以誠信，成就建設。</span>
+        </h1>
+
+        <p class="hero-description">
+          從道路橋梁到公共基礎建設，<br>
+          松東營造以踏實的施工與嚴謹的管理，<br>
+          將每一份託付，落實為值得信賴的工程。
+        </p>
+
+        <div class="hero-actions">
+          <a href="#services" class="btn">
+            探索服務項目
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="#about" class="btn btn-outline">
+            認識松東
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <span class="hero-caption" aria-hidden="true">
+        INTEGRITY / QUALITY / SAFETY
+      </span>
+    </section>
+
+    <!-- =========================
+         品牌重點
+    ========================= -->
+    <section class="highlights" aria-label="品牌重點">
+      <div class="container highlight-grid">
+
+        <div class="highlight">
+          <small>ESTABLISHED</small>
+          <strong>創立於 2007</strong>
+          <p>穩健扎根，持續精進</p>
+        </div>
+
+        <div class="highlight">
+          <small>EXPERTISE</small>
+          <strong>專業工程</strong>
+          <p>投入土木與公共建設</p>
+        </div>
+
+        <div class="highlight">
+          <small>COMMITMENT</small>
+          <strong>品質承諾</strong>
+          <p>重視每一個施工環節</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         公司簡介
+    ========================= -->
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="about-intro">
+          <div>
+            <span class="eyebrow">ABOUT SONG DONG</span>
+
+            <h2 class="section-title">
+              腳踏實地，<br>
+              築起每一份信任。
+            </h2>
+
+            <div class="about-signature">
+              誠信・品質・安全
+            </div>
+          </div>
+
+          <div class="about-copy">
+            <p class="lead">
+              我們以身為國家建設的推手為榮。
+            </p>
 
             <p>
-                以專業建築技術與誠信服務，
-                建構值得信賴的每一座建築。
+              松東營造股份有限公司成立於2007年，
+              從丙級營造起步，以不斷求新求變、
+              挑戰自我的精神，持續累積施工經驗與專業能力。
             </p>
+
+            <p>
+              從道路、橋梁到水利與公共工程，
+              我們重視工程品質、施工安全與團隊合作，
+              以嚴謹的態度面對每一項任務，
+              朝向穩健經營與永續發展邁進。
+            </p>
+          </div>
         </div>
-    </header>
 
-    <!-- 公司簡介 -->
-    <section class="section">
-        <div class="section-inner">
-            <div class="about-grid">
-                <div class="about-image"></div>
+        <!-- 公司相簿：2張 -->
+        <div
+          class="photo-slider"
+          data-slider
+          role="region"
+          aria-label="公司照片相簿"
+          aria-roledescription="輪播"
+        >
+          <div id="company-slides">
 
-                <div class="about-text">
-                    <div class="section-title">
-                        <small>COMPANY PROFILE</small>
-                        <h2>公司簡介</h2>
-                    </div>
+            <figure class="slider-slide">
+              <a
+                class="slide-image-link"
+                href="./images/company.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看公司照片一原圖（新分頁）"
+              >
+                <img
+                  src="./images/company.jpg"
+                  alt="松東營造公司照片一"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
 
-                    <p class="lead">
-                        松東營造股份有限公司成立於2007年，
-                        由丙級營造開始，歷經十六個年頭，
-                        一路胼手胝足、蓽路藍縷，
-                        至今資本額二億五仟萬，年營業額將近十億。
-                    </p>
+              <figcaption>
+                松東營造・公司照片 01
+              </figcaption>
+            </figure>
 
-                    <p>
-                        我們以不斷求新求變、挑戰自我的積極向上精神，
-                        期許能在營造業佔有一席之地。
-                    </p>
-                </div>
-            </div>
+            <figure class="slider-slide" hidden>
+              <a
+                class="slide-image-link"
+                href="./images/company-02.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看公司照片二原圖（新分頁）"
+              >
+                <img
+                  src="./images/company-02.jpg"
+                  alt="松東營造公司照片二"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+
+              <figcaption>
+                松東營造・公司照片 02
+              </figcaption>
+            </figure>
+
+          </div>
+
+          <div class="slider-controls">
+            <button
+              class="slider-button"
+              type="button"
+              data-prev
+              aria-controls="company-slides"
+              aria-label="上一張公司照片"
+            >
+              ← 上一張
+            </button>
+
+            <span
+              class="slider-counter"
+              aria-live="polite"
+              aria-atomic="true"
+            >1 / 2</span>
+
+            <button
+              class="slider-button"
+              type="button"
+              data-next
+              aria-controls="company-slides"
+              aria-label="下一張公司照片"
+            >
+              下一張 →
+            </button>
+          </div>
         </div>
-    </section>
 
-    <!-- 核心價值 -->
-    <section class="section values">
-        <div class="section-inner">
-            <div class="section-title">
-                <small>OUR VALUES</small>
-                <h2>我們重視的事</h2>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-number">01</div>
-                    <h3>誠信</h3>
-                    <p>
-                        以誠信作為企業經營的基礎，
-                        坦誠面對每一項工程與每一位客戶，
-                        建立長久且穩定的合作關係。
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-number">02</div>
-                    <h3>品質</h3>
-                    <p>
-                        嚴格控管施工品質與工程細節，
-                        從材料選擇到施工工法，
-                        每一個環節都不輕忽。
-                    </p>
-                </div>
-
-                <div class="value-card">
-                    <div class="value-number">03</div>
-                    <h3>安全</h3>
-                    <p>
-                        落實工地安全管理，
-                        重視施工環境與人員安全，
-                        讓工程在穩健的基礎上順利完成。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 核心服務：只保留一個完整區塊 -->
-    <section class="section services">
-        <div class="section-inner">
-            <div class="section-title">
-                <small>OUR SERVICES</small>
-                <h2>核心服務</h2>
-            </div>
-
-            <div class="services-grid">
-                <!-- 道路與交通工程 -->
-                <div class="service-card">
-                    <div class="service-icon">🛣️</div>
-                    <h3>道路與交通工程</h3>
-                    <p>
-                        辦理道路新建、拓寬、改善及相關交通設施工程，
-                        重視施工品質、工程安全與交通維持，
-                        確保道路工程順利完成。
-                    </p>
-                </div>
-
-                <!-- 橋梁工程 -->
-                <div class="service-card">
-                    <div class="service-icon">🌉</div>
-                    <h3>橋梁工程</h3>
-                    <p>
-                        承攬橋梁新建、改建及維護相關工程，
-                        從基礎、下部結構至上部結構，
-                        以嚴謹的施工管理確保工程品質與結構安全。
-                    </p>
-                </div>
-
-                <!-- 水利與排水工程 -->
-                <div class="service-card">
-                    <div class="service-icon">🌊</div>
-                    <h3>水利與排水工程</h3>
-                    <p>
-                        承辦河川整治、排水系統、護岸及水利設施等工程，
-                        透過完善的施工規劃與工程管理，
-                        提升防洪排水與環境整體機能。
-                    </p>
-                </div>
-
-                <!-- 公共基礎建設 -->
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>公共基礎建設</h3>
-                    <p>
-                        參與各項公共工程與基礎建設，
-                        以專業土木施工技術、工程管理及安全管理，
-                        穩健完成各項公共建設任務。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 經營理念 -->
-    <section class="section philosophy">
-        <div class="section-inner">
-            <div class="section-title">
-                <small>OUR PHILOSOPHY</small>
-                <h2>經營理念</h2>
-            </div>
-
-            <div class="philosophy-content">
-                <p>
-                    在公共建設中，無論是道路、橋樑、水利、建築、機電建設，
-                    都曾留下公司同仁努力不懈的足跡。
-                    雖然營造工程是一門極基礎的產業，
-                    但我們以身為國家建設的推手為榮。
-                    向品質的峰頂攀登，向經營的目標挑戰，
-                    我們除了爭取更多的業務，加強同仁的教育訓練，
-                    提升同仁的專業技能外，更廣徵天下英才，
-                    一起努力，朝挑戰自我、永續發展的目標邁進。
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 聯絡我們 -->
-    <section class="cta">
-        <h2>讓專業，成為建築最穩固的基礎</h2>
-
-        <p>
-            如果您有建築、土木、修繕或工程相關需求，
-            歡迎與松東營造聯繫。
+        <p class="gallery-note">
+          點選照片，可於新分頁查看原圖。
         </p>
 
-        <a href="contact.html" class="btn">聯絡我們</a>
+      </div>
     </section>
 
-    <!-- 頁尾 -->
-    <footer>
-        <p>
-            © 2026
-            <strong>松東營造股份有限公司</strong>
-            SONG DONG
-            版權所有。保留所有權利。
+    <!-- =========================
+         核心服務
+    ========================= -->
+    <section class="section services" id="services">
+      <div class="container">
+
+        <div class="heading-row">
+          <div>
+            <span class="eyebrow">OUR EXPERTISE</span>
+            <h2 class="section-title">專業所至，建設所在。</h2>
+          </div>
+
+          <p>
+            結合土木施工技術與工程管理，
+            從施工規劃到現場執行，穩健推進每一項建設。
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <span class="service-number">01 /</span>
+            <h3>道路與交通工程</h3>
+            <p>
+              道路新建、拓寬及改善，配合交通設施與交通維持規劃，
+              兼顧施工品質與用路安全。
+            </p>
+            <span class="service-en">
+              ROADS &amp; TRANSPORTATION
+            </span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02 /</span>
+            <h3>橋梁工程</h3>
+            <p>
+              橋梁新建、改建與維護，
+              從基礎至上下部結構，落實各階段施工管理。
+            </p>
+            <span class="service-en">
+              BRIDGE ENGINEERING
+            </span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03 /</span>
+            <h3>水利與排水工程</h3>
+            <p>
+              河川整治、排水系統、護岸及水利設施，
+              以完善施工規劃提升防洪排水機能。
+            </p>
+            <span class="service-en">
+              WATER &amp; DRAINAGE
+            </span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04 /</span>
+            <h3>公共基礎建設</h3>
+            <p>
+              投入公共工程與基礎設施建設，
+              整合專業技術、工程管理與安全管理。
+            </p>
+            <span class="service-en">
+              PUBLIC INFRASTRUCTURE
+            </span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         工程影像
+    ========================= -->
+    <section class="section" id="gallery">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">CONSTRUCTION IN FOCUS</span>
+          <h2 class="section-title">讓專業，落實於現場。</h2>
+          <p>
+            每一道工序，都承載著對品質的要求；
+            每一步建設，都來自團隊踏實的投入。
+          </p>
+        </div>
+
+        <!-- 工程相簿：6張 -->
+        <div
+          class="photo-slider"
+          data-slider
+          role="region"
+          aria-label="工程照片相簿"
+          aria-roledescription="輪播"
+        >
+          <div id="project-slides">
+
+            <!-- 第1張 -->
+            <figure class="slider-slide">
+              <a
+                class="slide-image-link"
+                href="./images/construction.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看工程紀錄01原圖（新分頁）"
+              >
+                <img
+                  src="./images/construction.jpg"
+                  alt="松東營造工程紀錄01"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>工程紀錄 01</figcaption>
+            </figure>
+
+            <!-- 第2張 -->
+            <figure class="slider-slide" hidden>
+              <a
+                class="slide-image-link"
+                href="./images/construction-02.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看工程紀錄02原圖（新分頁）"
+              >
+                <img
+                  src="./images/construction-02.jpg"
+                  alt="松東營造工程紀錄02"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>工程紀錄 02</figcaption>
+            </figure>
+
+            <!-- 第3張 -->
+            <figure class="slider-slide" hidden>
+              <a
+                class="slide-image-link"
+                href="./images/construction-03.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看工程紀錄03原圖（新分頁）"
+              >
+                <img
+                  src="./images/construction-03.jpg"
+                  alt="松東營造工程紀錄03"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>工程紀錄 03</figcaption>
+            </figure>
+
+            <!-- 第4張 -->
+            <figure class="slider-slide" hidden>
+              <a
+                class="slide-image-link"
+                href="./images/construction-04.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看工程紀錄04原圖（新分頁）"
+              >
+                <img
+                  src="./images/construction-04.jpg"
+                  alt="松東營造工程紀錄04"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>工程紀錄 04</figcaption>
+            </figure>
+
+            <!-- 第5張 -->
+            <figure class="slider-slide" hidden>
+              <a
+                class="slide-image-link"
+                href="./images/construction-05.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看工程紀錄05原圖（新分頁）"
+              >
+                <img
+                  src="./images/construction-05.jpg"
+                  alt="松東營造工程紀錄05"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>工程紀錄 05</figcaption>
+            </figure>
+
+            <!-- 第6張 -->
+            <figure class="slider-slide" hidden>
+              <a
+                class="slide-image-link"
+                href="./images/construction-06.jpg"
+                target="_blank"
+                rel="noopener"
+                aria-label="查看工程紀錄06原圖（新分頁）"
+              >
+                <img
+                  src="./images/construction-06.jpg"
+                  alt="松東營造工程紀錄06"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>工程紀錄 06</figcaption>
+            </figure>
+
+          </div>
+
+          <div class="slider-controls">
+            <button
+              class="slider-button"
+              type="button"
+              data-prev
+              aria-controls="project-slides"
+              aria-label="上一張工程照片"
+            >
+              ← 上一張
+            </button>
+
+            <span
+              class="slider-counter"
+              aria-live="polite"
+              aria-atomic="true"
+            >1 / 6</span>
+
+            <button
+              class="slider-button"
+              type="button"
+              data-next
+              aria-controls="project-slides"
+              aria-label="下一張工程照片"
+            >
+              下一張 →
+            </button>
+          </div>
+        </div>
+
+        <p class="gallery-note">
+          點選照片，可於新分頁查看原圖。
         </p>
-    </footer>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         經營理念
+    ========================= -->
+    <section class="section values" id="values">
+      <div class="container">
+
+        <span class="eyebrow">OUR COMMITMENT</span>
+
+        <h2 class="section-title">
+          建設的基礎，是始終如一的堅持。
+        </h2>
+
+        <div class="values-grid">
+
+          <article class="value">
+            <small>01 — INTEGRITY</small>
+            <h3>誠信為本</h3>
+            <p>
+              坦誠面對每一項工程與每一位合作夥伴，
+              以負責的態度履行承諾，建立長久穩定的合作關係。
+            </p>
+          </article>
+
+          <article class="value">
+            <small>02 — QUALITY</small>
+            <h3>品質為先</h3>
+            <p>
+              從材料選擇、施工工法到現場管理，
+              重視每一處細節，持續提升專業能力與工程品質。
+            </p>
+          </article>
+
+          <article class="value">
+            <small>03 — SAFETY</small>
+            <h3>安全為重</h3>
+            <p>
+              落實工地安全管理，重視人員與施工環境，
+              讓每項工程在穩健、安全的基礎上向前推進。
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         聯絡我們
+    ========================= -->
+    <section class="contact" id="contact">
+      <div class="container contact-wrap">
+
+        <div>
+          <span class="eyebrow">BUILD WITH US</span>
+          <h2>攜手合作，築起下一個可能。</h2>
+          <p>
+            歡迎洽詢工程需求與合作機會，與松東營造展開對話。
+          </p>
+        </div>
+
+        <!-- 此按鈕需有 contact.html 聯絡頁面 -->
+        <a href="./contact.html" class="btn">
+          聯絡我們
+          <span aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       頁尾
+  ========================= -->
+  <footer class="footer">
+    <div class="container footer-wrap">
+
+      <div>
+        <strong>松東營造股份有限公司</strong>
+        <small>© 2026 SONG DONG. All rights reserved.</small>
+      </div>
+
+      <a href="#top">回到頂部 ↑</a>
+
+    </div>
+  </footer>
+
+  <script>
+    /* =========================
+       手機選單
+    ========================= */
+    const menuButton = document.querySelector(".menu-toggle");
+    const menu = document.querySelector("#main-menu");
+
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.textContent = "選單 ☰";
+    }
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = menu.classList.toggle("is-open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "關閉 ✕" : "選單 ☰";
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (
+        event.key === "Escape" &&
+        menu.classList.contains("is-open")
+      ) {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    const desktopQuery = window.matchMedia("(min-width: 761px)");
+
+    desktopQuery.addEventListener("change", function (event) {
+      if (event.matches) {
+        closeMenu();
+      }
+    });
+
+    /* =========================
+       手動切換相簿
+       每個相簿獨立運作，不自動播放
+    ========================= */
+    document.querySelectorAll("[data-slider]").forEach(function (slider) {
+      const slides = Array.from(
+        slider.querySelectorAll(".slider-slide")
+      );
+
+      const counter = slider.querySelector(".slider-counter");
+      const previousButton = slider.querySelector("[data-prev]");
+      const nextButton = slider.querySelector("[data-next]");
+
+      if (!slides.length) {
+        return;
+      }
+
+      let currentIndex = 0;
+
+      slides.forEach(function (slide, index) {
+        slide.setAttribute("role", "group");
+        slide.setAttribute("aria-roledescription", "投影片");
+        slide.setAttribute(
+          "aria-label",
+          "第 " + (index + 1) + " 張，共 " + slides.length + " 張"
+        );
+      });
+
+      function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        slides.forEach(function (slide, slideIndex) {
+          slide.hidden = slideIndex !== currentIndex;
+        });
+
+        counter.textContent =
+          (currentIndex + 1) + " / " + slides.length;
+      }
+
+      previousButton.addEventListener("click", function () {
+        showSlide(currentIndex - 1);
+      });
+
+      nextButton.addEventListener("click", function () {
+        showSlide(currentIndex + 1);
+      });
+
+      // 焦點位於相簿內時，可用左右方向鍵切換。
+      slider.addEventListener("keydown", function (event) {
+        if (event.altKey || event.ctrlKey || event.metaKey) {
+          return;
+        }
+
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          previousButton.focus();
+          showSlide(currentIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          nextButton.focus();
+          showSlide(currentIndex + 1);
+        }
+      });
+
+      showSlide(0);
+    });
+  </script>
+
 </body>
 </html>
