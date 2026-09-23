@@ -13,9 +13,7 @@
   <meta name="theme-color" content="#10283f">
 
   <style>
-    /* =========================
-       基本設定
-    ========================= */
+    /* ===== 基本設定 ===== */
     :root {
       --navy: #10283f;
       --dark: #081725;
@@ -63,6 +61,10 @@
       max-width: 100%;
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     a:focus-visible,
     button:focus-visible {
       outline: 3px solid var(--gold);
@@ -80,7 +82,7 @@
     }
 
     .section {
-      padding: 100px 0;
+      padding: 95px 0;
     }
 
     .eyebrow {
@@ -95,13 +97,12 @@
     .section-title {
       color: var(--navy);
       font-size: clamp(28px, 3.4vw, 42px);
-      font-weight: 700;
       line-height: 1.4;
       letter-spacing: 2px;
     }
 
     .section-heading {
-      margin-bottom: 42px;
+      margin-bottom: 38px;
     }
 
     .section-heading p {
@@ -114,12 +115,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 28px;
+      gap: 24px;
       min-height: 52px;
       padding: 13px 25px;
+      border: 1px solid var(--gold);
       background: var(--gold);
       color: var(--dark);
-      border: 1px solid var(--gold);
       font-size: 14px;
       font-weight: 700;
       transition: background 0.2s, transform 0.2s;
@@ -131,8 +132,8 @@
     }
 
     .btn-outline {
-      background: transparent;
       border-color: rgba(255, 255, 255, 0.45);
+      background: transparent;
       color: #fff;
     }
 
@@ -140,9 +141,7 @@
       background: rgba(255, 255, 255, 0.12);
     }
 
-    /* =========================
-       導覽列
-    ========================= */
+    /* ===== 導覽列 ===== */
     .site-header {
       position: sticky;
       top: 0;
@@ -153,8 +152,8 @@
 
     .nav-wrap {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       min-height: 86px;
       gap: 24px;
     }
@@ -176,8 +175,8 @@
       display: block;
       color: #fff;
       font-size: 21px;
-      letter-spacing: 4px;
       line-height: 1.4;
+      letter-spacing: 4px;
     }
 
     .brand-en {
@@ -191,7 +190,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 26px;
       list-style: none;
     }
 
@@ -221,20 +220,17 @@
       cursor: pointer;
     }
 
-    /* =========================
-       首頁主視覺
-    ========================= */
+    /* ===== 主視覺 ===== */
     .hero {
       position: relative;
       isolation: isolate;
       display: flex;
       align-items: center;
       min-height: 650px;
-      min-height: min(760px, 88svh);
       padding: 100px 0 115px;
       overflow: hidden;
-      color: #fff;
       background: var(--navy);
+      color: #fff;
     }
 
     .hero-photo {
@@ -254,9 +250,9 @@
       z-index: -1;
       background: linear-gradient(
         90deg,
-        rgba(5, 19, 32, 0.94) 0%,
-        rgba(5, 19, 32, 0.79) 45%,
-        rgba(5, 19, 32, 0.35) 100%
+        rgba(5, 19, 32, 0.94),
+        rgba(5, 19, 32, 0.78) 45%,
+        rgba(5, 19, 32, 0.35)
       );
     }
 
@@ -266,10 +262,9 @@
     }
 
     .hero h1 {
-      max-width: 800px;
+      max-width: 850px;
       margin: 22px 0;
       font-size: clamp(38px, 5.8vw, 76px);
-      font-weight: 700;
       line-height: 1.3;
       letter-spacing: 4px;
     }
@@ -301,9 +296,7 @@
       letter-spacing: 3px;
     }
 
-    /* =========================
-       品牌重點
-    ========================= */
+    /* ===== 品牌重點 ===== */
     .highlights {
       background: var(--navy);
       color: #fff;
@@ -343,14 +336,12 @@
       font-size: 13px;
     }
 
-    /* =========================
-       公司簡介
-    ========================= */
+    /* ===== 公司簡介 ===== */
     .about-intro {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
-      gap: 65px;
       align-items: start;
+      gap: 65px;
       margin-bottom: 40px;
     }
 
@@ -374,22 +365,20 @@
       letter-spacing: 3px;
     }
 
-    /* =========================
-       手動切換相簿
-       公司與工程共用
-    ========================= */
+    /* ===== 手動相簿 ===== */
     .photo-slider {
       padding: 12px;
-      background: #fff;
       border: 1px solid var(--line);
+      background: #fff;
     }
 
     .slider-slide {
       margin: 0;
     }
 
-    .slider-slide[hidden] {
-      display: none !important;
+    .slide-stage {
+      position: relative;
+      background: #eeeee9;
     }
 
     .slide-image-link {
@@ -398,13 +387,26 @@
       justify-content: center;
       width: 100%;
       height: clamp(280px, 48vw, 580px);
-      background: #eeeee9;
     }
 
     .slide-image-link img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+
+    .photo-message {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #eeeee9;
+      color: var(--muted);
+      text-align: center;
+      font-size: 15px;
+      pointer-events: none;
     }
 
     .slider-slide figcaption {
@@ -452,21 +454,19 @@
     .gallery-note {
       margin-top: 18px;
       color: var(--muted);
-      font-size: 13px;
       text-align: center;
+      font-size: 13px;
     }
 
-    /* =========================
-       服務項目
-    ========================= */
+    /* ===== 核心服務 ===== */
     .services {
       background: #fff;
     }
 
     .heading-row {
       display: flex;
-      justify-content: space-between;
       align-items: flex-end;
+      justify-content: space-between;
       gap: 30px;
       margin-bottom: 42px;
     }
@@ -522,9 +522,7 @@
       letter-spacing: 1px;
     }
 
-    /* =========================
-       經營理念
-    ========================= */
+    /* ===== 經營理念 ===== */
     .values {
       background: var(--navy);
       color: #fff;
@@ -567,9 +565,7 @@
       font-size: 15px;
     }
 
-    /* =========================
-       聯絡我們
-    ========================= */
+    /* ===== 聯絡我們 ===== */
     .contact {
       padding: 75px 0;
       background: #ebe6dc;
@@ -595,8 +591,8 @@
 
     .contact .btn {
       flex-shrink: 0;
-      background: var(--navy);
       border-color: var(--navy);
+      background: var(--navy);
       color: #fff;
     }
 
@@ -604,9 +600,7 @@
       background: #1e405e;
     }
 
-    /* =========================
-       頁尾
-    ========================= */
+    /* ===== 頁尾 ===== */
     .footer {
       padding: 35px 0;
       background: var(--dark);
@@ -615,8 +609,8 @@
 
     .footer-wrap {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 25px;
     }
 
@@ -636,12 +630,10 @@
       font-size: 13px;
     }
 
-    /* =========================
-       平板
-    ========================= */
+    /* ===== 平板 ===== */
     @media (max-width: 1000px) {
       .nav-links {
-        gap: 18px;
+        gap: 16px;
       }
 
       .about-intro {
@@ -653,9 +645,7 @@
       }
     }
 
-    /* =========================
-       手機
-    ========================= */
+    /* ===== 手機 ===== */
     @media (max-width: 760px) {
       html {
         scroll-padding-top: 78px;
@@ -739,10 +729,6 @@
       .hero .eyebrow {
         font-size: 10px;
         letter-spacing: 2px;
-      }
-
-      .hero-actions {
-        gap: 12px;
       }
 
       .hero-actions .btn {
@@ -846,15 +832,14 @@
 
 <body id="top">
 
-  <!-- =========================
-       導覽列
-  ========================= -->
+  <!-- 導覽列 -->
   <header class="site-header">
     <nav class="container nav-wrap" aria-label="主要導覽">
 
       <a href="./index.html" class="brand" aria-label="松東營造首頁">
+        <!-- Logo 放在最外層，與 index.html 同一層 -->
         <img
-          src="./images/logo.png"
+          src="./logo.png"
           alt=""
           width="62"
           height="50"
@@ -891,15 +876,13 @@
 
   <main>
 
-    <!-- =========================
-         首頁主視覺
-    ========================= -->
+    <!-- 首頁主視覺 -->
     <section class="hero" aria-labelledby="hero-title">
-
       <img
         class="hero-photo"
         src="./images/about.jpg"
         alt=""
+        loading="eager"
         fetchpriority="high"
       >
 
@@ -937,9 +920,7 @@
       </span>
     </section>
 
-    <!-- =========================
-         品牌重點
-    ========================= -->
+    <!-- 品牌重點 -->
     <section class="highlights" aria-label="品牌重點">
       <div class="container highlight-grid">
 
@@ -964,9 +945,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         公司簡介
-    ========================= -->
+    <!-- 公司簡介 -->
     <section class="section" id="about">
       <div class="container">
 
@@ -1004,7 +983,7 @@
           </div>
         </div>
 
-        <!-- 公司相簿：2張 -->
+        <!-- 公司相簿 -->
         <div
           class="photo-slider"
           data-slider
@@ -1015,45 +994,47 @@
           <div id="company-slides">
 
             <figure class="slider-slide">
-              <a
-                class="slide-image-link"
-                href="./images/company.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看公司照片一原圖（新分頁）"
-              >
-                <img
-                  src="./images/company.jpg"
-                  alt="松東營造公司照片一"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/company.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看公司照片一原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/company.jpg"
+                    alt="松東營造公司照片一"
+                    loading="eager"
+                  >
+                </a>
 
-              <figcaption>
-                松東營造・公司照片 01
-              </figcaption>
+                <p class="photo-message" hidden></p>
+              </div>
+
+              <figcaption>松東營造・公司照片 01</figcaption>
             </figure>
 
             <figure class="slider-slide" hidden>
-              <a
-                class="slide-image-link"
-                href="./images/company-02.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看公司照片二原圖（新分頁）"
-              >
-                <img
-                  src="./images/company-02.jpg"
-                  alt="松東營造公司照片二"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/company-02.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看公司照片二原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/company-02.jpg"
+                    alt="松東營造公司照片二"
+                    loading="eager"
+                  >
+                </a>
 
-              <figcaption>
-                松東營造・公司照片 02
-              </figcaption>
+                <p class="photo-message" hidden></p>
+              </div>
+
+              <figcaption>松東營造・公司照片 02</figcaption>
             </figure>
 
           </div>
@@ -1094,9 +1075,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         核心服務
-    ========================= -->
+    <!-- 核心服務 -->
     <section class="section services" id="services">
       <div class="container">
 
@@ -1166,9 +1145,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         工程影像
-    ========================= -->
+    <!-- 工程影像 -->
     <section class="section" id="gallery">
       <div class="container">
 
@@ -1181,7 +1158,7 @@
           </p>
         </div>
 
-        <!-- 工程相簿：6張 -->
+        <!-- 工程相簿 -->
         <div
           class="photo-slider"
           data-slider
@@ -1191,117 +1168,141 @@
         >
           <div id="project-slides">
 
-            <!-- 第1張 -->
+            <!-- 工程照片 1 -->
             <figure class="slider-slide">
-              <a
-                class="slide-image-link"
-                href="./images/construction.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看工程紀錄01原圖（新分頁）"
-              >
-                <img
-                  src="./images/construction.jpg"
-                  alt="松東營造工程紀錄01"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/construction.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看工程紀錄01原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/construction.jpg"
+                    alt="松東營造工程紀錄01"
+                    loading="eager"
+                  >
+                </a>
+
+                <p class="photo-message" hidden></p>
+              </div>
+
               <figcaption>工程紀錄 01</figcaption>
             </figure>
 
-            <!-- 第2張 -->
+            <!-- 工程照片 2 -->
             <figure class="slider-slide" hidden>
-              <a
-                class="slide-image-link"
-                href="./images/construction-02.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看工程紀錄02原圖（新分頁）"
-              >
-                <img
-                  src="./images/construction-02.jpg"
-                  alt="松東營造工程紀錄02"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/construction-02.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看工程紀錄02原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/construction-02.jpg"
+                    alt="松東營造工程紀錄02"
+                    loading="eager"
+                  >
+                </a>
+
+                <p class="photo-message" hidden></p>
+              </div>
+
               <figcaption>工程紀錄 02</figcaption>
             </figure>
 
-            <!-- 第3張 -->
+            <!-- 工程照片 3 -->
             <figure class="slider-slide" hidden>
-              <a
-                class="slide-image-link"
-                href="./images/construction-03.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看工程紀錄03原圖（新分頁）"
-              >
-                <img
-                  src="./images/construction-03.jpg"
-                  alt="松東營造工程紀錄03"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/construction-03.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看工程紀錄03原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/construction-03.jpg"
+                    alt="松東營造工程紀錄03"
+                    loading="eager"
+                  >
+                </a>
+
+                <p class="photo-message" hidden></p>
+              </div>
+
               <figcaption>工程紀錄 03</figcaption>
             </figure>
 
-            <!-- 第4張 -->
+            <!-- 工程照片 4 -->
             <figure class="slider-slide" hidden>
-              <a
-                class="slide-image-link"
-                href="./images/construction-04.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看工程紀錄04原圖（新分頁）"
-              >
-                <img
-                  src="./images/construction-04.jpg"
-                  alt="松東營造工程紀錄04"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/construction-04.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看工程紀錄04原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/construction-04.jpg"
+                    alt="松東營造工程紀錄04"
+                    loading="eager"
+                  >
+                </a>
+
+                <p class="photo-message" hidden></p>
+              </div>
+
               <figcaption>工程紀錄 04</figcaption>
             </figure>
 
-            <!-- 第5張 -->
+            <!-- 工程照片 5 -->
             <figure class="slider-slide" hidden>
-              <a
-                class="slide-image-link"
-                href="./images/construction-05.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看工程紀錄05原圖（新分頁）"
-              >
-                <img
-                  src="./images/construction-05.jpg"
-                  alt="松東營造工程紀錄05"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/construction-05.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看工程紀錄05原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/construction-05.jpg"
+                    alt="松東營造工程紀錄05"
+                    loading="eager"
+                  >
+                </a>
+
+                <p class="photo-message" hidden></p>
+              </div>
+
               <figcaption>工程紀錄 05</figcaption>
             </figure>
 
-            <!-- 第6張 -->
+            <!-- 工程照片 6 -->
             <figure class="slider-slide" hidden>
-              <a
-                class="slide-image-link"
-                href="./images/construction-06.jpg"
-                target="_blank"
-                rel="noopener"
-                aria-label="查看工程紀錄06原圖（新分頁）"
-              >
-                <img
-                  src="./images/construction-06.jpg"
-                  alt="松東營造工程紀錄06"
-                  loading="eager"
-                  decoding="async"
+              <div class="slide-stage">
+                <a
+                  class="slide-image-link"
+                  href="./images/construction-06.jpg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="查看工程紀錄06原圖（新分頁）"
                 >
-              </a>
+                  <img
+                    src="./images/construction-06.jpg"
+                    alt="松東營造工程紀錄06"
+                    loading="eager"
+                  >
+                </a>
+
+                <p class="photo-message" hidden></p>
+              </div>
+
               <figcaption>工程紀錄 06</figcaption>
             </figure>
 
@@ -1343,9 +1344,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         經營理念
-    ========================= -->
+    <!-- 經營理念 -->
     <section class="section values" id="values">
       <div class="container">
 
@@ -1388,9 +1387,7 @@
       </div>
     </section>
 
-    <!-- =========================
-         聯絡我們
-    ========================= -->
+    <!-- 聯絡我們 -->
     <section class="contact" id="contact">
       <div class="container contact-wrap">
 
@@ -1402,7 +1399,6 @@
           </p>
         </div>
 
-        <!-- 此按鈕需有 contact.html 聯絡頁面 -->
         <a href="./contact.html" class="btn">
           聯絡我們
           <span aria-hidden="true">↗</span>
@@ -1413,9 +1409,7 @@
 
   </main>
 
-  <!-- =========================
-       頁尾
-  ========================= -->
+  <!-- 頁尾 -->
   <footer class="footer">
     <div class="container footer-wrap">
 
@@ -1430,9 +1424,7 @@
   </footer>
 
   <script>
-    /* =========================
-       手機選單
-    ========================= */
+    /* ===== 手機選單 ===== */
     const menuButton = document.querySelector(".menu-toggle");
     const menu = document.querySelector("#main-menu");
 
@@ -1471,10 +1463,34 @@
       }
     });
 
-    /* =========================
-       手動切換相簿
-       每個相簿獨立運作，不自動播放
-    ========================= */
+    /* ===== 照片載入提示 ===== */
+    document.querySelectorAll(".slider-slide").forEach(function (slide) {
+      const img = slide.querySelector("img");
+      const message = slide.querySelector(".photo-message");
+
+      function updatePhotoState() {
+        if (!img.complete) {
+          message.textContent = "照片載入中，請稍候…";
+          message.hidden = false;
+          return;
+        }
+
+        if (img.naturalWidth > 0) {
+          message.hidden = true;
+        } else {
+          message.textContent =
+            "照片暫時無法載入，請點選此處開啟原圖，或重新整理網頁。";
+          message.hidden = false;
+        }
+      }
+
+      img.addEventListener("load", updatePhotoState);
+      img.addEventListener("error", updatePhotoState);
+
+      updatePhotoState();
+    });
+
+    /* ===== 手動相簿：獨立切換、不自動播放 ===== */
     document.querySelectorAll("[data-slider]").forEach(function (slider) {
       const slides = Array.from(
         slider.querySelectorAll(".slider-slide")
@@ -1518,7 +1534,7 @@
         showSlide(currentIndex + 1);
       });
 
-      // 焦點位於相簿內時，可用左右方向鍵切換。
+      // 焦點位於相簿內時，可用鍵盤左右方向鍵切換。
       slider.addEventListener("keydown", function (event) {
         if (event.altKey || event.ctrlKey || event.metaKey) {
           return;
