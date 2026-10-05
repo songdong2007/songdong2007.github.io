@@ -468,9 +468,14 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 64px;
-      align-items: center;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: start;
+      grid-template-areas: "photos story";
+    }
+
+    .about-story {
+      grid-area: story;
     }
 
     .about-story .lead-para {
@@ -523,26 +528,26 @@
     /* 公司照片畫廊 */
     .about-visual {
       position: relative;
+      grid-area: photos;
+      padding: 16px;
+      background: var(--navy);
+      border-radius: 6px;
     }
 
     .visual-frame {
       position: relative;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(16, 40, 63, 0.12);
-      border: 1px solid var(--line);
-      background: #000;
+      background: var(--dark);
     }
 
     .visual-frame img {
       width: 100%;
-      height: 440px;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .visual-frame:hover img {
-      transform: scale(1.03);
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      display: block;
+      transition: opacity 0.2s ease;
     }
 
     .visual-thumb-strip {
@@ -557,7 +562,10 @@
       border-radius: 4px;
       overflow: hidden;
       border: 2px solid transparent;
-      height: 100px;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      padding: 0;
+      background: var(--dark);
       cursor: pointer;
       opacity: 0.75;
       transition: all 0.2s ease;
@@ -567,6 +575,12 @@
     .thumb-btn:hover {
       opacity: 1;
       border-color: var(--gold);
+    }
+
+    .thumb-btn:focus-visible {
+      outline: 2px solid var(--paper);
+      outline-offset: 3px;
+      opacity: 1;
     }
 
     .thumb-btn img {
@@ -1452,6 +1466,7 @@
       }
       .about-grid {
         grid-template-columns: 1fr;
+        grid-template-areas: "photos" "story";
         gap: 48px;
       }
       .gallery-grid {
@@ -1463,6 +1478,13 @@
     }
 
     @media (max-width: 768px) {
+      .about-visual {
+        padding: 10px;
+      }
+      .visual-thumb-strip {
+        gap: 8px;
+        margin-top: 10px;
+      }
       html {
         scroll-padding-top: 74px;
       }
