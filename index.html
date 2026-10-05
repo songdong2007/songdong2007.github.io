@@ -520,7 +520,7 @@
       line-height: 1.6;
     }
 
-    /* 雙照片畫廊架構 */
+    /* 公司照片畫廊 */
     .about-visual {
       position: relative;
     }
@@ -545,21 +545,9 @@
       transform: scale(1.03);
     }
 
-    .visual-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(to top, rgba(8, 23, 37, 0.9) 0%, transparent 100%);
-      color: #ffffff;
-      padding: 24px 20px 16px;
-      font-size: 13px;
-      letter-spacing: 0.05em;
-    }
-
     .visual-thumb-strip {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 12px;
       margin-top: 12px;
     }
@@ -585,18 +573,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .thumb-btn span {
-      position: absolute;
-      bottom: 4px;
-      left: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      color: #ffffff;
-      background: rgba(8, 23, 37, 0.8);
-      padding: 2px 6px;
-      border-radius: 2px;
     }
 
     /* ==========================================================================
@@ -1674,12 +1650,9 @@
               <img
                 id="about-main-img"
                 src="./images/company.jpg"
-                alt="松東營造公司總部與營運據點"
+                alt="松東營造員工旅遊於新加坡魚尾獅公園合影"
                 loading="lazy"
               >
-              <figcaption class="visual-caption" id="about-img-caption">
-                松東營造總部營運處（雲林縣水林鄉）
-              </figcaption>
             </figure>
 
             <div class="visual-thumb-strip" role="group" aria-label="公司相片切換">
@@ -1687,21 +1660,35 @@
                 type="button"
                 class="thumb-btn is-active"
                 data-img="./images/company.jpg"
-                data-caption="松東營造總部營運處（雲林縣水林鄉）"
-                aria-label="顯示公司照片一"
+                aria-label="顯示公司照片一" aria-pressed="true"
               >
-                <img src="./images/company.jpg" alt="公司外觀">
-                <span>照片 01</span>
+                <img src="./images/company.jpg" alt="松東營造員工旅遊於新加坡魚尾獅公園合影" loading="lazy">
               </button>
               <button
                 type="button"
                 class="thumb-btn"
                 data-img="./images/company-02.jpg"
-                data-caption="松東營造工程工務現況與作業團隊"
-                aria-label="顯示公司照片二"
+                aria-label="顯示公司照片二" aria-pressed="false"
               >
-                <img src="./images/company-02.jpg" alt="工務現場">
-                <span>照片 02</span>
+                <img src="./images/company-02.jpg" alt="松東營造團隊聚餐" loading="lazy">
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                data-img="./images/company-03.jpg"
+                aria-label="顯示公司照片三"
+                aria-pressed="false"
+              >
+                <img src="./images/company-03.jpg" alt="松東營造團隊烤肉活動" loading="lazy">
+              </button>
+              <button
+                type="button"
+                class="thumb-btn"
+                data-img="./images/company-04.jpg"
+                aria-label="顯示公司照片四"
+                aria-pressed="false"
+              >
+                <img src="./images/company-04.jpg" alt="松東營造員工旅遊於新加坡環球影城合影" loading="lazy">
               </button>
             </div>
           </div>
@@ -2681,26 +2668,24 @@
 
       /* 2. 關於我們：公司相片切換 */
       const aboutMainImg = document.querySelector("#about-main-img");
-      const aboutCaption = document.querySelector("#about-img-caption");
       const thumbBtns = document.querySelectorAll(".thumb-btn");
 
       thumbBtns.forEach(function (btn) {
         btn.addEventListener("click", function () {
-          thumbBtns.forEach(function (b) { b.classList.remove("is-active"); });
+          thumbBtns.forEach(function (b) { b.classList.remove("is-active"); b.setAttribute("aria-pressed", "false"); });
           this.classList.add("is-active");
+          this.setAttribute("aria-pressed", "true");
 
           const newSrc = this.getAttribute("data-img");
-          const newCaption = this.getAttribute("data-caption");
+          const newAlt = this.querySelector("img").alt;
 
           if (aboutMainImg && newSrc) {
             aboutMainImg.style.opacity = "0.4";
             setTimeout(function () {
               aboutMainImg.src = newSrc;
+              aboutMainImg.alt = newAlt;
               aboutMainImg.style.opacity = "1";
             }, 150);
-          }
-          if (aboutCaption && newCaption) {
-            aboutCaption.textContent = newCaption;
           }
         });
       });
