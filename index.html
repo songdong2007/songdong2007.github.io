@@ -329,6 +329,33 @@
       overflow: hidden;
     }
 
+    .hero-photo {
+      position: relative;
+      width: calc(100% - 48px);
+      max-width: 1040px;
+      aspect-ratio: 1.7;
+      margin: 24px auto 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .hero-photo .hero-title {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      margin: 0;
+      padding: 10px 14px;
+      background: var(--navy);
+      font-size: clamp(13px, 2.4vw, 32px);
+      letter-spacing: 0.02em;
+      text-shadow: none;
+      border-radius: 4px;
+    }
+
+    .hero-photo .hero-title .highlight-line {
+      color: var(--gold);
+    }
+
     .hero-bg {
       display: block;
       width: 100%;
@@ -1448,6 +1475,14 @@
     }
 
     @media (max-width: 768px) {
+      .hero-photo .hero-title {
+        top: 6px;
+        left: 6px;
+        padding: 4px 6px;
+      }
+      .hero-photo .hero-title .highlight-line {
+        margin-top: 2px;
+      }
       html {
         scroll-padding-top: 74px;
       }
@@ -1584,6 +1619,7 @@
          主視覺 (Hero)
          ======================================================================== -->
     <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-photo">
       <img
         class="hero-bg"
         src="./images/about.jpg"
@@ -1591,15 +1627,16 @@
         loading="eager"
         fetchpriority="high"
       >
+        <h1 class="hero-title" id="hero-heading">
+          以專業築基，以品質立信。
+          <span class="highlight-line">松姿勁拔・攜日曜東</span>
+        </h1>
+      </div>
       <div class="hero-overlay"></div>
 
       <div class="container">
         <div class="hero-content">
           <div class="hero-tag">SONG DONG CONSTRUCTION · EST. 2007</div>
-          <h1 class="hero-title" id="hero-heading">
-            以專業築基，以品質立信。
-            <span class="highlight-line">松姿勁拔・攜日曜東</span>
-          </h1>
           <p class="hero-desc">
             深耕台灣公共基礎建設與民生工程。松東營造以嚴謹的工序把關、厚實的施工管理，將每一項道路、橋梁與水利工程，構築為值得社會信賴的堅實基石。
           </p>
