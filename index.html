@@ -600,6 +600,109 @@
     }
 
     /* ==========================================================================
+       最新公告 (News & Announcements)
+       ========================================================================== */
+    .news-section {
+      background-color: var(--paper);
+      border-top: 1px solid var(--line);
+    }
+
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .news-item {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 24px 28px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+      transition: all 0.25s ease;
+      color: inherit;
+    }
+
+    .news-item:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 40, 63, 0.06);
+    }
+
+    .news-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .news-date {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .news-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 3px;
+      background: rgba(16, 40, 63, 0.08);
+      color: var(--navy);
+      letter-spacing: 0.04em;
+    }
+
+    .news-tag.tag-highlight {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .news-content {
+      min-width: 0;
+    }
+
+    .news-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .news-summary {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .news-arrow {
+      color: var(--gold-deep);
+      font-weight: 700;
+      font-size: 18px;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .news-item:hover .news-arrow {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px;
+      }
+      .news-arrow {
+        display: none;
+      }
+    }
+
+    /* ==========================================================================
        核心專業領域 (Services Section)
        ========================================================================== */
     .services-section {
@@ -786,10 +889,11 @@
     }
 
     .project-card-body {
-      padding: 22px 20px 20px;
+      padding: 20px 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
+      justify-content: center;
     }
 
     .project-category {
@@ -802,11 +906,11 @@
     }
 
     .project-title {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 8px;
-      line-height: 1.4;
+      margin-bottom: 0;
+      line-height: 1.5;
     }
 
     .project-desc {
@@ -830,6 +934,159 @@
     .project-scope {
       font-weight: 600;
       color: var(--navy);
+    }
+
+    /* ==========================================================================
+       獲獎紀錄 (Awards & Honors)
+       ========================================================================== */
+    .awards-section {
+      background-color: #ffffff;
+      border-top: 1px solid var(--line);
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .award-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+
+    .award-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(16, 40, 63, 0.08);
+    }
+
+    .award-card-image {
+      position: relative;
+      height: 250px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }
+
+    .award-card-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .award-card:hover .award-card-image img {
+      transform: scale(1.05);
+    }
+
+    .award-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(16, 40, 63, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .award-card:hover .award-card-overlay {
+      opacity: 1;
+    }
+
+    .award-card-overlay span {
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    .award-card-body {
+      padding: 20px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .award-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .award-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-deep);
+      background: rgba(199, 164, 105, 0.14);
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .award-year {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .award-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 12px;
+    }
+
+    .award-project {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.6;
+      border-top: 1px dashed var(--line);
+      padding-top: 10px;
+      margin-top: auto;
+    }
+
+    .award-project strong {
+      color: var(--text);
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 1200px) {
+      .awards-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .awards-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ==========================================================================
@@ -1298,8 +1555,10 @@
 
       <ul class="nav-menu" id="main-menu">
         <li><a href="#about">關於松東</a></li>
+        <li><a href="#news">最新公告</a></li>
         <li><a href="#services">專業領域</a></li>
         <li><a href="#gallery">工程實績</a></li>
+        <li><a href="#awards">獲獎紀錄</a></li>
         <li><a href="#values">經營理念</a></li>
         <li><a href="./contact.html" class="nav-cta">聯絡我們 ↗</a></li>
       </ul>
@@ -1451,6 +1710,68 @@
     </section>
 
     <!-- ========================================================================
+         最新公告 (Latest Announcements)
+         ======================================================================== -->
+    <section class="section news-section" id="news">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">LATEST ANNOUNCEMENTS</div>
+          <h2 class="section-title">最新公告與即時動態</h2>
+          <p class="section-desc">
+            掌握松東營造最新工程進度、工安防汛通報與人才招募資訊。
+          </p>
+        </div>
+
+        <div class="news-list">
+          <!-- 公告 1 -->
+          <article class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2026.09.28</span>
+              <span class="news-tag tag-highlight">工程快訊</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">「濁幹線北港溪渡槽工程」全線主梁吊裝完成，進入斜張索張拉作業</h3>
+              <p class="news-summary">
+                本標案跨越北港溪河道，長度與跨距均屬高難度水利結構，現場團隊在嚴密防汛與高空工安監控下順利完成關鍵節點工項。
+              </p>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </article>
+
+          <!-- 公告 2 -->
+          <article class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2026.08.15</span>
+              <span class="news-tag">工安通報</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">115年度第三季施工安全衛生講習與防汛應變自主演練</h3>
+              <p class="news-summary">
+                落實「安全第一、落實自主檢驗」理念，針對南科特定區及喜樹灣裡各工區深開挖與大型機具作業人員辦理回訓。
+              </p>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </article>
+
+          <!-- 公告 3 -->
+          <article class="news-item">
+            <div class="news-meta">
+              <span class="news-date">2026.07.10</span>
+              <span class="news-tag">人才招募</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">松東營造擴大徵才：誠徵工務所土木工程師、現場品管人員與安衛主管</h3>
+              <p class="news-summary">
+                歡迎具備公共工程查核經驗、積極踏實之專業夥伴加入團隊，意者請洽工務部門或填寫線上合作洽詢表單。
+              </p>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
          專業領域 (Services)
          ======================================================================== -->
     <section class="section services-section" id="services">
@@ -1559,12 +1880,11 @@
             <div
               class="project-card-image"
               data-full="./images/construction.jpg"
-              data-title="道路基層開挖與管線埋設工程"
-              data-desc="大型怪手與壓實機具進駐，精準控制開挖深度與管線基礎砂墊層鋪設，落實夯實度檢驗。"
+              data-title="臺南市南科特定區開發區塊F、G區段徵收工程"
             >
               <img
                 src="./images/construction.jpg"
-                alt="道路基層開挖與管線工程實景"
+                alt="臺南市南科特定區開發區塊F、G區段徵收工程實景"
                 loading="lazy"
               >
               <div class="project-card-overlay">
@@ -1572,15 +1892,7 @@
               </div>
             </div>
             <div class="project-card-body">
-              <span class="project-category">道路基礎工程</span>
-              <h3 class="project-title">道路基層開挖與管線埋設</h3>
-              <p class="project-desc">
-                重型機具進場進行路基開挖與結構夯實作業，確保地基乘載力符合公路規範。
-              </p>
-              <div class="project-footer">
-                <span>工法：重機具開挖夯實</span>
-                <span class="project-scope">紀錄 01</span>
-              </div>
+              <h3 class="project-title">臺南市南科特定區開發區塊F、G區段徵收工程</h3>
             </div>
           </article>
 
@@ -1589,12 +1901,11 @@
             <div
               class="project-card-image"
               data-full="./images/construction-02.jpg"
-              data-title="橋梁與上部結構現場工程"
-              data-desc="結構混凝土澆置與梁體施作，現場嚴密監控模板支撐強度與平整度，確保結構耐久年限。"
+              data-title="臺南市南科特定區開發區塊F、G區段徵收工程"
             >
               <img
                 src="./images/construction-02.jpg"
-                alt="橋梁結構現場工程實景"
+                alt="臺南市南科特定區開發區塊F、G區段徵收工程實景"
                 loading="lazy"
               >
               <div class="project-card-overlay">
@@ -1602,15 +1913,7 @@
               </div>
             </div>
             <div class="project-card-body">
-              <span class="project-category">橋梁土木工程</span>
-              <h3 class="project-title">結構體施作與高空作業</h3>
-              <p class="project-desc">
-                嚴格依照施工設計圖說推進，落實鋼筋保護層厚度與高空安全防護網架設。
-              </p>
-              <div class="project-footer">
-                <span>工法：鋼筋混凝土/模板</span>
-                <span class="project-scope">紀錄 02</span>
-              </div>
+              <h3 class="project-title">臺南市南科特定區開發區塊F、G區段徵收工程</h3>
             </div>
           </article>
 
@@ -1619,12 +1922,11 @@
             <div
               class="project-card-image"
               data-full="./images/construction-03.jpg"
-              data-title="大宗土方開挖與邊坡整地"
-              data-desc="長臂破碎與挖土機配合，清理邊坡石塊與基底整理，確保排水順暢與後續護坡施工穩定。"
+              data-title="臺南市南科特定區開發區塊F、G區段徵收工程"
             >
               <img
                 src="./images/construction-03.jpg"
-                alt="土方開挖與整地作業實景"
+                alt="臺南市南科特定區開發區塊F、G區段徵收工程實景"
                 loading="lazy"
               >
               <div class="project-card-overlay">
@@ -1632,15 +1934,7 @@
               </div>
             </div>
             <div class="project-card-body">
-              <span class="project-category">土方整地工程</span>
-              <h3 class="project-title">土方調配與邊坡平整作業</h3>
-              <p class="project-desc">
-                嚴密控管工區泥沙沉澱與逕流導引，有條不紊推進大規模基地開挖整平。
-              </p>
-              <div class="project-footer">
-                <span>工法：重型挖土機群施工</span>
-                <span class="project-scope">紀錄 03</span>
-              </div>
+              <h3 class="project-title">臺南市南科特定區開發區塊F、G區段徵收工程</h3>
             </div>
           </article>
 
@@ -1649,12 +1943,11 @@
             <div
               class="project-card-image"
               data-full="./images/construction-04.jpg"
-              data-title="鋼筋綁紮與混凝土精密澆置"
-              data-desc="嚴格查核鋼筋號數、間距與搭接長度，澆置過程連續震動搗實，杜絕蜂窩與冷縫缺陷。"
+              data-title="臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程"
             >
               <img
                 src="./images/construction-04.jpg"
-                alt="鋼筋結構綁紮與澆置實景"
+                alt="臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程實景"
                 loading="lazy"
               >
               <div class="project-card-overlay">
@@ -1662,15 +1955,7 @@
               </div>
             </div>
             <div class="project-card-body">
-              <span class="project-category">RC結構工程</span>
-              <h3 class="project-title">鋼筋組立與澆置自主品管</h3>
-              <p class="project-desc">
-                各項鋼筋工程均依技師審定計畫施作，每一單元皆經查驗合格後始得澆灌。
-              </p>
-              <div class="project-footer">
-                <span>工法：三級品管查驗</span>
-                <span class="project-scope">紀錄 04</span>
-              </div>
+              <h3 class="project-title">臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程</h3>
             </div>
           </article>
 
@@ -1679,12 +1964,11 @@
             <div
               class="project-card-image"
               data-full="./images/construction-05.jpg"
-              data-title="擋土支撐與深開挖防護工程"
-              data-desc="擋土鋼板樁與安全支撐系統配置，有效防範鄰近路面坍塌與地下水滲透風險。"
+              data-title="臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程"
             >
               <img
                 src="./images/construction-05.jpg"
-                alt="擋土支撐工程實景"
+                alt="臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程實景"
                 loading="lazy"
               >
               <div class="project-card-overlay">
@@ -1692,15 +1976,7 @@
               </div>
             </div>
             <div class="project-card-body">
-              <span class="project-category">水利與擋土工程</span>
-              <h3 class="project-title">開挖擋土與地下結構防護</h3>
-              <p class="project-desc">
-                結合自動化監測儀器即時監控地盤沉陷與水壓，確保開挖過程萬無一失。
-              </p>
-              <div class="project-footer">
-                <span>工法：擋土支撐與地下工法</span>
-                <span class="project-scope">紀錄 05</span>
-              </div>
+              <h3 class="project-title">臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程</h3>
             </div>
           </article>
 
@@ -1709,12 +1985,11 @@
             <div
               class="project-card-image"
               data-full="./images/construction-06.jpg"
-              data-title="瀝青混凝土鋪面與面層滾壓"
-              data-desc="控制出廠溫度與鋪裝平整度，重型輪胎壓路機接續滾壓，交付高品質平整路面。"
+              data-title="濁幹線北港溪渡槽工程"
             >
               <img
                 src="./images/construction-06.jpg"
-                alt="瀝青路面滾壓鋪設實景"
+                alt="濁幹線北港溪渡槽工程實景"
                 loading="lazy"
               >
               <div class="project-card-overlay">
@@ -1722,14 +1997,503 @@
               </div>
             </div>
             <div class="project-card-body">
-              <span class="project-category">鋪面工程</span>
-              <h3 class="project-title">高品質路面滾壓交付</h3>
-              <p class="project-desc">
-                嚴密落實溫度控制與厚度取樣試驗，提升路面抗剪力與行車抗滑安全性。
-              </p>
-              <div class="project-footer">
-                <span>工法：高溫瀝青滾壓工藝</span>
-                <span class="project-scope">紀錄 06</span>
+              <h3 class="project-title">濁幹線北港溪渡槽工程</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         獲獎紀錄 (Awards & Honors)
+         ======================================================================== -->
+    <section class="section awards-section" id="awards">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">HONORS &amp; RECOGNITION</div>
+          <h2 class="section-title">品質見證：歷年榮譽與獲獎紀錄</h2>
+          <p class="section-desc">
+            每一座獎座與獎狀，皆凝聚了現場施工團隊的專業與堅持。松東營造以扎實嚴謹的工序，屢獲國家級公共工程金質獎、金安獎與國際卓越建設獎最高肯定。
+          </p>
+        </div>
+
+        <div class="awards-grid">
+          <!-- 獲獎 1 (awards-01) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-01.jpg"
+              data-title="第17屆 優良工程金安獎 佳作"
+              data-desc="臺南市南科特定區開發區塊F、G區段徵收工程（勞動部頒發）"
+            >
+              <img
+                src="./images/awards-01.jpg"
+                alt="第17屆優良工程金安獎佳作獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金安獎</span>
+                <span class="award-year">112 年</span>
+              </div>
+              <h3 class="award-name">第17屆優良工程金安獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                臺南市南科特定區開發區塊F、G區段徵收工程
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 2 (awards-02) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-02.jpg"
+              data-title="第15屆 優良工程金安獎 優等"
+              data-desc="台1線急水溪橋改建工程（勞動部・110年11月26日）"
+            >
+              <img
+                src="./images/awards-02.jpg"
+                alt="第15屆優良工程金安獎優等獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金安獎</span>
+                <span class="award-year">110 年</span>
+              </div>
+              <h3 class="award-name">第15屆優良工程金安獎 優等</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                台1線急水溪橋改建工程
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 3 (awards-03) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-03.jpg"
+              data-title="第19屆 公共工程金質獎 優等"
+              data-desc="嘉義市華興橋改建工程（行政院公共工程委員會・108年12月24日）"
+            >
+              <img
+                src="./images/awards-03.jpg"
+                alt="第19屆公共工程金質獎優等獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">108 年</span>
+              </div>
+              <h3 class="award-name">第19屆公共工程金質獎 優等</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                嘉義市華興橋改建工程（獎狀）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 4 (awards-04) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-04.jpg"
+              data-title="第19屆 公共工程金質獎 優等（金質獎座）"
+              data-desc="嘉義市華興橋改建工程（行政院公共工程委員會頒發）"
+            >
+              <img
+                src="./images/awards-04.jpg"
+                alt="第19屆公共工程金質獎優等金質獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">108 年</span>
+              </div>
+              <h3 class="award-name">第19屆公共工程金質獎 優等</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                嘉義市華興橋改建工程（獎座）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 5 (awards-05) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-05.jpg"
+              data-title="第20屆 公共工程金質獎 佳作"
+              data-desc="臺南市第六期新營區長勝營區市地重劃工程（行政院公共工程委員會・109年12月24日）"
+            >
+              <img
+                src="./images/awards-05.jpg"
+                alt="第20屆公共工程金質獎佳作獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">109 年</span>
+              </div>
+              <h3 class="award-name">第20屆公共工程金質獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                新營區長勝營區市地重劃工程（獎狀）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 6 (awards-06) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-06.jpg"
+              data-title="第20屆 公共工程金質獎 佳作（金質獎座）"
+              data-desc="臺南市第六期新營區長勝營區市地重劃工程（行政院公共工程委員會頒發）"
+            >
+              <img
+                src="./images/awards-06.jpg"
+                alt="第20屆公共工程金質獎佳作金質獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">109 年</span>
+              </div>
+              <h3 class="award-name">第20屆公共工程金質獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                新營區長勝營區市地重劃工程（獎座）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 7 (awards-07) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-07.jpg"
+              data-title="第20屆 公共工程金質獎 佳作"
+              data-desc="臺南市永康區新設鹽行國中暨附近地區區段徵收工程（行政院公共工程委員會・109年12月24日）"
+            >
+              <img
+                src="./images/awards-07.jpg"
+                alt="第20屆公共工程金質獎佳作獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">109 年</span>
+              </div>
+              <h3 class="award-name">第20屆公共工程金質獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                永康區新設鹽行國中區段徵收（獎狀）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 8 (awards-08) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-08.jpg"
+              data-title="第20屆 公共工程金質獎 佳作（金質獎座）"
+              data-desc="臺南市永康區新設鹽行國中暨附近地區區段徵收工程（行政院公共工程委員會頒發）"
+            >
+              <img
+                src="./images/awards-08.jpg"
+                alt="第20屆公共工程金質獎佳作金質獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">109 年</span>
+              </div>
+              <h3 class="award-name">第20屆公共工程金質獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                永康區新設鹽行國中區段徵收（獎座）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 9 (awards-09) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-09.jpg"
+              data-title="第23屆 公共工程金質獎 佳作"
+              data-desc="台1線急水溪橋改建工程（行政院公共工程委員會・112年12月26日）"
+            >
+              <img
+                src="./images/awards-09.jpg"
+                alt="第23屆公共工程金質獎佳作獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">112 年</span>
+              </div>
+              <h3 class="award-name">第23屆公共工程金質獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                台1線急水溪橋改建工程（獎狀）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 10 (awards-10) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-10.jpg"
+              data-title="第23屆 公共工程金質獎 佳作（金質獎座）"
+              data-desc="台1線急水溪橋改建工程（行政院公共工程委員會頒發）"
+            >
+              <img
+                src="./images/awards-10.jpg"
+                alt="第23屆公共工程金質獎佳作金質獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">金質獎</span>
+                <span class="award-year">112 年</span>
+              </div>
+              <h3 class="award-name">第23屆公共工程金質獎 佳作</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                台1線急水溪橋改建工程（獎座）
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 11 (awards-11) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-11.jpg"
+              data-title="臺南市政府第1屆 公共工程優質獎 優等"
+              data-desc="新營及鹽水區南80與南74交接處至縣道172線新闢工程（臺南市政府・108年9月11日）"
+            >
+              <img
+                src="./images/awards-11.jpg"
+                alt="臺南市政府第1屆公共工程優質獎優等獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">市府優質獎</span>
+                <span class="award-year">108 年</span>
+              </div>
+              <h3 class="award-name">第1屆公共工程優質獎 優等</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                南80與南74交接至172線新闢工程
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 12 (awards-12) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-12.jpg"
+              data-title="臺南市政府第2屆 公共工程優質獎 特優"
+              data-desc="臺南市永康區新設鹽行國中暨附近地區區段徵收工程（臺南市政府・109年10月1日）"
+            >
+              <img
+                src="./images/awards-12.jpg"
+                alt="臺南市政府第2屆公共工程優質獎特優獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">市府優質獎</span>
+                <span class="award-year">109 年</span>
+              </div>
+              <h3 class="award-name">第2屆公共工程優質獎 特優</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                永康區新設鹽行國中區段徵收
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 13 (awards-13) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-13.jpg"
+              data-title="臺南市政府第5屆 公共工程優質獎 特優"
+              data-desc="臺南市南科特定區開發區塊F、G區段徵收工程（臺南市政府・112年10月1日）"
+            >
+              <img
+                src="./images/awards-13.jpg"
+                alt="臺南市政府第5屆公共工程優質獎特優獎狀"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">市府優質獎</span>
+                <span class="award-year">112 年</span>
+              </div>
+              <h3 class="award-name">第5屆公共工程優質獎 特優</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                臺南市南科特定區開發區塊F、G區段徵收
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 14 (awards-14) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-14.jpg"
+              data-title="2020 國家卓越建設獎 金質獎"
+              data-desc="長勝營區市地重劃工程（最佳規劃設計類・公共建設與都市空間類）"
+            >
+              <img
+                src="./images/awards-14.jpg"
+                alt="2020國家卓越建設獎金質獎琉璃獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">國家卓越建設</span>
+                <span class="award-year">2020 年</span>
+              </div>
+              <h3 class="award-name">國家卓越建設獎 金質獎</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                新營區長勝營區市地重劃工程
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 15 (awards-15) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-15.jpg"
+              data-title="2020 建築園冶獎 公共建築景觀類"
+              data-desc="長勝營區市地重劃工程 - 長勝公園（高雄市建築經營協會主辦）"
+            >
+              <img
+                src="./images/awards-15.jpg"
+                alt="2020建築園冶獎公共建築景觀類獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">建築園冶獎</span>
+                <span class="award-year">2020 年</span>
+              </div>
+              <h3 class="award-name">建築園冶獎 公共建築景觀類</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                長勝營區市地重劃工程 - 長勝公園
+              </div>
+            </div>
+          </article>
+
+          <!-- 獲獎 16 (awards-16) -->
+          <article class="award-card">
+            <div
+              class="award-card-image"
+              data-full="./images/awards-16.jpg"
+              data-title="2021 FIABCI 全球卓越建設獎 銀獎 World Silver Winner"
+              data-desc="Chang Sheng Park 長勝公園（Environmental Category・世界不動產聯盟 FIABCI）"
+            >
+              <img
+                src="./images/awards-16.jpg"
+                alt="2021 FIABCI全球卓越建設獎銀獎獎座"
+                loading="lazy"
+              >
+              <div class="award-card-overlay">
+                <span>檢視大圖 ↗</span>
+              </div>
+            </div>
+            <div class="award-card-body">
+              <div class="award-card-meta">
+                <span class="award-tag">全球卓越建設</span>
+                <span class="award-year">2021 年</span>
+              </div>
+              <h3 class="award-name">FIABCI 全球卓越建設獎 銀獎</h3>
+              <div class="award-project">
+                <strong>獲獎標案</strong>
+                長勝公園 Chang Sheng Park（國際獎項）
               </div>
             </div>
           </article>
@@ -1841,8 +2605,10 @@
           <h4>站內導覽</h4>
           <ul class="footer-links">
             <li><a href="#about">關於松東營造</a></li>
+            <li><a href="#news">最新公告消息</a></li>
             <li><a href="#services">專業工程範疇</a></li>
             <li><a href="#gallery">工程紀錄相片</a></li>
+            <li><a href="#awards">歷年獲獎紀錄</a></li>
             <li><a href="#values">經營承諾與理念</a></li>
             <li><a href="./contact.html">聯絡松東營造 ↗</a></li>
           </ul>
@@ -1951,6 +2717,7 @@
         lightboxImg.src = src;
         lightboxTitle.textContent = title || "";
         lightboxDesc.textContent = desc || "";
+        lightboxDesc.style.display = desc ? "block" : "none";
         lightbox.classList.add("is-active");
         document.body.style.overflow = "hidden";
       }
@@ -1961,7 +2728,7 @@
         document.body.style.overflow = "";
       }
 
-      document.querySelectorAll(".project-card-image").forEach(function (card) {
+      document.querySelectorAll(".project-card-image, .award-card-image").forEach(function (card) {
         card.addEventListener("click", function () {
           const fullSrc = this.getAttribute("data-full");
           const title = this.getAttribute("data-title");
