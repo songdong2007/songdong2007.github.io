@@ -324,8 +324,8 @@
        ========================================================================== */
     .hero {
       position: relative;
-      background-color: var(--navy);
-      color: #ffffff;
+      background-color: var(--line);
+      color: var(--navy);
       overflow: hidden;
     }
 
@@ -364,7 +364,7 @@
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 0.2em;
-      color: var(--gold-light);
+      color: var(--text);
       margin-bottom: 24px;
     }
 
@@ -381,12 +381,12 @@
       line-height: 1.25;
       letter-spacing: 0.06em;
       margin-bottom: 24px;
-      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      text-shadow: none;
     }
 
     .hero-title .highlight-line {
       display: block;
-      color: var(--gold-light);
+      color: var(--navy);
       font-size: 0.88em;
       margin-top: 6px;
       font-weight: 600;
@@ -395,7 +395,7 @@
     .hero-desc {
       font-size: clamp(16px, 1.8vw, 19px);
       line-height: 1.95;
-      color: #dbe4ec;
+      color: var(--text);
       max-width: 660px;
       margin-bottom: 40px;
     }
@@ -405,6 +405,24 @@
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
+    }
+
+    .hero-actions .btn-primary {
+      background-color: var(--navy);
+      color: var(--paper);
+      border-color: var(--navy);
+    }
+
+    .hero-actions .btn-outline {
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .hero-actions .btn-primary:hover,
+    .hero-actions .btn-outline:hover {
+      background-color: var(--dark);
+      border-color: var(--dark);
+      color: var(--paper);
     }
 
     /* 英雄底座：規格認證條 */
