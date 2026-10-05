@@ -608,6 +608,59 @@
       box-shadow: 0 6px 20px rgba(16, 40, 63, 0.06);
     }
 
+    a.news-item:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 4px;
+    }
+
+    .news-source {
+      display: block;
+      margin-top: 8px;
+      color: var(--navy);
+      font-size: 13px;
+    }
+
+    .heat-safety {
+      margin-bottom: 32px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .heat-safety h3 {
+      color: var(--navy);
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .heat-safety p {
+      color: var(--text);
+      max-width: 65ch;
+    }
+
+    .heat-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 20px;
+    }
+
+    .heat-links a {
+      color: var(--navy);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      padding: 8px 0;
+    }
+
+    .heat-links a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .heat-links a:focus-visible {
+      outline: 2px solid var(--navy);
+      outline-offset: 4px;
+    }
+
     .news-meta {
       display: flex;
       align-items: center;
@@ -1705,11 +1758,89 @@
           <div class="section-label">LATEST ANNOUNCEMENTS</div>
           <h2 class="section-title">最新公告與即時動態</h2>
           <p class="section-desc">
-            掌握松東營造最新工程進度、工安防汛通報與人才招募資訊。
+            掌握工程與工安動態，查閱職安署近期公告與營造安全宣導影片。公告連至職安署網站，影片連至 YouTube。
           </p>
         </div>
 
+        <aside class="heat-safety" aria-labelledby="heat-safety-title">
+          <h3 id="heat-safety-title">高氣溫作業宣導專區</h3>
+          <p>戶外施工的熱危害預防資訊，彙整職安署相關法令、預防指引、宣導手冊與教學影片，供工地管理及作業人員查閱。</p>
+          <nav class="heat-links" aria-label="高氣溫作業官方資源">
+            <a href="https://www.osha.gov.tw/48110/48207/48309/nodelist">職安署高氣溫專區</a>
+            <a href="https://www.osha.gov.tw/48110/48207/48309/48313/lpsimplelist">相關法規與預防指引</a>
+            <a href="https://www.osha.gov.tw/48110/48207/48309/48315/lpsimplelist">宣導事項與手冊</a>
+            <a href="https://www.youtube.com/watch?v=z80mOGzA83Q">觀看高氣溫危害預防影片（YouTube）</a>
+          </nav>
+        </aside>
+
         <div class="news-list">
+          <!-- 職安署公告：人工查核更新於 2026-10-05，日期採原公告發布日期 -->
+          <a class="news-item" href="https://www.osha.gov.tw/48110/48417/48419/212738/post">
+            <div class="news-meta">
+              <time class="news-date" datetime="2026-09-24">2026.09.24</time>
+              <span class="news-tag">職安署・工安提醒</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">連假期間高風險作業，職安署提醒落實安全管理</h3>
+              <p class="news-summary">針對高處、吊掛、維修與局限空間作業，提醒雇主事先確認防護措施、人力安排與應變流程。</p>
+              <span class="news-source">來源：勞動部職業安全衛生署｜前往官方公告</span>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a class="news-item" href="https://www.osha.gov.tw/48110/48417/48423/212509/post">
+            <div class="news-meta">
+              <time class="news-date" datetime="2026-09-21">2026.09.21</time>
+              <span class="news-tag">職安署・風險評估</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">職業安全衛生署函頒「風險評估指引」</h3>
+              <p class="news-summary">職安署公布風險評估指引，相關說明與附件可至官方公告頁面查閱及下載。</p>
+              <span class="news-source">來源：勞動部職業安全衛生署｜前往官方公告</span>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- 宣導影片：沿用職安署影音專區的原始發布日期 -->
+          <a class="news-item" href="https://www.youtube.com/watch?v=7x_e7JugVAo">
+            <div class="news-meta">
+              <time class="news-date" datetime="2024-02-05">2024.02.05</time>
+              <span class="news-tag">宣導影片</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">施工架作業（第二部）</h3>
+              <p class="news-summary">施工架作業安全宣導，供工地團隊觀看與教育訓練參考。</p>
+              <span class="news-source">職安署影音專區收錄｜前往 YouTube 觀看</span>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a class="news-item" href="https://www.youtube.com/watch?v=SgbURnkh9TI">
+            <div class="news-meta">
+              <time class="news-date" datetime="2024-02-05">2024.02.05</time>
+              <span class="news-tag">宣導影片</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">開口作業・墜落危害預防</h3>
+              <p class="news-summary">開口作業安全宣導，提醒現場人員重視墜落危害。</p>
+              <span class="news-source">職安署影音專區收錄｜前往 YouTube 觀看</span>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a class="news-item" href="https://www.youtube.com/watch?v=W2lDpBTfzJY">
+            <div class="news-meta">
+              <time class="news-date" datetime="2021-03-25">2021.03.25</time>
+              <span class="news-tag">宣導影片</span>
+            </div>
+            <div class="news-content">
+              <h3 class="news-title">開挖作業危害預防</h3>
+              <p class="news-summary">開挖作業安全宣導，供土木與管溝施工團隊觀看參考。</p>
+              <span class="news-source">職安署影音專區收錄｜前往 YouTube 觀看</span>
+            </div>
+            <div class="news-arrow" aria-hidden="true">→</div>
+          </a>
+
           <!-- 公告 1 -->
           <article class="news-item">
             <div class="news-meta">
