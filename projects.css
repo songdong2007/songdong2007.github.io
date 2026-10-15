@@ -257,3 +257,12 @@
 .project-sources ul { list-style: none; }
 .project-sources li + li { margin-top: 8px; }
 .project-sources a { color: var(--navy); font-size: 14px; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+
+    .leave-details { margin-top: 12px; }
+    .leave-details summary { padding-block: 10px; color: var(--navy); font-weight: 600; cursor: pointer; }
+    .leave-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+    .leave-table caption { text-align: left; color: var(--navy); font-weight: 600; padding-bottom: 10px; }
+    .leave-table th, .leave-table td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+    .leave-table thead th { color: var(--navy); }
+    .leave-table tbody th { font-weight: 400; width: 52%; }
+    .benefit-detail a { color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }

@@ -1364,6 +1364,15 @@
       .home-activities .activity-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
     @media (max-width: 600px) { .company-updates .home-benefits .benefits-list, .home-activities .activity-grid { grid-template-columns: 1fr; } }
+
+    .leave-details { margin-top: 12px; }
+    .leave-details summary { padding-block: 10px; color: var(--navy); font-weight: 600; cursor: pointer; }
+    .leave-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+    .leave-table caption { text-align: left; color: var(--navy); font-weight: 600; padding-bottom: 10px; }
+    .leave-table th, .leave-table td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+    .leave-table thead th { color: var(--navy); }
+    .leave-table tbody th { font-weight: 400; width: 52%; }
+    .benefit-detail a { color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
   </style>
 </head>
 
@@ -1510,11 +1519,13 @@
           </div>
         </section>
         <section class="home-benefits" id="benefits" aria-labelledby="benefits-heading"><div class="benefits-heading"><h2 class="section-topic" id="benefits-heading">員工福利</h2><p class="section-desc">從獎金、年度出國假與補助，到生活、健康與學習支持，了解來松東上班享有的福利。</p></div><dl class="benefits-list">
+          <div class="benefit-row"><dt>勞健保</dt><dd><p>全體員工加入<strong>勞工保險與全民健康保險</strong>。</p></dd></div>
           <div class="benefit-row"><dt>薪資制度</dt><dd><p>薪資採<strong>職等分級制度</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>年終獎金</dt><dd><p>年終獎金<strong>保底1.5個月</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>年終與結案獎金</dt><dd><p>年終獎金<strong>保底1.5個月</strong>，<strong>結案獎金另計</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>特休制度</dt><dd><p>依《勞動基準法》第38條，按在同一雇主或事業單位的工作年資給予特別休假。</p><details class="leave-details"><summary>查看年資與特休日數</summary><table class="leave-table"><caption>法定特別休假日數</caption><thead><tr><th scope="col">工作年資</th><th scope="col">特休日數</th></tr></thead><tbody><tr><th scope="row">滿6個月、未滿1年</th><td>3天</td></tr><tr><th scope="row">滿1年、未滿2年</th><td>7天</td></tr><tr><th scope="row">滿2年、未滿3年</th><td>10天</td></tr><tr><th scope="row">滿3年、未滿5年</th><td>每年14天</td></tr><tr><th scope="row">滿5年、未滿10年</th><td>每年15天</td></tr><tr><th scope="row">滿10年以上</th><td>滿10年16天，其後每年增加1天，最高30天</td></tr></tbody></table><p class="benefit-detail">滿半年取得的3天，與滿一年取得的7天分別給予。特休日期原則由員工排定，必要時雙方協商調整。年度終結或契約終止未休完的天數，依法發給工資；年度終結時也可經雙方協商遞延至次年度。</p></details><p class="benefit-detail"><a href="https://laws.mol.gov.tw/flaw/FLAWDOC01.aspx?flno=38&amp;id=FL014930">法規依據：勞動基準法第38條</a> · <a href="https://www.mol.gov.tw/1607/28162/28166/28218/28226/81492/post">勞動部特休說明</a></p></dd></div>
           <div class="benefit-row"><dt>出國假與補助</dt><dd><p>員工<strong>年資滿一年</strong>，每年一次享有<strong>出國假3天</strong>，並補助<strong>新臺幣30,000元</strong>。</p><p class="benefit-detail">適用條件：員工年資滿一年。提供頻率：一年一次。</p></dd></div>
           <div class="benefit-row"><dt>返鄉津貼</dt><dd><p>返鄉津貼最高補助<strong>新臺幣4,000元</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>供餐或住宿</dt><dd><p>提供供餐或住宿福利，支持日常工作生活。</p></dd></div>
+          <div class="benefit-row"><dt>供餐住宿</dt><dd><p>提供<strong>供餐與住宿</strong>，並設有<strong>休閒設備及運動器材</strong>。</p></dd></div>
           <div class="benefit-row"><dt>健康檢查</dt><dd><p>提供員工健康檢查，關心同仁健康。</p></dd></div>
           <div class="benefit-row"><dt>教育訓練補助</dt><dd><p>提供教育訓練補助，支持員工學習與專業成長。</p></dd></div>
         </dl></section>
