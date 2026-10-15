@@ -482,6 +482,27 @@
       .company-updates .news-section { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 40px; }
     }
 
+    .about-company-info { margin: 28px 0; }
+    .about-company-info > div { padding: 16px 0; border-top: 1px solid var(--line); }
+    .about-company-info dt { color: var(--navy); font-weight: 700; margin-bottom: 6px; }
+    .about-company-info dd { margin: 0; color: var(--text); }
+    .employee-subheading { color: var(--navy); font-size: 22px; margin-bottom: 20px; }
+    .employee-complaints { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .employee-complaints p { color: var(--muted); font-size: 14px; }
+    .employee-complaint-link { display: inline-flex; align-items: center; gap: 16px; min-height: 48px; margin-top: 20px; padding: 10px 20px; background: var(--navy); color: var(--paper); border-radius: 4px; font-weight: 700; }
+    .employee-complaint-link:hover { background: var(--dark); }
+    .home-benefits { border-top: 1px solid var(--line); background: var(--paper); }
+    .benefits-heading { margin-bottom: 36px; }
+    .home-benefits .benefits-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 48px; }
+    .home-benefits .benefit-row { min-width: 0; padding: 24px 0; border-top: 1px solid var(--line); }
+    .home-benefits dt { color: var(--navy); font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .home-benefits dd { margin: 0; color: var(--text); }
+    .home-benefits .benefit-detail { color: var(--muted); font-size: 14px; margin-top: 12px; }
+    .home-activities { border-top: 1px solid var(--line); }
+    .activities-disclosure summary { color: var(--navy); padding-block: 16px; font-weight: 700; cursor: pointer; }
+    .activities-disclosure .activity-grid { margin-top: 24px; }
+    @media (max-width: 700px) { .home-benefits .benefits-list { grid-template-columns: 1fr; } }
+
     .about-story .lead-para {
       font-size: 19px;
       font-weight: 600;
@@ -1345,7 +1366,8 @@
 
       <ul class="nav-menu" id="main-menu">
         <li><a href="#about">關於松東</a></li>
-        <li><a href="#news">訊息公告</a></li>
+        <li><a href="#news">員工專區</a></li>
+        <li><a href="#benefits">員工福利</a></li>
         <li><a href="#gallery">專業領域與工程實績</a></li>
         <li><a href="#awards">獲獎紀錄</a></li>
         <li><a href="#values">經營理念</a></li>
@@ -1437,6 +1459,11 @@
               我們深知公共工程關乎民生安全與區域發展，因此在每一處鋼筋綁紮、每一立方混凝土澆置、每一段瀝青鋪築的工序中，皆嚴格落實施工規範與自主品管，以務實行動為社會構築安心生活環境。
             </p>
 
+            <dl class="about-company-info">
+              <div><dt>公司資本額</dt><dd>新臺幣<strong>4.3億元</strong></dd></div>
+              <div><dt>經營理念</dt><dd>誠信為本、品質至上、安全第一。以踏實的施工管理與自主品管，落實每一項工程承諾。</dd></div>
+              <div><dt>薪資制度</dt><dd>薪資採<strong>職等分級制度</strong>。</dd></div>
+            </dl>
             <div class="about-badges">
               <div class="badge-card">
                 <strong>專業團隊與重機具配置</strong>
@@ -1450,24 +1477,8 @@
           </div>
         </section>
         <section class="news-section" id="news" aria-labelledby="news-heading">
-
-        <div class="section-header">
-          <h2 class="section-topic" id="news-heading">訊息公告</h2>
-          <p class="section-desc">
-            查閱松東營造最新公告、團隊活動花絮與員工福利資訊。
-          </p>
-        </div>
-
-        <div class="message-controls">
-        <div class="message-tabs" role="tablist" aria-label="訊息公告分類" hidden>
-          <button type="button" id="announcement-tab" role="tab" aria-selected="true" aria-controls="announcement-panel" tabindex="0">最新公告</button>
-          <button type="button" id="activity-tab" role="tab" aria-selected="false" aria-controls="activity-panel" tabindex="-1">活動花絮</button>
-        </div>
-          <a class="message-safety-link" href="./benefits.html">員工福利</a>
-          <a class="message-safety-link" href="./complaints.html">申訴專區（測試中）</a>
-        </div>
-        <div id="announcement-panel" role="tabpanel" aria-labelledby="announcement-tab" tabindex="0">
-        <h3 class="message-panel-heading">最新公告</h3>
+          <div class="section-header"><h2 class="section-topic" id="news-heading">員工專區</h2><p class="section-desc">查閱公司最新公告，並透過申訴管道反映工作相關問題。</p></div>
+          <section aria-labelledby="latest-news-heading"><h3 class="employee-subheading" id="latest-news-heading">最新公告</h3>
         <div class="news-list">
           <!-- 公告 1 -->
           <article class="news-item">
@@ -1502,9 +1513,25 @@
             <div class="news-arrow" aria-hidden="true">→</div>
           </a>
         </div>
-        </div>
-        <div id="activity-panel" role="tabpanel" aria-labelledby="activity-tab" tabindex="0">
-          <h3 class="message-panel-heading">活動花絮</h3>
+          </section>
+          <section class="employee-complaints" aria-labelledby="employee-complaints-title"><h3 class="employee-subheading" id="employee-complaints-title">申訴與意見反映</h3><p>供公司員工、工班人員及協力廠商使用。表單目前仍標示為測試階段，請先使用模擬資料。</p><a class="employee-complaint-link" href="./complaints.html">申訴專區（測試中） <span aria-hidden="true">→</span></a></section>
+        </section>
+      </div>
+    </div>
+
+    <!-- ========================================================================
+         專業領域 (Services)
+         ======================================================================== -->
+    <section class="section home-benefits" id="benefits" aria-labelledby="benefits-heading"><div class="container"><div class="benefits-heading"><h2 class="section-topic" id="benefits-heading">員工福利</h2><p class="section-desc">從獎金、年度出國假與補助，到生活、健康與學習支持，了解來松東上班享有的福利。</p></div><dl class="benefits-list">
+          <div class="benefit-row"><dt>薪資制度</dt><dd><p>薪資採<strong>職等分級制度</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>年終獎金</dt><dd><p>年終獎金<strong>保底1.5個月</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>出國假與補助</dt><dd><p>員工<strong>年資滿一年</strong>，每年一次享有<strong>出國假3天</strong>，並補助<strong>新臺幣30,000元</strong>。</p><p class="benefit-detail">適用條件：員工年資滿一年。提供頻率：一年一次。</p></dd></div>
+          <div class="benefit-row"><dt>返鄉津貼</dt><dd><p>返鄉津貼最高補助<strong>新臺幣4,000元</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>供餐或住宿</dt><dd><p>提供供餐或住宿福利，支持日常工作生活。</p></dd></div>
+          <div class="benefit-row"><dt>健康檢查</dt><dd><p>提供員工健康檢查，關心同仁健康。</p></dd></div>
+          <div class="benefit-row"><dt>教育訓練補助</dt><dd><p>提供教育訓練補助，支持員工學習與專業成長。</p></dd></div>
+        </dl></div></section>
+    <section class="section home-activities" id="activities" aria-labelledby="activities-heading"><div class="container"><h2 class="section-topic" id="activities-heading">活動花絮</h2><details class="activities-disclosure"><summary>查看團隊活動與相簿</summary>
           <div class="activity-grid">
             <figure class="activity-entry">
               <a href="./album-mid-autumn-115.html" aria-label="開啟115年度中秋烤肉歡聚相簿，共8張照片">
@@ -1518,15 +1545,8 @@
             <figure class="activity-entry"><a href="./images/company-03.jpg" aria-label="查看團隊烤肉活動原圖"><img src="./images/company-03.jpg" alt="松東營造團隊烤肉活動" loading="lazy" width="800" height="600"></a><figcaption>團隊烤肉活動</figcaption></figure>
             <figure class="activity-entry"><a href="./images/company-04.jpg" aria-label="查看員工旅遊｜新加坡環球影城原圖"><img src="./images/company-04.jpg" alt="松東營造員工旅遊於新加坡環球影城合影" loading="lazy" width="800" height="600"></a><figcaption>員工旅遊｜新加坡環球影城</figcaption></figure>
           </div>
-        </div>
+    </details></div></section>
 
-        </section>
-      </div>
-    </div>
-
-    <!-- ========================================================================
-         專業領域 (Services)
-         ======================================================================== -->
     <section class="section expertise-projects" id="gallery" aria-labelledby="expertise-heading">
       <div class="container">
         <div class="section-header" id="services">
@@ -2168,8 +2188,9 @@
           <h4>站內導覽</h4>
           <ul class="footer-links">
             <li><a href="#about">關於松東營造</a></li>
-            <li><a href="#news">訊息公告</a></li>
-            <li><a href="./benefits.html">員工福利</a></li>
+            <li><a href="#news">員工專區</a></li>
+            <li><a href="#benefits">員工福利</a></li>
+            <li><a href="#activities">活動花絮</a></li>
             <li><a href="#gallery">專業領域與工程實績</a></li>
             <li><a href="#awards">歷年獲獎紀錄</a></li>
             <li><a href="#values">經營承諾與理念</a></li>
@@ -2212,37 +2233,6 @@
   <script>
     (function () {
       "use strict";
-
-      /* 訊息公告：分類切換，支援鍵盤左右鍵、Home 與 End */
-      const messageTabs = document.querySelector('.message-tabs');
-      if (messageTabs) {
-        const tabs = Array.from(messageTabs.querySelectorAll('[role="tab"]'));
-        function selectMessageTab(tab) {
-          tabs.forEach(function (item) {
-            const active = item === tab;
-            item.setAttribute('aria-selected', String(active));
-            item.tabIndex = active ? 0 : -1;
-            document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
-          });
-        }
-        tabs.forEach(function (tab, index) {
-          tab.addEventListener('click', function () { selectMessageTab(tab); });
-          tab.addEventListener('keydown', function (event) {
-            let next;
-            if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-            else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
-            else if (event.key === 'Home') next = 0;
-            else if (event.key === 'End') next = tabs.length - 1;
-            else return;
-            event.preventDefault();
-            selectMessageTab(tabs[next]);
-            tabs[next].focus();
-          });
-        });
-        selectMessageTab(tabs[0]);
-        messageTabs.hidden = false;
-        document.getElementById('news').classList.add('tabs-ready');
-      }
 
       /* 1. 手機選單控制 */
       const menuButton = document.querySelector(".menu-toggle");
