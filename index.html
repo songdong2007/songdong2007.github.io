@@ -1339,14 +1339,8 @@
       }
     }
 
-    /* 公司介紹與福利並列；員工服務集中於頁尾前 */
+    /* 公司介紹與組織架構並列；員工服務集中於頁尾前 */
     .company-updates-grid { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 56px; }
-    .company-updates .home-benefits { border-top: 0; border-left: 1px solid var(--line); padding-left: 40px; }
-    .company-updates .benefits-heading { margin-bottom: 24px; }
-    .company-updates .home-benefits .benefits-list { grid-template-columns: 1fr; }
-    .company-updates .benefit-row { padding-block: 16px; }
-    .company-updates .home-benefits dt { font-size: 18px; margin-bottom: 6px; }
-    .company-updates .home-benefits dd { font-size: 15px; }
     .employee-section { border-top: 1px solid var(--line); background: var(--paper); }
     .employee-section .section-header { margin-bottom: 32px; }
     .employee-content-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 48px; align-items: start; }
@@ -1357,13 +1351,11 @@
     .home-activities .activity-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
     @media (max-width: 1000px) {
       .company-updates-grid { grid-template-columns: 1fr; gap: 48px; }
-      .company-updates .home-benefits { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 40px; }
-      .company-updates .home-benefits .benefits-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .employee-content-grid { grid-template-columns: 1fr; gap: 32px; }
       .employee-section .employee-complaints { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 28px; }
       .home-activities .activity-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
     }
-    @media (max-width: 600px) { .company-updates .home-benefits .benefits-list, .home-activities .activity-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .home-activities .activity-grid { grid-template-columns: 1fr; } }
 
     .leave-details { margin-top: 12px; }
     .leave-details summary { padding-block: 10px; color: var(--navy); font-weight: 600; cursor: pointer; }
@@ -1373,6 +1365,43 @@
     .leave-table thead th { color: var(--navy); }
     .leave-table tbody th { font-weight: 400; width: 52%; }
     .benefit-detail a { color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
+
+    /* 首頁標題與聯絡資訊 */
+    .hero-intro-grid { display: grid; grid-template-columns: minmax(0,1.7fr) minmax(0,1fr); gap: 48px; align-items: start; }
+    .hero-intro-copy { min-width: 0; }
+    .hero-intro-copy .hero-title { font-size: clamp(30px,3vw,44px); }
+    .hero-contact { padding: 28px; border: 1px solid var(--navy); border-radius: 4px; }
+    .hero-contact h2 { font-size: 24px; color: var(--navy); margin-bottom: 12px; }
+    .hero-contact-phone { display: inline-block; font-size: clamp(24px,2.6vw,34px); line-height: 1.4; color: var(--navy); font-weight: 700; margin-bottom: 20px; font-variant-numeric: tabular-nums; }
+    .hero-contact dl > div { margin-bottom: 14px; }
+    .hero-contact dt { font-size: 13px; color: var(--text); }
+    .hero-contact dd { margin: 0; color: var(--navy); font-size: 15px; }
+    .hero-contact-link { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+    /* 組織層級以文字與結構線呈現 */
+    .organization-section { border-left: 1px solid var(--line); padding-left: 40px; }
+    .organization-chart { padding: 28px 0 12px; }
+    .organization-chain, .organization-teams { list-style: none; margin: 0; padding: 0; }
+    .organization-chain > li { position: relative; padding-top: 32px; }
+    .organization-chain > li:first-child { padding-top: 0; }
+    .organization-chain > li:not(:first-child)::before { content: ''; position: absolute; top: 0; left: 50%; height: 32px; border-left: 1px solid var(--muted); }
+    .organization-node { width: min(100%,260px); min-height: 64px; margin-inline: auto; padding: 16px; border: 1px solid var(--navy); border-radius: 4px; color: var(--paper); background: var(--navy); text-align: center; font-size: 20px; font-weight: 700; }
+    .organization-deputy strong { display: block; }
+    .organization-deputy span { display: block; color: var(--paper); font-size: 13px; font-weight: 400; margin-top: 6px; }
+    .organization-teams { position: relative; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; padding-top: 48px; }
+    .organization-teams::before { content: ''; position: absolute; top: 0; left: 50%; height: 24px; border-left: 1px solid var(--muted); }
+    .organization-teams > li { position: relative; min-width: 0; }
+    .organization-teams > li::before { content: ''; position: absolute; top: -24px; left: 50%; height: 24px; border-left: 1px solid var(--muted); }
+    .organization-teams > li::after { content: ''; position: absolute; top: -24px; left: -6px; right: -6px; border-top: 1px solid var(--muted); }
+    .organization-teams > li:first-child::after { left: 50%; }
+    .organization-teams > li:last-child::after { right: 50%; }
+    .organization-team { position: relative; padding: 14px 4px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); text-align: center; font-weight: 700; font-size: 15px; }
+    @media(max-width:1000px) { .organization-section { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 40px; } }
+    @media(max-width:800px) { .hero-intro-grid { grid-template-columns: 1fr; gap: 28px; } .hero-contact { padding: 24px; } }
+    .about-values-details { margin-top: 12px; }
+    .about-values-details summary { padding-block: 10px; min-height: 44px; color: var(--navy); font-weight: 600; cursor: pointer; }
+    .about-value { margin-top: 16px; }
+    .about-value h4 { color: var(--navy); font-size: 17px; margin-bottom: 8px; }
+    .about-story .about-value p { font-size: 15px; margin-bottom: 0; }
   </style>
 </head>
 
@@ -1435,7 +1464,8 @@
       <div class="hero-overlay"></div>
 
       <div class="container">
-        <div class="hero-content">
+        <div class="hero-content hero-intro-grid">
+          <div class="hero-intro-copy">
           <div class="hero-tag">SONG DONG CONSTRUCTION · EST. 1982</div>
           <h1 class="hero-title" id="hero-heading">
             以專業築基，以品質立信。
@@ -1444,6 +1474,13 @@
           <p class="hero-desc">
             深耕台灣公共基礎建設與民生工程。松東營造以嚴謹的工序把關、厚實的施工管理，將每一項道路、橋梁與水利工程，構築為值得社會信賴的堅實基石。
           </p>
+        </div>
+          <aside class="hero-contact" aria-labelledby="hero-contact-heading">
+            <h2 id="hero-contact-heading">聯絡我們</h2>
+            <a class="hero-contact-phone" href="tel:057857898">05-7857898</a>
+            <dl><div><dt>公司名稱</dt><dd>松東營造股份有限公司</dd></div><div><dt>統一編號</dt><dd>94804902</dd></div><div><dt>公司地址</dt><dd>雲林縣水林鄉土厝村大庄44-36號</dd></div></dl>
+            <a class="hero-contact-link" href="./contact.html">完整聯絡資訊 <span aria-hidden="true">→</span></a>
+          </aside>
         </div>
       </div>
     </section>
@@ -1503,7 +1540,7 @@
 
             <dl class="about-company-info">
               <div><dt>公司資本額</dt><dd>新臺幣<strong>4.3億元</strong></dd></div>
-              <div><dt>經營理念</dt><dd>誠信為本、品質至上、安全第一。以踏實的施工管理與自主品管，落實每一項工程承諾。</dd></div>
+              <div><dt>經營理念</dt><dd><p>誠信為本、品質至上、安全第一。以踏實的施工管理與自主品管，落實每一項工程承諾。</p><details class="about-values-details" id="values"><summary>閱讀完整經營理念</summary><div class="about-value"><h4>誠信為本</h4><p>嚴守工程合約規範，不偷工、不減料、不推諉。與發包單位、工程顧問與協力廠商建立彼此信賴的長久夥伴關係，實事求是履行每一項工程承諾。</p></div><div class="about-value"><h4>品質至上</h4><p>從鋼筋原料檢驗、混凝土拌合比抽驗到現場各單元查驗，落實「自主檢查、監造複驗」的三級品管標準。追求結構強度與施工細節的極致穩定。</p></div><div class="about-value"><h4>安全第一</h4><p>堅持「人命至上、工安無價」。每日作業前工具箱會議、個人防護裝備確實查核、工區周遭交通維持管制，全力實現零職災、零事故之工區標準。</p></div></details></dd></div>
               <div><dt>薪資制度</dt><dd>薪資採<strong>職等分級制度</strong>。</dd></div>
             </dl>
             <div class="about-badges">
@@ -1518,17 +1555,18 @@
             </div>
           </div>
         </section>
-        <section class="home-benefits" id="benefits" aria-labelledby="benefits-heading"><div class="benefits-heading"><h2 class="section-topic" id="benefits-heading">員工福利</h2><p class="section-desc">從獎金、年度出國假與補助，到生活、健康與學習支持，了解來松東上班享有的福利。</p></div><dl class="benefits-list">
-          <div class="benefit-row"><dt>勞健保</dt><dd><p>全體員工加入<strong>勞工保險與全民健康保險</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>薪資制度</dt><dd><p>薪資採<strong>職等分級制度</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>年終與結案獎金</dt><dd><p>年終獎金<strong>保底1.5個月</strong>，<strong>結案獎金另計</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>特休制度</dt><dd><p>依《勞動基準法》第38條，按在同一雇主或事業單位的工作年資給予特別休假。</p><details class="leave-details"><summary>查看年資與特休日數</summary><table class="leave-table"><caption>法定特別休假日數</caption><thead><tr><th scope="col">工作年資</th><th scope="col">特休日數</th></tr></thead><tbody><tr><th scope="row">滿6個月、未滿1年</th><td>3天</td></tr><tr><th scope="row">滿1年、未滿2年</th><td>7天</td></tr><tr><th scope="row">滿2年、未滿3年</th><td>10天</td></tr><tr><th scope="row">滿3年、未滿5年</th><td>每年14天</td></tr><tr><th scope="row">滿5年、未滿10年</th><td>每年15天</td></tr><tr><th scope="row">滿10年以上</th><td>滿10年16天，其後每年增加1天，最高30天</td></tr></tbody></table><p class="benefit-detail">滿半年取得的3天，與滿一年取得的7天分別給予。特休日期原則由員工排定，必要時雙方協商調整。年度終結或契約終止未休完的天數，依法發給工資；年度終結時也可經雙方協商遞延至次年度。</p></details><p class="benefit-detail"><a href="https://laws.mol.gov.tw/flaw/FLAWDOC01.aspx?flno=38&amp;id=FL014930">法規依據：勞動基準法第38條</a> · <a href="https://www.mol.gov.tw/1607/28162/28166/28218/28226/81492/post">勞動部特休說明</a></p></dd></div>
-          <div class="benefit-row"><dt>出國假與補助</dt><dd><p>員工<strong>年資滿一年</strong>，每年一次享有<strong>出國假3天</strong>，並補助<strong>新臺幣30,000元</strong>。</p><p class="benefit-detail">適用條件：員工年資滿一年。提供頻率：一年一次。</p></dd></div>
-          <div class="benefit-row"><dt>返鄉津貼</dt><dd><p>返鄉津貼最高補助<strong>新臺幣4,000元</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>供餐住宿</dt><dd><p>提供<strong>供餐與住宿</strong>，並設有<strong>休閒設備及運動器材</strong>。</p></dd></div>
-          <div class="benefit-row"><dt>健康檢查</dt><dd><p>提供員工健康檢查，關心同仁健康。</p></dd></div>
-          <div class="benefit-row"><dt>教育訓練補助</dt><dd><p>提供教育訓練補助，支持員工學習與專業成長。</p></dd></div>
-        </dl></section>
+        <section class="organization-section" aria-labelledby="organization-heading">
+          <h2 class="section-topic" id="organization-heading">組織架構</h2>
+          <div class="organization-chart">
+            <ol class="organization-chain">
+              <li><div class="organization-node">董事長</div></li>
+              <li><div class="organization-node">總經理</div></li>
+              <li><div class="organization-node organization-deputy"><strong>副總經理</strong><span>執行・行政・財務・業務</span></div>
+                <ol class="organization-teams"><li><div class="organization-team">第一小隊</div></li><li><div class="organization-team">第二小隊</div></li><li><div class="organization-team">第三小隊</div></li></ol>
+              </li>
+            </ol>
+          </div>
+        </section>
       </div>
     </div>
 
@@ -2084,6 +2122,20 @@
       </div>
     </section>
 
+    <section class="section home-benefits" id="benefits" aria-labelledby="benefits-heading">
+      <div class="container"><div class="benefits-heading"><h2 class="section-topic" id="benefits-heading">員工福利</h2><p class="section-desc">從獎金、年度出國假與補助，到生活、健康與學習支持，了解來松東上班享有的福利。</p></div><dl class="benefits-list">
+          <div class="benefit-row"><dt>勞健保</dt><dd><p>全體員工加入<strong>勞工保險與全民健康保險</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>職工福利委員會</dt><dd><p>設有<strong>職工福利委員會</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>年終與結案獎金</dt><dd><p>年終獎金<strong>保底1.5個月</strong>，<strong>結案獎金另計</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>特休制度</dt><dd><p>依《勞動基準法》第38條，按在同一雇主或事業單位的工作年資給予特別休假。</p><details class="leave-details"><summary>查看年資與特休日數</summary><table class="leave-table"><caption>法定特別休假日數</caption><thead><tr><th scope="col">工作年資</th><th scope="col">特休日數</th></tr></thead><tbody><tr><th scope="row">滿6個月、未滿1年</th><td>3天</td></tr><tr><th scope="row">滿1年、未滿2年</th><td>7天</td></tr><tr><th scope="row">滿2年、未滿3年</th><td>10天</td></tr><tr><th scope="row">滿3年、未滿5年</th><td>每年14天</td></tr><tr><th scope="row">滿5年、未滿10年</th><td>每年15天</td></tr><tr><th scope="row">滿10年以上</th><td>滿10年16天，其後每年增加1天，最高30天</td></tr></tbody></table><p class="benefit-detail">滿半年取得的3天，與滿一年取得的7天分別給予。特休日期原則由員工排定，必要時雙方協商調整。年度終結或契約終止未休完的天數，依法發給工資；年度終結時也可經雙方協商遞延至次年度。</p></details><p class="benefit-detail"><a href="https://laws.mol.gov.tw/flaw/FLAWDOC01.aspx?flno=38&amp;id=FL014930">法規依據：勞動基準法第38條</a> · <a href="https://www.mol.gov.tw/1607/28162/28166/28218/28226/81492/post">勞動部特休說明</a></p></dd></div>
+          <div class="benefit-row"><dt>出國假與補助</dt><dd><p>員工<strong>年資滿一年</strong>，每年一次享有<strong>出國假3天</strong>，並補助<strong>新臺幣30,000元</strong>。</p><p class="benefit-detail">適用條件：員工年資滿一年。提供頻率：一年一次。</p></dd></div>
+          <div class="benefit-row"><dt>返鄉津貼</dt><dd><p>返鄉津貼最高補助<strong>新臺幣4,000元</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>供餐住宿</dt><dd><p>提供<strong>供餐與住宿</strong>，並設有<strong>休閒設備及運動器材</strong>。</p></dd></div>
+          <div class="benefit-row"><dt>健康檢查</dt><dd><p>提供員工健康檢查，關心同仁健康。</p></dd></div>
+          <div class="benefit-row"><dt>教育訓練補助</dt><dd><p>提供教育訓練補助，支持員工學習與專業成長。</p></dd></div>
+        </dl></div>
+    </section>
+
     <section class="section home-activities" id="activities" aria-labelledby="activities-heading"><div class="container"><h2 class="section-topic" id="activities-heading">員工花絮</h2><details class="activities-disclosure"><summary>查看團隊活動與相簿</summary>
           <div class="activity-grid">
             <figure class="activity-entry">
@@ -2103,75 +2155,12 @@
     <!-- ========================================================================
          經營理念 (Values)
          ======================================================================== -->
-    <section class="section values-section" id="values">
-      <div class="container">
-        <h2 class="section-topic">經營理念</h2>
-            <h3 class="section-title">建設的真義，是歷久彌堅的承諾。</h3>
-        <p class="section-desc">
-          營造工程不是單純的買賣，而是對社會大眾行車平安、居住安全的永續保證。松東營造秉持三大核心原則，穩步向前。
-        </p>
 
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-card-top">
-              <span class="value-order">PRINCIPLE 01</span>
-              <span class="value-en">INTEGRITY FIRST</span>
-            </div>
-            <h3 class="value-title">誠信為本</h3>
-            <p class="value-text">
-              嚴守工程合約規範，不偷工、不減料、不推諉。與發包單位、工程顧問與協力廠商建立彼此信賴的長久夥伴關係，實事求是履行每一項工程承諾。
-            </p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-card-top">
-              <span class="value-order">PRINCIPLE 02</span>
-              <span class="value-en">UNCOMPROMISING QUALITY</span>
-            </div>
-            <h3 class="value-title">品質至上</h3>
-            <p class="value-text">
-              從鋼筋原料檢驗、混凝土拌合比抽驗到現場各單元查驗，落實「自主檢查、監造複驗」的三級品管標準。追求結構強度與施工細節的極致穩定。
-            </p>
-          </div>
-
-          <div class="value-card">
-            <div class="value-card-top">
-              <span class="value-order">PRINCIPLE 03</span>
-              <span class="value-en">SAFETY &amp; CARE</span>
-            </div>
-            <h3 class="value-title">安全第一</h3>
-            <p class="value-text">
-              堅持「人命至上、工安無價」。每日作業前工具箱會議、個人防護裝備確實查核、工區周遭交通維持管制，全力實現零職災、零事故之工區標準。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ========================================================================
          合作邀請與聯繫 (CTA)
          ======================================================================== -->
-    <section class="cta-section" id="contact-cta">
-      <div class="container cta-inner">
-        <div>
-          <h2 class="section-topic">聯絡我們</h2>
-          <h3 class="cta-title">攜手松東，築起下一項公共典範。</h3>
-          <p class="cta-desc">
-            竭誠歡迎政府機關、工程顧問公司與營造同業洽詢工程統包、專業分包合作與相關業務交流。
-          </p>
-        </div>
-        <div class="cta-btns">
-          <a href="tel:057857898" class="btn btn-navy">
-            直接來電洽詢
-            <span aria-hidden="true">☎</span>
-          </a>
-          <a href="./contact.html" class="btn btn-primary">
-            完整聯絡資訊
-            <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
+
     <section class="section employee-section" id="news" aria-labelledby="news-heading">
         <div class="container">
           <div class="section-header"><h2 class="section-topic" id="news-heading">員工專區</h2><p class="section-desc">查閱公司最新公告，並透過申訴管道反映工作相關問題。</p></div>
