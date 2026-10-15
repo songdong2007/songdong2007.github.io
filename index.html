@@ -1442,6 +1442,13 @@
     .employee-section .news-item { background: color-mix(in srgb, var(--gold) 6%, var(--paper)); }
     .employee-section .employee-complaint-link { background: var(--navy); color: var(--paper); }
     .employee-section .employee-complaint-link:hover { background: var(--dark); }
+    .job-grade-table { width: 100%; margin-top: 16px; border-collapse: collapse; font-size: 15px; }
+    .job-grade-table caption { text-align: left; color: var(--navy); font-weight: 600; padding-bottom: 10px; }
+    .job-grade-table th, .job-grade-table td { text-align: left; padding: 12px 14px; border: 1px solid var(--line); }
+    .job-grade-table thead th { color: var(--paper); background: var(--navy); font-weight: 600; }
+    .job-grade-table tbody th { color: var(--navy); font-weight: 500; }
+    .job-grade-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--navy) 4%, var(--paper)); }
+    .job-grade-table td { font-variant-numeric: tabular-nums; }
   </style>
 </head>
 
@@ -1581,7 +1588,7 @@
             <dl class="about-company-info">
               <div><dt>公司資本額</dt><dd>新臺幣<strong>4.3億元</strong></dd></div>
               <div><dt>經營理念</dt><dd><p>誠信為本、品質至上、安全第一。以踏實的施工管理與自主品管，落實每一項工程承諾。</p><details class="about-values-details" id="values"><summary>閱讀完整經營理念</summary><div class="about-value"><h4>誠信為本</h4><p>嚴守工程合約規範，不偷工、不減料、不推諉。與發包單位、工程顧問與協力廠商建立彼此信賴的長久夥伴關係，實事求是履行每一項工程承諾。</p></div><div class="about-value"><h4>品質至上</h4><p>從鋼筋原料檢驗、混凝土拌合比抽驗到現場各單元查驗，落實「自主檢查、監造複驗」的三級品管標準。追求結構強度與施工細節的極致穩定。</p></div><div class="about-value"><h4>安全第一</h4><p>堅持「人命至上、工安無價」。每日作業前工具箱會議、個人防護裝備確實查核、工區周遭交通維持管制，全力實現零職災、零事故之工區標準。</p></div></details></dd></div>
-              <div><dt>薪資制度</dt><dd>薪資採<strong>職等分級制度</strong>。</dd></div>
+              <div><dt>薪資制度</dt><dd><p>薪資採<strong>職等分級制度</strong>，共分25個職等。</p><table class="job-grade-table"><caption>職等與職稱對照表</caption><thead><tr><th scope="col">職等範圍</th><th scope="col">職稱</th></tr></thead><tbody><tr><td>1～9職等</td><th scope="row">助理工程員</th></tr><tr><td>10～13職等</td><th scope="row">工程員</th></tr><tr><td>14～16職等</td><th scope="row">副工程師</th></tr><tr><td>17～25職等</td><th scope="row">正工程師</th></tr></tbody></table></dd></div>
             </dl>
             <div class="about-badges">
               <div class="badge-card">
