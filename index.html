@@ -130,6 +130,19 @@
       background: var(--gold);
     }
 
+    .section-topic {
+      margin-bottom: 16px;
+      color: var(--navy);
+      font-size: clamp(22px, 2.4vw, 28px);
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+    }
+
+    .values-section .section-topic {
+      color: var(--gold);
+    }
+
     .section-title {
       font-size: clamp(28px, 3.6vw, 40px);
       font-weight: 700;
@@ -256,7 +269,7 @@
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 20px;
       list-style: none;
     }
 
@@ -479,11 +492,19 @@
       background-color: var(--paper);
     }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
-      gap: 40px;
-      align-items: center;
+    .company-updates { background: var(--paper); }
+    .company-updates-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+    .company-updates-grid > section { min-width: 0; scroll-margin-top: 100px; }
+    .company-updates .about-story .section-title { font-size: clamp(26px, 2.4vw, 32px); }
+    .company-updates .news-section { border-top: 0; border-left: 1px solid var(--line); padding-left: 40px; }
+    .company-updates .section-header { margin-bottom: 28px; }
+    .company-updates .news-item { grid-template-columns: 1fr; gap: 12px; padding: 22px; }
+    .company-updates .news-arrow { display: none; }
+    .company-updates .activity-grid { gap: 20px; }
+    .company-updates .activity-entry figcaption { font-size: 13px; }
+    @media (max-width: 1000px) {
+      .company-updates-grid { grid-template-columns: 1fr; gap: 48px; }
+      .company-updates .news-section { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 40px; }
     }
 
     .about-story .lead-para {
@@ -533,67 +554,6 @@
       line-height: 1.6;
     }
 
-    /* 公司照片畫廊 */
-    .about-visual {
-      position: relative;
-    }
-
-    .visual-frame {
-      position: relative;
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--paper);
-    }
-
-    .visual-frame img {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 3;
-      object-fit: contain;
-      display: block;
-      transition: opacity 0.2s ease;
-    }
-
-    .visual-thumb-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 12px;
-    }
-
-    .thumb-btn {
-      position: relative;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 2px solid transparent;
-      height: auto;
-      aspect-ratio: 4 / 3;
-      padding: 0;
-      background: var(--paper);
-      cursor: pointer;
-      opacity: 0.75;
-      transition: all 0.2s ease;
-    }
-
-    .thumb-btn.is-active,
-    .thumb-btn:hover {
-      opacity: 1;
-      border-color: var(--gold);
-    }
-
-    .thumb-btn img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .thumb-btn:focus-visible {
-      outline: 2px solid var(--navy);
-      outline-offset: 3px;
-      opacity: 1;
-    }
-
     /* ==========================================================================
        最新公告 (News & Announcements)
        ========================================================================== */
@@ -601,6 +561,20 @@
       background-color: var(--paper);
       border-top: 1px solid var(--line);
     }
+
+    .message-tabs { display: flex; gap: 12px; margin-bottom: 28px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+    .message-tabs[hidden], [role="tabpanel"][hidden] { display: none; }
+    .message-tabs button { min-height: 48px; padding: 10px 28px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-weight: 700; transition: background-color .2s ease, color .2s ease; }
+    .message-tabs button[aria-selected="true"] { background: var(--navy); color: var(--paper); }
+    .message-tabs button:hover { background: var(--dark); color: var(--paper); }
+    .message-panel-heading { margin: 24px 0 20px; color: var(--navy); font-size: 22px; }
+    .news-section.tabs-ready .message-panel-heading { display: none; }
+    .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+    .activity-entry { min-width: 0; }
+    .activity-entry a { display: block; }
+    .activity-entry img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; }
+    .activity-entry figcaption { margin-top: 12px; color: var(--navy); font-weight: 600; }
+    @media (max-width: 768px) { .activity-grid { grid-template-columns: 1fr; gap: 24px; } .message-tabs button { flex: 1; padding-inline: 16px; } }
 
     .news-list {
       display: flex;
@@ -848,6 +822,14 @@
     /* ==========================================================================
        工程影像實績 (Project Gallery) - 真實施工紀錄展示
        ========================================================================== */
+    .project-index { margin-bottom: 40px; border-top: 1px solid var(--line); }
+    .project-index h3 { margin: 24px 0 12px; color: var(--navy); font-size: 22px; }
+    .project-index ul { list-style: none; }
+    .project-index li { border-bottom: 1px solid var(--line); }
+    .project-index a { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; color: var(--navy); font-weight: 600; }
+    .project-index a:hover, .project-detail-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .project-detail-link { display: inline-block; padding: 12px 0 0; color: var(--navy); font-size: 14px; text-decoration: underline; text-underline-offset: 5px; }
+
     .gallery-section {
       background-color: var(--paper);
     }
@@ -1469,23 +1451,20 @@
       .hero-bar-item {
         border-bottom: 1px solid var(--line-dark);
       }
-      .about-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: "photos" "story";
-        gap: 48px;
-      }
-      .about-visual {
-        grid-area: photos;
-      }
-      .about-story {
-        grid-area: story;
-      }
       .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
+    }
+
+    @media (max-width: 1100px) {
+      .menu-toggle { display: block; }
+      .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); flex-direction: column; align-items: stretch; gap: 0; padding: 16px 24px 24px; }
+      .nav-menu.is-open { display: flex; }
+      .nav-menu a { display: block; padding: 12px 0; }
+      .nav-cta { margin-top: 12px; }
     }
 
     @media (max-width: 768px) {
@@ -1565,6 +1544,10 @@
       }
     }
 
+    @media (max-width: 600px) {
+      .about-badges { grid-template-columns: 1fr; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto !important;
@@ -1610,7 +1593,8 @@
 
       <ul class="nav-menu" id="main-menu">
         <li><a href="#about">關於松東</a></li>
-        <li><a href="#news">最新公告</a></li>
+        <li><a href="#news">訊息公告</a></li>
+        <li><a href="./safety.html">職安專區</a></li>
         <li><a href="#services">專業領域</a></li>
         <li><a href="#gallery">工程實績</a></li>
         <li><a href="#awards">獲獎紀錄</a></li>
@@ -1628,7 +1612,7 @@
       <div class="hero-photo">
       <img
         class="hero-bg"
-        src="./images/about.jpg"
+        src="./images/about-web.jpg"
         alt="松東營造2026年開工暨新春團拜全體合影"
         loading="eager"
         fetchpriority="high"
@@ -1691,12 +1675,12 @@
     <!-- ========================================================================
          關於松東 (About)
          ======================================================================== -->
-    <section class="section about-section" id="about">
-      <div class="container">
-        <div class="about-grid">
+    <div class="section company-updates">
+      <div class="container company-updates-grid">
+        <section class="about-section" id="about" aria-labelledby="about-heading">
           <div class="about-story">
-            <div class="section-label">ABOUT SONG DONG</div>
-            <h2 class="section-title">腳踏實地，築起每一份公眾信任。</h2>
+            <h2 class="section-topic" id="about-heading">關於松東</h2>
+            <h3 class="section-title">腳踏實地，築起每一份公眾信任。</h3>
             <div class="section-desc" style="margin-bottom: 24px;">
               松東營造股份有限公司創立於2007年，發軔於雲林，長年投身國家公共基礎設施建設。
             </div>
@@ -1724,116 +1708,23 @@
               </div>
             </div>
           </div>
+        </section>
+        <section class="news-section" id="news" aria-labelledby="news-heading">
 
-          <!-- 公司相片展示 -->
-          <div class="about-visual">
-            <figure class="visual-frame">
-              <img
-                id="about-main-img"
-                src="./images/company.jpg"
-                alt="松東營造員工旅遊於新加坡魚尾獅公園合影"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="visual-thumb-strip" role="group" aria-label="公司相片切換">
-              <button
-                type="button"
-                class="thumb-btn is-active"
-                data-img="./images/company.jpg"
-                aria-label="顯示公司照片一" aria-pressed="true"
-              >
-                <img src="./images/company.jpg" alt="松東營造員工旅遊於新加坡魚尾獅公園合影" loading="lazy">
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                data-img="./images/company-02.jpg"
-                aria-label="顯示公司照片二" aria-pressed="false"
-              >
-                <img src="./images/company-02.jpg" alt="松東營造團隊聚餐" loading="lazy">
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                data-img="./images/company-03.jpg"
-                aria-label="顯示公司照片三"
-                aria-pressed="false"
-              >
-                <img src="./images/company-03.jpg" alt="松東營造團隊烤肉活動" loading="lazy">
-              </button>
-              <button
-                type="button"
-                class="thumb-btn"
-                data-img="./images/company-04.jpg"
-                aria-label="顯示公司照片四"
-                aria-pressed="false"
-              >
-                <img src="./images/company-04.jpg" alt="松東營造員工旅遊於新加坡環球影城合影" loading="lazy">
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================================
-         最新公告 (Latest Announcements)
-         ======================================================================== -->
-    <section class="section news-section" id="news">
-      <div class="container">
         <div class="section-header">
-          <div class="section-label">LATEST ANNOUNCEMENTS</div>
-          <h2 class="section-title">最新公告與即時動態</h2>
+          <h2 class="section-topic" id="news-heading">訊息公告</h2>
           <p class="section-desc">
-            掌握工程與工安動態，查閱職安署近期公告與營造安全宣導影片。公告連至職安署網站，影片連至 YouTube。
+            查閱松東營造最新公告與團隊活動花絮。職業安全相關指引與宣導資源，請至<a href="./safety.html" style="color: var(--navy); text-decoration: underline; text-underline-offset: 5px;">職安專區</a>查閱。
           </p>
         </div>
 
-        <aside class="heat-safety" aria-labelledby="heat-safety-title">
-          <h3 id="heat-safety-title">高氣溫作業宣導專區</h3>
-          <p>戶外施工的熱危害預防資訊，彙整職安署相關法令、預防指引、宣導手冊與教學影片，供工地管理及作業人員查閱。</p>
-          <nav class="heat-links" aria-label="高氣溫作業官方資源">
-            <a href="https://www.osha.gov.tw/48110/48207/48309/nodelist">職安署高氣溫專區</a>
-            <a href="https://www.osha.gov.tw/48110/48207/48309/48313/lpsimplelist">相關法規與預防指引</a>
-            <a href="https://www.osha.gov.tw/48110/48207/48309/48315/lpsimplelist">宣導事項與手冊</a>
-            <a href="https://www.youtube.com/watch?v=z80mOGzA83Q">觀看高氣溫危害預防影片（YouTube）</a>
-          </nav>
-        </aside>
-
-        <aside class="heat-safety" aria-labelledby="work-safety-videos-title">
-          <h3 id="work-safety-videos-title">各項作業之危害預防影片專區</h3>
-          <p>彙整職安署影音專區收錄的施工架、開口與開挖作業宣導影片，供工地團隊觀看與教育訓練參考。</p>
-          <nav class="heat-links" aria-label="各項作業危害預防影片">
-            <a href="https://www.youtube.com/watch?v=7x_e7JugVAo">施工架作業（第二部）</a>
-            <a href="https://www.youtube.com/watch?v=SgbURnkh9TI">開口作業・墜落危害預防</a>
-            <a href="https://www.youtube.com/watch?v=W2lDpBTfzJY">開挖作業危害預防</a>
-          </nav>
-        </aside>
-
-        <aside class="heat-safety" aria-labelledby="construction-safety-title">
-          <h3 id="construction-safety-title">職安署營造安全專區</h3>
-          <p>查閱墜落危害預防、施工架作業安全、營造工程風險評估與職業安全衛生管理等資訊。</p>
-          <nav class="heat-links" aria-label="營造安全官方資源">
-            <a href="https://www.osha.gov.tw/48110/48129/48177/nodelist">前往職安署營造安全專區</a>
-          </nav>
-        </aside>
-
+        <div class="message-tabs" role="tablist" aria-label="訊息公告分類" hidden>
+          <button type="button" id="announcement-tab" role="tab" aria-selected="true" aria-controls="announcement-panel" tabindex="0">最新公告</button>
+          <button type="button" id="activity-tab" role="tab" aria-selected="false" aria-controls="activity-panel" tabindex="-1">活動花絮</button>
+        </div>
+        <div id="announcement-panel" role="tabpanel" aria-labelledby="announcement-tab" tabindex="0">
+        <h3 class="message-panel-heading">最新公告</h3>
         <div class="news-list">
-          <!-- 職安署公告：人工查核更新於 2026-10-05，日期採原公告發布日期 -->
-          <a class="news-item" href="https://www.osha.gov.tw/48110/48417/48423/212509/post">
-            <div class="news-meta">
-              <time class="news-date" datetime="2026-09-21">2026.09.21</time>
-              <span class="news-tag">職安署・風險評估</span>
-            </div>
-            <div class="news-content">
-              <h3 class="news-title">職業安全衛生署函頒「風險評估指引」</h3>
-              <p class="news-summary">職安署公布風險評估指引，相關說明與附件可至官方公告頁面查閱及下載。</p>
-              <span class="news-source">來源：勞動部職業安全衛生署｜前往官方公告</span>
-            </div>
-            <div class="news-arrow" aria-hidden="true">→</div>
-          </a>
-
           <!-- 公告 1 -->
           <article class="news-item">
             <div class="news-meta">
@@ -1867,8 +1758,21 @@
             <div class="news-arrow" aria-hidden="true">→</div>
           </a>
         </div>
+        </div>
+        <div id="activity-panel" role="tabpanel" aria-labelledby="activity-tab" tabindex="0">
+          <h3 class="message-panel-heading">活動花絮</h3>
+          <div class="activity-grid">
+            <figure class="activity-entry"><a href="./images/about-web.jpg" aria-label="查看2026年開工暨新春團拜原圖"><img src="./images/about-web.jpg" alt="松東營造2026年開工暨新春團拜全體合影" loading="lazy" width="800" height="600"></a><figcaption>2026年開工暨新春團拜</figcaption></figure>
+            <figure class="activity-entry"><a href="./images/company.jpg" aria-label="查看員工旅遊｜新加坡魚尾獅公園原圖"><img src="./images/company.jpg" alt="松東營造員工旅遊於新加坡魚尾獅公園合影" loading="lazy" width="800" height="600"></a><figcaption>員工旅遊｜新加坡魚尾獅公園</figcaption></figure>
+            <figure class="activity-entry"><a href="./images/company-02.jpg" aria-label="查看團隊聚餐原圖"><img src="./images/company-02.jpg" alt="松東營造團隊聚餐" loading="lazy" width="800" height="600"></a><figcaption>團隊聚餐</figcaption></figure>
+            <figure class="activity-entry"><a href="./images/company-03.jpg" aria-label="查看團隊烤肉活動原圖"><img src="./images/company-03.jpg" alt="松東營造團隊烤肉活動" loading="lazy" width="800" height="600"></a><figcaption>團隊烤肉活動</figcaption></figure>
+            <figure class="activity-entry"><a href="./images/company-04.jpg" aria-label="查看員工旅遊｜新加坡環球影城原圖"><img src="./images/company-04.jpg" alt="松東營造員工旅遊於新加坡環球影城合影" loading="lazy" width="800" height="600"></a><figcaption>員工旅遊｜新加坡環球影城</figcaption></figure>
+          </div>
+        </div>
+
+        </section>
       </div>
-    </section>
+    </div>
 
     <!-- ========================================================================
          專業領域 (Services)
@@ -1876,8 +1780,8 @@
     <section class="section services-section" id="services">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">CORE CAPABILITIES</div>
-          <h2 class="section-title">專業所至，建設所在。</h2>
+          <h2 class="section-topic">專業領域</h2>
+            <h3 class="section-title">專業所至，建設所在。</h3>
           <p class="section-desc">
             整合土木工程技術與現場工務管理，從前期施工計畫、交維安全規劃到現場精準執行，具備全方位公共建設承攬實力。
           </p>
@@ -1962,8 +1866,8 @@
       <div class="container">
         <div class="gallery-intro-row">
           <div>
-            <div class="section-label">PROJECT ARCHIVE</div>
-            <h2 class="section-title">現場見證：以實績彰顯品質。</h2>
+            <h2 class="section-topic">工程實績</h2>
+            <h3 class="section-title">現場見證：以實績彰顯品質。</h3>
             <p class="section-desc">
               走進施工第一線，每一道工序皆經得起嚴格檢驗。以下為松東營造之代表性施工實況紀錄。
             </p>
@@ -1972,6 +1876,12 @@
             點選照片可開啟高解析圖檔
           </div>
         </div>
+
+        <nav class="project-index" aria-label="代表工程介紹"><h3>代表工程介紹</h3><ul><li><a href="./project-jishui.html">台1線急水溪橋改建工程 <span aria-hidden="true">→</span></a></li>
+<li><a href="./project-beigang.html">濁幹線北港溪渡槽工程 <span aria-hidden="true">→</span></a></li>
+<li><a href="./project-changsheng.html">臺南市第六期新營區長勝營區市地重劃工程（長勝公園） <span aria-hidden="true">→</span></a></li>
+<li><a href="./project-xishu.html">臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程 <span aria-hidden="true">→</span></a></li>
+<li><a href="./project-nanke.html">臺南市南科特定區開發區塊F、G區段徵收工程 <span aria-hidden="true">→</span></a></li></ul></nav>
 
         <div class="gallery-grid">
           <!-- 專案 1 -->
@@ -1992,6 +1902,7 @@
             </div>
             <div class="project-card-body">
               <h3 class="project-title">臺南市南科特定區開發區塊F、G區段徵收工程</h3>
+              <a class="project-detail-link" href="./project-nanke.html">查看工程介紹 →</a>
             </div>
           </article>
 
@@ -2013,6 +1924,7 @@
             </div>
             <div class="project-card-body">
               <h3 class="project-title">臺南市南科特定區開發區塊F、G區段徵收工程</h3>
+              <a class="project-detail-link" href="./project-nanke.html">查看工程介紹 →</a>
             </div>
           </article>
 
@@ -2034,6 +1946,7 @@
             </div>
             <div class="project-card-body">
               <h3 class="project-title">臺南市南科特定區開發區塊F、G區段徵收工程</h3>
+              <a class="project-detail-link" href="./project-nanke.html">查看工程介紹 →</a>
             </div>
           </article>
 
@@ -2055,6 +1968,7 @@
             </div>
             <div class="project-card-body">
               <h3 class="project-title">臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程</h3>
+              <a class="project-detail-link" href="./project-xishu.html">查看工程介紹 →</a>
             </div>
           </article>
 
@@ -2076,6 +1990,7 @@
             </div>
             <div class="project-card-body">
               <h3 class="project-title">臺南市喜樹灣裡市地重劃、代辦區外灣1滯洪池及抽水站工程</h3>
+              <a class="project-detail-link" href="./project-xishu.html">查看工程介紹 →</a>
             </div>
           </article>
 
@@ -2097,6 +2012,7 @@
             </div>
             <div class="project-card-body">
               <h3 class="project-title">濁幹線北港溪渡槽工程</h3>
+              <a class="project-detail-link" href="./project-beigang.html">查看工程介紹 →</a>
             </div>
           </article>
         </div>
@@ -2109,8 +2025,8 @@
     <section class="section awards-section" id="awards">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">HONORS &amp; RECOGNITION</div>
-          <h2 class="section-title">品質見證：歷年榮譽與獲獎紀錄</h2>
+          <h2 class="section-topic">獲獎紀錄</h2>
+            <h3 class="section-title">品質見證：歷年榮譽與獲獎紀錄</h3>
           <p class="section-desc">
             每一座獎座與獎狀，皆凝聚了現場施工團隊的專業與堅持。松東營造以扎實嚴謹的工序，屢獲國家級公共工程金質獎、金安獎與國際卓越建設獎最高肯定。
           </p>
@@ -2605,8 +2521,8 @@
          ======================================================================== -->
     <section class="section values-section" id="values">
       <div class="container">
-        <div class="section-label">OUR COMMITMENT</div>
-        <h2 class="section-title">建設的真義，是歷久彌堅的承諾。</h2>
+        <h2 class="section-topic">經營理念</h2>
+            <h3 class="section-title">建設的真義，是歷久彌堅的承諾。</h3>
         <p class="section-desc">
           營造工程不是單純的買賣，而是對社會大眾行車平安、居住安全的永續保證。松東營造秉持三大核心原則，穩步向前。
         </p>
@@ -2654,7 +2570,8 @@
     <section class="cta-section" id="contact-cta">
       <div class="container cta-inner">
         <div>
-          <h2 class="cta-title">攜手松東，築起下一項公共典範。</h2>
+          <h2 class="section-topic">聯絡我們</h2>
+          <h3 class="cta-title">攜手松東，築起下一項公共典範。</h3>
           <p class="cta-desc">
             竭誠歡迎政府機關、工程顧問公司與營造同業洽詢工程統包、專業分包合作與相關業務交流。
           </p>
@@ -2704,7 +2621,8 @@
           <h4>站內導覽</h4>
           <ul class="footer-links">
             <li><a href="#about">關於松東營造</a></li>
-            <li><a href="#news">最新公告消息</a></li>
+            <li><a href="#news">訊息公告</a></li>
+            <li><a href="./safety.html">職安專區</a></li>
             <li><a href="#services">專業工程範疇</a></li>
             <li><a href="#gallery">工程紀錄相片</a></li>
             <li><a href="#awards">歷年獲獎紀錄</a></li>
@@ -2748,6 +2666,37 @@
     (function () {
       "use strict";
 
+      /* 訊息公告：分類切換，支援鍵盤左右鍵、Home 與 End */
+      const messageTabs = document.querySelector('.message-tabs');
+      if (messageTabs) {
+        const tabs = Array.from(messageTabs.querySelectorAll('[role="tab"]'));
+        function selectMessageTab(tab) {
+          tabs.forEach(function (item) {
+            const active = item === tab;
+            item.setAttribute('aria-selected', String(active));
+            item.tabIndex = active ? 0 : -1;
+            document.getElementById(item.getAttribute('aria-controls')).hidden = !active;
+          });
+        }
+        tabs.forEach(function (tab, index) {
+          tab.addEventListener('click', function () { selectMessageTab(tab); });
+          tab.addEventListener('keydown', function (event) {
+            let next;
+            if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+            else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+            else if (event.key === 'Home') next = 0;
+            else if (event.key === 'End') next = tabs.length - 1;
+            else return;
+            event.preventDefault();
+            selectMessageTab(tabs[next]);
+            tabs[next].focus();
+          });
+        });
+        selectMessageTab(tabs[0]);
+        messageTabs.hidden = false;
+        document.getElementById('news').classList.add('tabs-ready');
+      }
+
       /* 1. 手機選單控制 */
       const menuButton = document.querySelector(".menu-toggle");
       const menu = document.querySelector("#main-menu");
@@ -2777,30 +2726,6 @@
           }
         });
       }
-
-      /* 2. 關於我們：公司相片切換 */
-      const aboutMainImg = document.querySelector("#about-main-img");
-      const thumbBtns = document.querySelectorAll(".thumb-btn");
-
-      thumbBtns.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          thumbBtns.forEach(function (b) { b.classList.remove("is-active"); b.setAttribute("aria-pressed", "false"); });
-          this.classList.add("is-active");
-          this.setAttribute("aria-pressed", "true");
-
-          const newSrc = this.getAttribute("data-img");
-          const newAlt = this.querySelector("img").alt;
-
-          if (aboutMainImg && newSrc) {
-            aboutMainImg.style.opacity = "0.4";
-            setTimeout(function () {
-              aboutMainImg.src = newSrc;
-              aboutMainImg.alt = newAlt;
-              aboutMainImg.style.opacity = "1";
-            }, 150);
-          }
-        });
-      });
 
       /* 3. 工程紀錄：燈箱檢視 (Lightbox) */
       const lightbox = document.querySelector("#lightbox");
