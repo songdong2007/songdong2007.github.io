@@ -577,14 +577,7 @@
     .message-panel-heading { margin: 24px 0 20px; color: var(--navy); font-size: 22px; }
     .news-section.tabs-ready .message-panel-heading { display: none; }
     .activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
-    .activity-album { grid-column: 1 / -1; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
-    .activity-album h4 { margin-bottom: 6px; color: var(--navy); font-size: 22px; line-height: 1.5; }
-    .activity-album-date { margin-bottom: 20px; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-    .activity-album-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .activity-album-photo { min-width: 0; }
-    .activity-album-photo a { display: block; }
-    .activity-album-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; }
-    @media (max-width: 600px) { .activity-album-grid { grid-template-columns: 1fr; } }
+    .album-cover-meta { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; font-weight: 400; }
 
     .activity-entry { min-width: 0; }
     .activity-entry a { display: block; }
@@ -1780,19 +1773,12 @@
         <div id="activity-panel" role="tabpanel" aria-labelledby="activity-tab" tabindex="0">
           <h3 class="message-panel-heading">活動花絮</h3>
           <div class="activity-grid">
-            <section class="activity-album" aria-labelledby="mid-autumn-title">
-              <h4 id="mid-autumn-title">115年度中秋烤肉歡聚</h4>
-              <p class="activity-album-date"><time datetime="2026-09-18">2026.09.18</time></p>
-              <div class="activity-album-grid">
-            <figure class="activity-album-photo"><a href="./images/news-04.jpg" aria-label="查看2026年9月18日團隊活動｜合影紀錄原圖"><img src="./images/news-04.jpg" alt="2026年9月18日松東營造團隊活動｜合影紀錄" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-            <figure class="activity-album-photo"><a href="./images/news-05.jpg" aria-label="查看2026年9月18日團隊活動｜現場合影原圖"><img src="./images/news-05.jpg" alt="2026年9月18日松東營造團隊活動｜現場合影" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-            <figure class="activity-album-photo"><a href="./images/news-06.jpg" aria-label="查看2026年9月18日團隊活動｜歡唱花絮原圖"><img src="./images/news-06.jpg" alt="2026年9月18日松東營造團隊活動｜歡唱花絮" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-            <figure class="activity-album-photo"><a href="./images/news-07.jpg" aria-label="查看2026年9月18日團隊活動｜互動花絮原圖"><img src="./images/news-07.jpg" alt="2026年9月18日松東營造團隊活動｜互動花絮" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-            <figure class="activity-album-photo"><a href="./images/news-08.jpg" aria-label="查看2026年9月18日團隊活動｜團體合影原圖"><img src="./images/news-08.jpg" alt="2026年9月18日松東營造團隊活動｜團體合影" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-            <figure class="activity-album-photo"><a href="./images/news-09.jpg" aria-label="查看2026年9月18日團隊活動｜歡唱紀錄（一）原圖"><img src="./images/news-09.jpg" alt="2026年9月18日松東營造團隊活動｜歡唱紀錄（一）" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-            <figure class="activity-album-photo"><a href="./images/news-10.jpg" aria-label="查看2026年9月18日團隊活動｜歡唱紀錄（二）原圖"><img src="./images/news-10.jpg" alt="2026年9月18日松東營造團隊活動｜歡唱紀錄（二）" loading="lazy" decoding="async" width="1477" height="1108"></a></figure>
-              </div>
-            </section>
+            <figure class="activity-entry">
+              <a href="./album-mid-autumn-115.html" aria-label="開啟115年度中秋烤肉歡聚相簿，共7張照片">
+                <img src="./images/news-08.jpg" alt="115年度中秋烤肉歡聚相簿封面：團隊合影" loading="lazy" decoding="async" width="1477" height="1108">
+              </a>
+              <figcaption>115年度中秋烤肉歡聚<span class="album-cover-meta">2026.09.18 · 7張照片 · 查看相簿</span></figcaption>
+            </figure>
             <figure class="activity-entry"><a href="./images/about-web.jpg" aria-label="查看2026年開工暨新春團拜原圖"><img src="./images/about-web.jpg" alt="松東營造2026年開工暨新春團拜全體合影" loading="lazy" width="800" height="600"></a><figcaption>2026年開工暨新春團拜</figcaption></figure>
             <figure class="activity-entry"><a href="./images/company.jpg" aria-label="查看員工旅遊｜新加坡魚尾獅公園原圖"><img src="./images/company.jpg" alt="松東營造員工旅遊於新加坡魚尾獅公園合影" loading="lazy" width="800" height="600"></a><figcaption>員工旅遊｜新加坡魚尾獅公園</figcaption></figure>
             <figure class="activity-entry"><a href="./images/company-02.jpg" aria-label="查看團隊聚餐原圖"><img src="./images/company-02.jpg" alt="松東營造團隊聚餐" loading="lazy" width="800" height="600"></a><figcaption>團隊聚餐</figcaption></figure>
