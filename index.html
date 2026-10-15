@@ -760,6 +760,14 @@
       border-top: 1px solid var(--line);
     }
 
+    .award-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+    .award-filters[hidden], .award-filter-status[hidden], .award-card[hidden] { display: none; }
+    .award-filters button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 4px; color: var(--navy); font-weight: 600; line-height: 1.5; transition: background-color .2s ease, color .2s ease; }
+    .award-filters button:hover { border-color: var(--navy); }
+    .award-filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+    .award-filter-status { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+    @media(max-width:600px) { .award-filters { gap: 8px; } .award-filters button { padding: 10px 12px; font-size: 13px; } }
+
     .awards-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1571,9 +1579,19 @@
           </p>
         </div>
 
+        <div class="award-filters" role="group" aria-label="獲獎紀錄分類" hidden>
+          <button type="button" data-award-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-award-filter="quality" aria-pressed="false">公共工程金質獎</button>
+          <button type="button" data-award-filter="safety" aria-pressed="false">優良工程金安獎</button>
+          <button type="button" data-award-filter="city" aria-pressed="false">市府公共工程優質獎</button>
+          <button type="button" data-award-filter="national" aria-pressed="false">國家卓越建設獎</button>
+          <button type="button" data-award-filter="landscape" aria-pressed="false">建築園冶獎</button>
+          <button type="button" data-award-filter="global" aria-pressed="false">FIABCI全球卓越建設獎</button>
+        </div>
+        <p class="award-filter-status" role="status" hidden></p>
         <div class="awards-grid">
           <!-- 獲獎 1 (awards-01) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="safety">
             <div
               class="award-card-image"
               data-full="./images/awards-01.jpg"
@@ -1603,7 +1621,7 @@
           </article>
 
           <!-- 獲獎 2 (awards-02) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="safety">
             <div
               class="award-card-image"
               data-full="./images/awards-02.jpg"
@@ -1633,7 +1651,7 @@
           </article>
 
           <!-- 獲獎 3 (awards-03) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-03.jpg"
@@ -1663,7 +1681,7 @@
           </article>
 
           <!-- 獲獎 4 (awards-04) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-04.jpg"
@@ -1693,7 +1711,7 @@
           </article>
 
           <!-- 獲獎 5 (awards-05) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-05.jpg"
@@ -1723,7 +1741,7 @@
           </article>
 
           <!-- 獲獎 6 (awards-06) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-06.jpg"
@@ -1753,7 +1771,7 @@
           </article>
 
           <!-- 獲獎 7 (awards-07) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-07.jpg"
@@ -1783,7 +1801,7 @@
           </article>
 
           <!-- 獲獎 8 (awards-08) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-08.jpg"
@@ -1813,7 +1831,7 @@
           </article>
 
           <!-- 獲獎 9 (awards-09) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-09.jpg"
@@ -1843,7 +1861,7 @@
           </article>
 
           <!-- 獲獎 10 (awards-10) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="quality">
             <div
               class="award-card-image"
               data-full="./images/awards-10.jpg"
@@ -1873,7 +1891,7 @@
           </article>
 
           <!-- 獲獎 11 (awards-11) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="city">
             <div
               class="award-card-image"
               data-full="./images/awards-11.jpg"
@@ -1903,7 +1921,7 @@
           </article>
 
           <!-- 獲獎 12 (awards-12) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="city">
             <div
               class="award-card-image"
               data-full="./images/awards-12.jpg"
@@ -1933,7 +1951,7 @@
           </article>
 
           <!-- 獲獎 13 (awards-13) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="city">
             <div
               class="award-card-image"
               data-full="./images/awards-13.jpg"
@@ -1963,7 +1981,7 @@
           </article>
 
           <!-- 獲獎 14 (awards-14) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="national">
             <div
               class="award-card-image"
               data-full="./images/awards-14.jpg"
@@ -1993,7 +2011,7 @@
           </article>
 
           <!-- 獲獎 15 (awards-15) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="landscape">
             <div
               class="award-card-image"
               data-full="./images/awards-15.jpg"
@@ -2023,7 +2041,7 @@
           </article>
 
           <!-- 獲獎 16 (awards-16) -->
-          <article class="award-card">
+          <article class="award-card" data-award-category="global">
             <div
               class="award-card-image"
               data-full="./images/awards-16.jpg"
@@ -2263,6 +2281,30 @@
   <script>
     (function () {
       "use strict";
+
+      /* 獲獎紀錄分類 */
+      const awardFilters = document.querySelector('.award-filters');
+      if (awardFilters) {
+        const filterButtons = Array.from(awardFilters.querySelectorAll('button'));
+        const awardCards = Array.from(document.querySelectorAll('[data-award-category]'));
+        const awardStatus = document.querySelector('.award-filter-status');
+        filterButtons.forEach(function (button) {
+          button.addEventListener('click', function () {
+            const category = button.getAttribute('data-award-filter');
+            filterButtons.forEach(function (item) { item.setAttribute('aria-pressed', String(item === button)); });
+            let visible = 0;
+            awardCards.forEach(function (card) {
+              const show = category === 'all' || card.getAttribute('data-award-category') === category;
+              card.hidden = !show;
+              if (show) visible++;
+            });
+            awardStatus.textContent = button.textContent + '：顯示' + visible + '筆獎項影像';
+          });
+        });
+        awardFilters.hidden = false;
+        awardStatus.hidden = false;
+        awardStatus.textContent = '全部：顯示' + awardCards.length + '筆獎項影像';
+      }
 
       /* 1. 手機選單控制 */
       const menuButton = document.querySelector(".menu-toggle");
