@@ -30,11 +30,11 @@
       --gold: #c7a469;
       --gold-deep: #a88548;
       --gold-light: #e5cb9b;
-      --paper: #f7f6f2;
+      --paper: #f6f5f1;
       --surface: #ffffff;
-      --text: #1d2b38;
-      --muted: #5e6c77;
-      --line: #e3e2dc;
+      --text: #263746;
+      --muted: #65717b;
+      --line: #dedfdc;
       --line-dark: rgba(255, 255, 255, 0.12);
 
       --font-stack: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1415,6 +1415,33 @@
       font-size: clamp(21px, 2.2vw, 28px);
       line-height: 1.5;
     }
+
+    /* 以品牌深藍、金色與紙色區分章節 */
+    .company-updates, .company-updates .about-section { background: var(--paper); }
+    .expertise-projects { background: var(--navy); border-top-color: var(--navy); }
+    .expertise-projects .section-topic { color: var(--gold); }
+    .expertise-projects .section-title, .expertise-copy h3, .expertise-case h4 { color: var(--paper); }
+    .expertise-projects .section-desc, .expertise-copy > p { color: color-mix(in srgb, var(--paper) 88%, var(--navy)); }
+    .expertise-projects .expertise-scope, .expertise-related a { color: color-mix(in srgb, var(--paper) 78%, var(--navy)); }
+    .expertise-projects .expertise-list, .expertise-projects .expertise-row, .expertise-projects .expertise-case { border-color: color-mix(in srgb, var(--paper) 28%, var(--navy)); }
+    .expertise-projects .expertise-link { color: var(--gold); }
+    .expertise-projects .expertise-related a:hover { color: var(--paper); }
+    .awards-section { background: color-mix(in srgb, var(--gold) 12%, var(--paper)); border-top-color: var(--gold); }
+    .awards-section .award-card { background: var(--paper); }
+    .awards-section .award-filters button { background: var(--paper); }
+    .awards-section .award-filters button[aria-pressed="true"] { background: var(--navy); }
+    .home-benefits { background: color-mix(in srgb, var(--navy) 5%, var(--paper)); border-top-color: var(--line); }
+    .home-benefits .benefit-row { border-color: color-mix(in srgb, var(--navy) 20%, var(--paper)); }
+    .home-benefits .leave-details[open] { background: var(--paper); padding: 12px; border-radius: 4px; }
+    .home-activities { background: var(--dark); border-top-color: var(--dark); }
+    .home-activities .section-topic, .home-activities .activities-disclosure summary { color: var(--gold); }
+    .home-activities .activity-entry figcaption { color: var(--paper); }
+    .home-activities .album-cover-meta { color: color-mix(in srgb, var(--paper) 78%, var(--dark)); }
+    .home-activities .activity-entry img { border-color: color-mix(in srgb, var(--paper) 25%, var(--dark)); }
+    .employee-section { background: var(--paper); border-top-color: var(--gold); }
+    .employee-section .news-item { background: color-mix(in srgb, var(--gold) 6%, var(--paper)); }
+    .employee-section .employee-complaint-link { background: var(--navy); color: var(--paper); }
+    .employee-section .employee-complaint-link:hover { background: var(--dark); }
   </style>
 </head>
 
