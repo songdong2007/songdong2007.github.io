@@ -1402,6 +1402,14 @@
     .about-value { margin-top: 16px; }
     .about-value h4 { color: var(--navy); font-size: 17px; margin-bottom: 8px; }
     .about-story .about-value p { font-size: 15px; margin-bottom: 0; }
+    .organization-connectors { display: block; width: 100%; height: 28px; overflow: visible; }
+    .organization-connectors path { fill: none; stroke: var(--muted); stroke-width: 1; vector-effect: non-scaling-stroke; }
+    .organization-executives { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); list-style: none; padding: 0; margin: 0; }
+    .organization-executives li { min-width: 0; margin-inline: 4px; padding: 12px 2px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); text-align: center; }
+    .organization-executives span { display: block; font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    .organization-executives strong { display: block; font-size: 13px; font-weight: 500; white-space: nowrap; }
+    .organization-shared-management { margin: 0; padding: 10px 4px; border: 1px solid var(--line); border-radius: 4px; color: var(--navy); font-size: 14px; text-align: center; }
+    @media(max-width:400px) { .organization-executives li { margin-inline: 3px; } .organization-executives strong { font-size: 12px; } }
   </style>
 </head>
 
@@ -1561,8 +1569,12 @@
             <ol class="organization-chain">
               <li><div class="organization-node">董事長</div></li>
               <li><div class="organization-node">總經理</div></li>
-              <li><div class="organization-node organization-deputy"><strong>副總經理</strong><span>執行・行政・財務・業務</span></div>
-                <ol class="organization-teams"><li><div class="organization-team">第一小隊</div></li><li><div class="organization-team">第二小隊</div></li><li><div class="organization-team">第三小隊</div></li></ol>
+              <li class="organization-management">
+                <svg class="organization-connectors" viewBox="0 0 400 28" preserveAspectRatio="none" aria-hidden="true"><path d="M200 0V10 M50 28V10H350V28 M150 10V28 M250 10V28"/></svg>
+                <ul class="organization-executives" aria-label="四位副總經理"><li><span>執行</span><strong>副總經理</strong></li><li><span>行政</span><strong>副總經理</strong></li><li><span>財務</span><strong>副總經理</strong></li><li><span>業務</span><strong>副總經理</strong></li></ul>
+                <svg class="organization-connectors" viewBox="0 0 400 28" preserveAspectRatio="none" aria-hidden="true"><path d="M50 0V18H350V0 M150 0V18 M250 0V18 M200 18V28"/></svg>
+                <p class="organization-shared-management">四位副總經理共同管理三大小隊</p>
+                <ol class="organization-teams" aria-label="共同管理之三大小隊"><li><div class="organization-team">第一小隊</div></li><li><div class="organization-team">第二小隊</div></li><li><div class="organization-team">第三小隊</div></li></ol>
               </li>
             </ol>
           </div>
