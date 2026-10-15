@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="origin">
   <title>申訴與意見反映專區｜松東營造</title>
   <meta name="description" content="提供公司員工、工班人員與協力廠商使用的申訴與意見反映表單，目前為模擬資料測試階段。">
   <meta name="theme-color" content="#10283f">
@@ -35,6 +36,8 @@
     .consent input { margin-top: 7px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--navy); }
     .privacy-note { font-size: 14px; color: var(--muted); margin-top: 16px; }
     .submit-button { min-height: 48px; padding: 12px 28px; margin-top: 24px; font: inherit; font-weight: 700; border: 1px solid var(--navy); border-radius: 4px; background: var(--navy); color: var(--paper); cursor: pointer; }
+    .submit-button:disabled { opacity: .6; cursor: not-allowed; }
+    #local-file-warning[hidden] { display: none; }
     .submit-button:hover { background: var(--dark); }
     @media (max-width: 900px) { .complaint-layout { grid-template-columns: 1fr; gap: 36px; } }
     @media (max-width: 600px) { .complaint-content { padding-block: 36px 48px; } .form-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 30px; } }
@@ -68,6 +71,7 @@
     <section class="hero" aria-labelledby="page-title"><div class="container"><h1 id="page-title">申訴與意見反映專區</h1><p>供公司員工、工班人員及協力廠商反映工作相關問題與意見。</p></div></section>
     <div class="container complaint-content">
       <aside class="test-notice" aria-labelledby="test-title"><strong id="test-title">表單測試中｜請使用模擬資料</strong><p>目前用於確認寄送流程，請勿填入真實申訴、個人敏感資料或機密附件。收件啟用與公司受理安排確認後，再正式開放使用。</p></aside>
+      <aside id="local-file-warning" class="test-notice" role="alert" hidden><strong>請使用線上網頁測試表單</strong><p>目前開啟的是電腦中的HTML檔案，無法透過FormSubmit送出。請前往<a href="https://songdong2007.github.io/complaints.html" style="text-decoration: underline;">線上申訴測試頁面</a>，再填寫模擬資料。</p></aside>
       <div class="complaint-layout">
         <section class="complaint-intro" aria-labelledby="instructions-title">
           <h2 id="instructions-title">填寫說明</h2>
@@ -117,6 +121,11 @@
   </footer>
   <script>
     (function () {
+      if (window.location.protocol === 'file:') {
+        document.getElementById('local-file-warning').hidden = false;
+        document.querySelectorAll('.complaint-form input, .complaint-form select, .complaint-form textarea, .complaint-form button').forEach(function (control) { control.disabled = true; });
+        return;
+      }
       const attachment = document.getElementById('report-attachment');
       function validateAttachment() {
         const file = attachment.files && attachment.files[0];
