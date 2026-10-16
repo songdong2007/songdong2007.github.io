@@ -1378,10 +1378,9 @@
     .hero-contact dd { margin: 0; color: var(--navy); font-size: 15px; }
     .hero-contact-link { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
     /* 組織層級以文字與結構線呈現 */
-    .organization-section { border-left: 1px solid var(--line); padding-left: 40px; }
-    .organization-chart { padding: 28px 0 12px; overflow-x: auto; }
-    .organization-chart:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-    .organization-diagram { display: block; width: 100%; min-width: 540px; height: auto; }
+    .organization-section { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 40px; }
+    .organization-chart { width: 100%; max-width: 960px; margin-inline: auto; padding: 28px 0 12px; }
+    .organization-diagram { display: block; width: 100%; height: auto; }
     .organization-links { fill: none; stroke: var(--muted); stroke-width: 1; }
     .organization-boxes { fill: var(--navy); }
     .organization-labels { fill: var(--paper); font-size: 17px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
@@ -1587,7 +1586,7 @@
         </section>
         <section class="organization-section" aria-labelledby="organization-heading">
           <h2 class="section-topic" id="organization-heading">組織架構</h2>
-          <div class="organization-chart" tabindex="0" role="region" aria-label="組織架構圖，可左右捲動">
+          <div class="organization-chart">
             <svg class="organization-diagram" viewBox="0 0 660 440" role="img" aria-labelledby="org-title org-desc">
               <title id="org-title">松東營造組織架構</title>
               <desc id="org-desc">董事長下設總經理。總經理下設財務部、工務部、行政部、業務部、技術創新中心及職安中心，六個單位均連接施工大隊。</desc>
