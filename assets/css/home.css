@@ -1,0 +1,1412 @@
+/* ==========================================================================
+   松東營造 設計系統規範 (Song Dong Design System)
+   遵循實體工程企業厚重、穩健、值得信賴之美感，杜絕 AI 模板刻板設計
+   ========================================================================== */
+:root {
+  --navy: #10283f;
+  --navy-dark: #0a1a2b;
+  --dark: #081725;
+  --gold: #c7a469;
+  --gold-deep: #a88548;
+  --gold-light: #e5cb9b;
+  --paper: #f6f5f1;
+  --surface: #ffffff;
+  --text: #263746;
+  --muted: #65717b;
+  --line: #dedfdc;
+  --line-dark: rgba(255, 255, 255, 0.12);
+
+  --font-stack: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Noto Serif TC", "Songti TC", "Baskerville", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 86px;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-stack);
+  background-color: var(--paper);
+  color: var(--text);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+}
+
+/* ==========================================================================
+   通用排版與元件
+   ========================================================================== */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: 52px;
+  position: relative;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-topic {
+  margin-bottom: 16px;
+  color: var(--navy);
+  font-size: clamp(34px, 4.2vw, 48px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.values-section .section-topic {
+  color: var(--gold);
+}
+
+.section-title {
+  font-size: clamp(28px, 3.6vw, 40px);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--navy);
+  letter-spacing: 0.05em;
+}
+
+.section-desc {
+  margin-top: 16px;
+  max-width: 640px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary {
+  background-color: var(--gold);
+  color: var(--dark);
+  border: 1px solid var(--gold);
+}
+
+.btn-primary:hover {
+  background-color: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(199, 164, 105, 0.25);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-navy {
+  background-color: var(--navy);
+  color: #ffffff;
+  border: 1px solid var(--navy);
+}
+
+.btn-navy:hover {
+  background-color: var(--navy-dark);
+  border-color: var(--navy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(16, 40, 63, 0.25);
+}
+
+/* ==========================================================================
+   頂部導覽列 (Site Header)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(8, 23, 37, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-dark);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84px;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 58px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
+}
+
+.brand-en {
+  margin-top: 3px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-menu a {
+  color: #d1d9e0;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding: 8px 0;
+}
+
+.nav-menu a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.nav-menu a:hover {
+  color: #ffffff;
+}
+
+.nav-menu a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px !important;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  color: var(--gold) !important;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--dark) !important;
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px 12px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   主視覺 (Hero Section) - 扎實、大器、沉穩
+   ========================================================================== */
+.hero {
+  position: relative;
+  background-color: var(--line);
+  color: var(--navy);
+  overflow: hidden;
+}
+
+.hero-photo {
+  position: relative;
+  width: calc(100% - 48px);
+  max-width: 1200px;
+  aspect-ratio: 1.7;
+  margin: 24px auto 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+
+.hero-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-overlay {
+  display: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding: 48px 0 56px;
+  max-width: 100%;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text);
+  margin-bottom: 24px;
+}
+
+.hero-tag::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero-title {
+  font-size: clamp(34px, 5.2vw, 64px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+  text-shadow: none;
+}
+
+.hero-title .highlight-line {
+  display: block;
+  color: var(--navy);
+  font-size: 0.88em;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.hero-desc {
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.95;
+  color: var(--text);
+  max-width: 660px;
+  margin-bottom: 0;
+}
+
+/* 英雄底座：規格認證條 */
+.hero-bar {
+  position: relative;
+  z-index: 3;
+  background: var(--dark);
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.hero-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hero-bar-item {
+  padding: 24px 28px;
+  border-right: 1px solid var(--line-dark);
+}
+
+.hero-bar-item:last-child {
+  border-right: none;
+}
+
+.hero-bar-item .item-num {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.hero-bar-item .item-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
+
+.hero-bar-item .item-sub {
+  display: block;
+  font-size: 12px;
+  color: #9cb1c4;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   關於松東 (About Section) - 扎實的工程歷程與實體資歷
+   ========================================================================== */
+.about-section {
+  background-color: var(--paper);
+}
+
+.company-updates { background: var(--paper); }
+.company-updates-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.company-updates-grid > section { min-width: 0; scroll-margin-top: 100px; }
+.company-updates .about-story .section-title { font-size: clamp(26px, 2.4vw, 32px); }
+.company-updates .news-section { border-top: 0; border-left: 1px solid var(--line); padding-left: 40px; }
+.company-updates .section-header { margin-bottom: 28px; }
+.company-updates .news-item { grid-template-columns: 1fr; gap: 12px; padding: 22px; }
+.company-updates .news-arrow { display: none; }
+.company-updates .activity-grid { gap: 20px; }
+.company-updates .activity-entry figcaption { font-size: 13px; }
+@media (max-width: 1000px) {
+  .company-updates-grid { grid-template-columns: 1fr; gap: 48px; }
+  .company-updates .news-section { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 40px; }
+}
+
+.about-company-info { margin: 28px 0; }
+.about-company-info > div { padding: 16px 0; border-top: 1px solid var(--line); }
+.about-company-info dt { color: var(--navy); font-weight: 700; margin-bottom: 6px; }
+.about-company-info dd { margin: 0; color: var(--text); }
+.employee-subheading { color: var(--navy); font-size: 22px; margin-bottom: 20px; }
+.employee-complaints { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
+.employee-complaints p { color: var(--muted); font-size: 14px; }
+.employee-complaint-link { display: inline-flex; align-items: center; gap: 16px; min-height: 48px; margin-top: 20px; padding: 10px 20px; background: var(--navy); color: var(--paper); border-radius: 4px; font-weight: 700; }
+.employee-complaint-link:hover { background: var(--dark); }
+.home-benefits { border-top: 1px solid var(--line); background: var(--paper); }
+.benefits-heading { margin-bottom: 36px; }
+.home-benefits .benefits-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 48px; }
+.home-benefits .benefit-row { min-width: 0; padding: 24px 0; border-top: 1px solid var(--line); }
+.home-benefits dt { color: var(--navy); font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+.home-benefits dd { margin: 0; color: var(--text); }
+.home-benefits .benefit-detail { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.home-activities { border-top: 1px solid var(--line); }
+.activities-disclosure summary { color: var(--navy); padding-block: 16px; font-weight: 700; cursor: pointer; }
+.activities-disclosure .activity-grid { margin-top: 24px; }
+@media (max-width: 700px) { .home-benefits .benefits-list { grid-template-columns: 1fr; } }
+
+.about-story .lead-para {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.85;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--gold);
+  padding-left: 16px;
+}
+
+.about-story p {
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.about-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.badge-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+.badge-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.badge-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   最新公告 (News & Announcements)
+   ========================================================================== */
+.news-section {
+  background-color: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.message-controls { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 12px; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.message-controls .message-tabs { margin: 0; padding: 0; border: 0; flex: 0 0 100%; }
+.message-controls .message-tabs button { flex: 1; }
+.message-controls .message-safety-link { flex: 1; text-align: center; }
+.message-safety-link { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 20px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-weight: 700; transition: background-color .2s ease, color .2s ease; }
+.message-safety-link:hover { background: var(--dark); color: var(--paper); }
+.message-controls .message-tabs button { padding-inline: 20px; }
+@media (max-width: 400px) { .message-controls { gap: 8px; } .message-controls .message-tabs { gap: 8px; } .message-controls .message-tabs button, .message-safety-link { padding-inline: 12px; font-size: 14px; } }
+
+.message-tabs { display: flex; gap: 12px; margin-bottom: 28px; border-bottom: 1px solid var(--line); padding-bottom: 20px; }
+.message-tabs[hidden], [role="tabpanel"][hidden] { display: none; }
+.message-tabs button { min-height: 48px; padding: 10px 28px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-weight: 700; transition: background-color .2s ease, color .2s ease; }
+.message-tabs button[aria-selected="true"] { background: var(--navy); color: var(--paper); }
+.message-tabs button:hover { background: var(--dark); color: var(--paper); }
+.message-panel-heading { margin: 24px 0 20px; color: var(--navy); font-size: 22px; }
+.news-section.tabs-ready .message-panel-heading { display: none; }
+.activity-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.album-cover-meta { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; font-weight: 400; }
+
+.activity-entry { min-width: 0; }
+.activity-entry a { display: block; }
+.activity-entry img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--paper); border: 1px solid var(--line); border-radius: 4px; }
+.activity-entry figcaption { margin-top: 12px; color: var(--navy); font-weight: 600; }
+@media (max-width: 768px) { .activity-grid { grid-template-columns: 1fr; gap: 24px; } .message-tabs button { flex: 1; padding-inline: 16px; } }
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-item {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 24px 28px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.25s ease;
+  color: inherit;
+}
+
+.news-item:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 40, 63, 0.06);
+}
+
+a.news-item:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 4px;
+}
+
+.news-source {
+  display: block;
+  margin-top: 8px;
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.heat-safety {
+  margin-bottom: 32px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.heat-safety h3 {
+  color: var(--navy);
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.heat-safety p {
+  color: var(--text);
+  max-width: 65ch;
+}
+
+.heat-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 20px;
+}
+
+.heat-links a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  padding: 8px 0;
+}
+
+.heat-links a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.heat-links a:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 4px;
+}
+
+.news-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.news-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.news-tag {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 3px;
+  background: rgba(16, 40, 63, 0.08);
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+.news-tag.tag-highlight {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.news-content {
+  min-width: 0;
+}
+
+.news-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.news-summary {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.news-arrow {
+  color: var(--gold-deep);
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.news-item:hover .news-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+  .news-arrow {
+    display: none;
+  }
+}
+
+/* 專業領域與代表工程 */
+.expertise-projects { background: var(--paper); border-top: 1px solid var(--line); }
+.expertise-list { border-top: 1px solid var(--line); }
+.expertise-row { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 48px; align-items: start; padding: 48px 0; border-bottom: 1px solid var(--line); }
+.expertise-row:nth-child(even) .expertise-photo { order: 2; }
+.expertise-photo { display: block; overflow: hidden; border-radius: 4px; }
+.expertise-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .25s ease; }
+.expertise-photo:hover img { transform: scale(1.02); }
+.expertise-copy { min-width: 0; }
+.expertise-copy h3 { margin-bottom: 16px; color: var(--navy); font-size: clamp(24px,2.5vw,30px); line-height: 1.4; }
+.expertise-copy > p { color: var(--text); max-width: 65ch; }
+.expertise-scope { display: flex; flex-wrap: wrap; gap: 8px 20px; list-style: none; margin: 20px 0 24px; color: var(--muted); font-size: 14px; }
+.expertise-case { border-top: 1px solid var(--line); padding-top: 20px; }
+.expertise-case h4 { color: var(--navy); font-size: 17px; line-height: 1.6; margin-bottom: 12px; }
+.expertise-link { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+.expertise-related { margin-top: 12px; }
+.expertise-related a { display: inline-block; padding-block: 6px; color: var(--muted); font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.expertise-related a:hover { color: var(--navy); }
+#services { scroll-margin-top: 100px; }
+@media (max-width: 900px) { .expertise-row { grid-template-columns: 1fr; gap: 28px; padding-block: 36px; } .expertise-row:nth-child(even) .expertise-photo { order: 0; } }
+
+/* ==========================================================================
+   獲獎紀錄 (Awards & Honors)
+   ========================================================================== */
+.awards-section {
+  background-color: #ffffff;
+  border-top: 1px solid var(--line);
+}
+
+.award-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+.award-filters[hidden], .award-filter-status[hidden], .award-card[hidden] { display: none; }
+.award-filters button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--line); border-radius: 4px; color: var(--navy); font-weight: 600; line-height: 1.5; transition: background-color .2s ease, color .2s ease; }
+.award-filters button:hover { border-color: var(--navy); }
+.award-filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+.award-filter-status { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+@media(max-width:600px) { .award-filters { gap: 8px; } .award-filters button { padding: 10px 12px; font-size: 13px; } }
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.award-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.award-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(16, 40, 63, 0.08);
+}
+
+.award-card-image {
+  position: relative;
+  height: 250px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.award-card-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.award-card:hover .award-card-image img {
+  transform: scale(1.05);
+}
+
+.award-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 40, 63, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.award-card:hover .award-card-overlay {
+  opacity: 1;
+}
+
+.award-card-overlay span {
+  background: var(--gold);
+  color: var(--dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.award-card-body {
+  padding: 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.award-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.award-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  background: rgba(199, 164, 105, 0.14);
+  padding: 3px 8px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+
+.award-year {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.award-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+  margin-bottom: 12px;
+}
+
+.award-project {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  border-top: 1px dashed var(--line);
+  padding-top: 10px;
+  margin-top: auto;
+}
+
+.award-project strong {
+  color: var(--text);
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 1200px) {
+  .awards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .awards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   經營理念 (Values Section) - 沉穩海軍藍基底
+   ========================================================================== */
+.values-section {
+  background-color: var(--navy);
+  color: #ffffff;
+  padding: 110px 0;
+}
+
+.values-section .section-label {
+  color: var(--gold-light);
+}
+
+.values-section .section-label::before {
+  background: var(--gold-light);
+}
+
+.values-section .section-title {
+  color: #ffffff;
+}
+
+.values-section .section-desc {
+  color: #c4d3e0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 36px 30px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.value-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.value-order {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+}
+
+.value-en {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: #8fa6ba;
+}
+
+.value-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+.value-text {
+  color: #c4d3e0;
+  font-size: 14.5px;
+  line-height: 1.85;
+}
+
+/* ==========================================================================
+   聯絡與合作邀請 (CTA Section)
+   ========================================================================== */
+.cta-section {
+  background-color: #ebe6dc;
+  padding: 85px 0;
+  border-top: 1px solid var(--line);
+}
+
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta-title {
+  font-size: clamp(26px, 3.2vw, 36px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.cta-desc {
+  color: var(--text);
+  font-size: 16px;
+  max-width: 580px;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   頁尾 (Site Footer)
+   ========================================================================== */
+.site-footer {
+  background-color: var(--dark);
+  color: #8c9ea0;
+  padding: 80px 0 36px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 14px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 56px;
+  margin-bottom: 56px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand strong {
+  display: block;
+  color: #ffffff;
+  font-size: 19px;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.footer-brand span {
+  display: block;
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  color: #a2b4c5;
+  line-height: 1.8;
+  max-width: 380px;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.footer-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-info-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: #bdcddc;
+  line-height: 1.6;
+}
+
+.footer-info-list strong {
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: #bdcddc;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 12.5px;
+  color: #697a89;
+}
+
+.footer-bottom a {
+  color: var(--gold);
+}
+
+/* ==========================================================================
+   圖片燈箱 Modal (Lightbox)
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(5, 15, 25, 0.95);
+  backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox-modal.is-active {
+  display: flex;
+}
+
+.lightbox-container {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  background: #000;
+  border-radius: 6px;
+  border: 1px solid var(--line-dark);
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-img-wrap {
+  max-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #081725;
+}
+
+.lightbox-img-wrap img {
+  max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.lightbox-info {
+  padding: 20px 24px;
+  background: var(--dark);
+  border-top: 1px solid var(--line-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.lightbox-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.lightbox-desc {
+  font-size: 13px;
+  color: #a4b7c8;
+  margin-top: 4px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(8, 23, 37, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.lightbox-close:hover {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
+}
+
+/* ==========================================================================
+   響應式斷點 (Responsive Queries)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-bar-item:nth-child(2) {
+    border-right: none;
+  }
+  .hero-bar-item {
+    border-bottom: 1px solid var(--line-dark);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 1100px) {
+  .menu-toggle { display: block; }
+  .nav-menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--dark); flex-direction: column; align-items: stretch; gap: 0; padding: 16px 24px 24px; }
+  .nav-menu.is-open { display: flex; }
+  .nav-menu a { display: block; padding: 12px 0; }
+  .nav-cta { margin-top: 12px; }
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 74px;
+  }
+  .section {
+    padding: 68px 0;
+  }
+  .nav-wrap {
+    min-height: 74px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    border-bottom: 1px solid var(--line-dark);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 16px 24px 24px;
+  }
+  .nav-menu.is-open {
+    display: flex;
+  }
+  .nav-menu a {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .nav-cta {
+    margin-top: 12px;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero {
+    min-height: auto;
+  }
+  .hero-content {
+    padding: 32px 0 40px;
+  }
+  .hero-bar-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-bar-item {
+    border-right: none;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-badges { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* 公司介紹與組織架構並列；員工服務集中於頁尾前 */
+.company-updates-grid { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); gap: 56px; }
+.employee-section { border-top: 1px solid var(--line); background: var(--paper); }
+.employee-section .section-header { margin-bottom: 32px; }
+.employee-content-grid { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 48px; align-items: start; }
+.employee-content-grid > section { min-width: 0; }
+.employee-section .news-item { grid-template-columns: 1fr; gap: 12px; padding: 24px; }
+.employee-section .news-arrow { display: none; }
+.employee-section .employee-complaints { margin-top: 0; padding-top: 0; border-top: 0; border-left: 1px solid var(--line); padding-left: 32px; }
+.home-activities .activity-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+@media (max-width: 1000px) {
+  .company-updates-grid { grid-template-columns: 1fr; gap: 48px; }
+  .employee-content-grid { grid-template-columns: 1fr; gap: 32px; }
+  .employee-section .employee-complaints { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 28px; }
+  .home-activities .activity-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 600px) { .home-activities .activity-grid { grid-template-columns: 1fr; } }
+
+.leave-details { margin-top: 12px; }
+.leave-details summary { padding-block: 10px; color: var(--navy); font-weight: 600; cursor: pointer; }
+.leave-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+.leave-table caption { text-align: left; color: var(--navy); font-weight: 600; padding-bottom: 10px; }
+.leave-table th, .leave-table td { text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid var(--line); }
+.leave-table thead th { color: var(--navy); }
+.leave-table tbody th { font-weight: 400; width: 52%; }
+.benefit-detail a { color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
+
+/* 首頁標題與聯絡資訊 */
+.hero-intro-grid { display: grid; grid-template-columns: minmax(0,1.7fr) minmax(0,1fr); gap: 48px; align-items: start; }
+.hero-intro-copy { min-width: 0; }
+.hero-intro-copy .hero-title { font-size: clamp(30px,3vw,44px); }
+.hero-contact { padding: 28px; border: 1px solid var(--navy); border-radius: 4px; }
+.hero-contact h2 { font-size: 24px; color: var(--navy); margin-bottom: 12px; }
+.hero-contact-phone { display: inline-block; font-size: clamp(24px,2.6vw,34px); line-height: 1.4; color: var(--navy); font-weight: 700; margin-bottom: 20px; font-variant-numeric: tabular-nums; }
+.hero-contact dl > div { margin-bottom: 14px; }
+.hero-contact dt { font-size: 13px; color: var(--text); }
+.hero-contact dd { margin: 0; color: var(--navy); font-size: 15px; }
+.hero-contact-link { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
+/* 組織層級以文字與結構線呈現 */
+.organization-section { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 40px; }
+.organization-chart { width: 100%; max-width: 960px; margin-inline: auto; padding: 28px 0 12px; }
+.organization-diagram { display: block; width: 100%; height: auto; }
+.organization-links { fill: none; stroke: var(--muted); stroke-width: 1; }
+.organization-boxes { fill: var(--navy); }
+.organization-labels { fill: var(--paper); font-size: 17px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
+.organization-vertical { writing-mode: vertical-rl; font-size: 15px; letter-spacing: 0.03em; }
+@media(max-width:1000px) { .organization-section { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 40px; } }
+@media(max-width:800px) { .hero-intro-grid { grid-template-columns: 1fr; gap: 28px; } .hero-contact { padding: 24px; } }
+.about-values-details { margin-top: 12px; }
+.about-values-details summary { padding-block: 10px; min-height: 44px; color: var(--navy); font-weight: 600; cursor: pointer; }
+.about-value { margin-top: 16px; }
+.about-value h4 { color: var(--navy); font-size: 17px; margin-bottom: 8px; }
+.about-story .about-value p { font-size: 15px; margin-bottom: 0; }
+.section-title.section-subtitle,
+.company-updates .about-story .section-title.section-subtitle {
+  font-size: clamp(21px, 2.2vw, 28px);
+  line-height: 1.5;
+}
+
+/* 以品牌深藍、金色與紙色區分章節 */
+.company-updates, .company-updates .about-section { background: var(--paper); }
+.expertise-projects { background: var(--navy); border-top-color: var(--navy); }
+.expertise-projects .section-topic { color: var(--gold); }
+.expertise-projects .section-title, .expertise-copy h3, .expertise-case h4 { color: var(--paper); }
+.expertise-projects .section-desc, .expertise-copy > p { color: color-mix(in srgb, var(--paper) 88%, var(--navy)); }
+.expertise-projects .expertise-scope, .expertise-related a { color: color-mix(in srgb, var(--paper) 78%, var(--navy)); }
+.expertise-projects .expertise-list, .expertise-projects .expertise-row, .expertise-projects .expertise-case { border-color: color-mix(in srgb, var(--paper) 28%, var(--navy)); }
+.expertise-projects .expertise-link { color: var(--gold); }
+.expertise-projects .expertise-related a:hover { color: var(--paper); }
+.awards-section { background: color-mix(in srgb, var(--gold) 12%, var(--paper)); border-top-color: var(--gold); }
+.awards-section .award-card { background: var(--paper); }
+.awards-section .award-filters button { background: var(--paper); }
+.awards-section .award-filters button[aria-pressed="true"] { background: var(--navy); }
+.home-benefits { background: color-mix(in srgb, var(--navy) 5%, var(--paper)); border-top-color: var(--line); }
+.home-benefits .benefit-row { border-color: color-mix(in srgb, var(--navy) 20%, var(--paper)); }
+.home-benefits .leave-details[open] { background: var(--paper); padding: 12px; border-radius: 4px; }
+.home-activities { background: var(--dark); border-top-color: var(--dark); }
+.home-activities .section-topic, .home-activities .activities-disclosure summary { color: var(--gold); }
+.home-activities .activity-entry figcaption { color: var(--paper); }
+.home-activities .album-cover-meta { color: color-mix(in srgb, var(--paper) 78%, var(--dark)); }
+.home-activities .activity-entry img { border-color: color-mix(in srgb, var(--paper) 25%, var(--dark)); }
+.employee-section { background: var(--paper); border-top-color: var(--gold); }
+.employee-section .news-item { background: color-mix(in srgb, var(--gold) 6%, var(--paper)); }
+.employee-section .employee-complaint-link { background: var(--navy); color: var(--paper); }
+.employee-section .employee-complaint-link:hover { background: var(--dark); }
+.job-grade-table { width: 100%; margin-top: 16px; border-collapse: collapse; font-size: 15px; }
+.job-grade-table caption { text-align: left; color: var(--navy); font-weight: 600; padding-bottom: 10px; }
+.job-grade-table th, .job-grade-table td { text-align: left; padding: 12px 14px; border: 1px solid var(--line); }
+.job-grade-table thead th { color: var(--paper); background: var(--navy); font-weight: 600; }
+.job-grade-table tbody th { color: var(--navy); font-weight: 500; }
+.job-grade-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--navy) 4%, var(--paper)); }
+.job-grade-table td { font-variant-numeric: tabular-nums; }

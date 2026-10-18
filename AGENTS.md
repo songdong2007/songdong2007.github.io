@@ -2,7 +2,7 @@
 
 ## 1. 專案背景與定位
 本專案為「松東營造股份有限公司」的官方網站，定位為傳統優良營造廠、公共工程（道路、橋梁、水利、土木工程）實體企業官網。
-所有在此專案中生成的 HTML、CSS、JavaScript 或文字內容，必須嚴格遵循 [PRODUCT.md](file:///C:/Website/PRODUCT.md) 與 [DESIGN.md](file:///C:/Website/DESIGN.md)。
+所有在此專案中生成的 HTML、CSS、JavaScript 或文字內容，必須嚴格遵循 [PRODUCT.md](./PRODUCT.md) 與 [DESIGN.md](./DESIGN.md)。
 
 ## 2. 設計核心準則（嚴格去除「AI 味」）
 本專案已安裝並啟用 **Impeccable** 技能。在進行任何介面設計、切版或樣式微調時，務必遵守以下「反 AI 刻板設計 (Anti-Slop)」準則：

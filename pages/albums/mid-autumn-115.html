@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>115年度中秋烤肉歡聚｜松東營造</title><meta name="description" content="松東營造115年度中秋烤肉歡聚活動相簿，共8張照片。"><link rel="stylesheet" href="./projects.css"><style>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>115年度中秋烤肉歡聚｜松東營造</title><meta name="description" content="松東營造115年度中秋烤肉歡聚活動相簿，共8張照片。"><link rel="stylesheet" href="../../assets/css/subpage.css"><style>
 .album-main { padding: 48px 0 64px; }
 .album-main h1 { color: var(--navy); font-size: clamp(26px,4vw,38px); line-height: 1.4; margin-bottom: 8px; }
 .album-date { color: var(--muted); margin-bottom: 28px; }
@@ -18,9 +18,9 @@
 <body>  <header class="site-header">
     <nav class="container nav-wrap" aria-label="主要導覽">
 
-      <a href="./index.html" class="brand" aria-label="松東營造首頁">
+      <a href="../../index.html" class="brand" aria-label="松東營造首頁">
         <img
-          src="./images/logo.png"
+          src="../../assets/images/brand/logo.png"
           alt=""
           width="62"
           height="50"
@@ -32,12 +32,12 @@
         </span>
       </a>
 
-      <a href="./index.html#activities" class="back-link">
+      <a href="../../index.html#activities" class="back-link">
         ← 員工花絮
       </a>
 
     </nav>
-  </header><main class="album-main"><div class="container"><h1>115年度中秋烤肉歡聚</h1><p class="album-date"><time datetime="2026-09-18">2026.09.18</time> · 共8張照片</p><figure class="album-photo"><img id="album-image" src="./images/news-04.jpg" alt="115年度中秋烤肉歡聚，第1張照片" width="1477" height="1108"><figcaption id="album-caption" aria-live="polite">第1張，共8張</figcaption></figure><div class="album-controls" hidden><button type="button" id="album-prev" aria-label="上一張照片">← 上一張</button><span class="album-counter" id="album-counter">1 / 8</span><button type="button" id="album-next" aria-label="下一張照片">下一張 →</button></div><noscript><p>相簿照片：<a href="./images/news-04.jpg">第1張</a>、<a href="./images/news-05.jpg">第2張</a>、<a href="./images/news-06.jpg">第3張</a>、<a href="./images/news-07.jpg">第4張</a>、<a href="./images/news-08.jpg">第5張</a>、<a href="./images/news-09.jpg">第6張</a>、<a href="./images/news-10.jpg">第7張</a>、<a href="./images/news-12.jpg">第8張</a></p></noscript></div></main>  <footer class="footer">
+  </header><main class="album-main"><div class="container"><h1>115年度中秋烤肉歡聚</h1><p class="album-date"><time datetime="2026-09-18">2026.09.18</time> · 共8張照片</p><figure class="album-photo"><img id="album-image" src="../../assets/images/news/04.jpg" alt="115年度中秋烤肉歡聚，第1張照片" width="1477" height="1108"><figcaption id="album-caption" aria-live="polite">第1張，共8張</figcaption></figure><div class="album-controls" hidden><button type="button" id="album-prev" aria-label="上一張照片">← 上一張</button><span class="album-counter" id="album-counter">1 / 8</span><button type="button" id="album-next" aria-label="下一張照片">下一張 →</button></div><noscript><p>相簿照片：<a href="../../assets/images/news/04.jpg">第1張</a>、<a href="../../assets/images/news/05.jpg">第2張</a>、<a href="../../assets/images/news/06.jpg">第3張</a>、<a href="../../assets/images/news/07.jpg">第4張</a>、<a href="../../assets/images/news/08.jpg">第5張</a>、<a href="../../assets/images/news/09.jpg">第6張</a>、<a href="../../assets/images/news/10.jpg">第7張</a>、<a href="../../assets/images/news/12.jpg">第8張</a></p></noscript></div></main>  <footer class="footer">
     <div class="container footer-wrap">
 
       <div>
@@ -45,21 +45,21 @@
         <small>© 2026 SONG DONG. All rights reserved.</small>
       </div>
 
-      <a href="./index.html">返回首頁 →</a>
+      <a href="../../index.html">返回首頁 →</a>
 
     </div>
   </footer>
 <script>
 (function () {
   'use strict';
-  const photos = ['news-04.jpg','news-05.jpg','news-06.jpg','news-07.jpg','news-08.jpg','news-09.jpg','news-10.jpg','news-12.jpg'];
+  const photos = ['../../assets/images/news/04.jpg','../../assets/images/news/05.jpg','../../assets/images/news/06.jpg','../../assets/images/news/07.jpg','../../assets/images/news/08.jpg','../../assets/images/news/09.jpg','../../assets/images/news/10.jpg','../../assets/images/news/12.jpg'];
   const photo = document.getElementById('album-image');
   const caption = document.getElementById('album-caption');
   const counter = document.getElementById('album-counter');
   let current = 0;
   function movePhoto(step) {
     current = (current + step + photos.length) % photos.length;
-    photo.src = './images/' + photos[current];
+    photo.src = photos[current];
     photo.alt = '115年度中秋烤肉歡聚，第' + (current + 1) + '張照片';
     caption.textContent = '第' + (current + 1) + '張，共' + photos.length + '張';
     counter.textContent = (current + 1) + ' / ' + photos.length;
