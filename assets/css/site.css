@@ -1379,8 +1379,11 @@ a.news-item:focus-visible {
 .organization-diagram { display: block; width: 100%; height: auto; }
 .organization-links { fill: none; stroke: var(--muted); stroke-width: 1; }
 .organization-boxes { fill: var(--navy); }
-.organization-labels { fill: var(--paper); font-size: 17px; font-weight: 500; text-anchor: middle; dominant-baseline: central; }
-.organization-vertical { writing-mode: vertical-rl; font-size: 15px; letter-spacing: 0.03em; }
+.organization-labels { fill: var(--paper); font-size: 17px; font-weight: 500; }
+/* Safari 不會讓子元素繼承 dominant-baseline，需直接設在 text／tspan 上 */
+.organization-labels text, .organization-labels tspan { text-anchor: middle; dominant-baseline: central; }
+/* 直排標籤逐字以 tspan 定位，不依賴 writing-mode（Safari 直排字距較寬會溢出方框） */
+.organization-vertical { font-size: 15px; }
 @media(max-width:1000px) { .organization-section { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; padding-top: 40px; } }
 @media(max-width:800px) { .hero-intro-grid { grid-template-columns: 1fr; gap: 28px; } .hero-contact { padding: 24px; } }
 .about-values-details { margin-top: 12px; }
