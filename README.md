@@ -4,22 +4,26 @@
 ## 目錄結構
 
 ```
-index.html                 首頁（GitHub Pages 進入點，須留在根目錄）
+index.html                 關於松東（GitHub Pages 進入點，須留在根目錄）
 pages/
+  projects.html            工程實績
+  awards.html              獲獎紀錄
   benefits.html            員工福利
-  complaints.html          申訴管道
+  activities.html          員工花絮
+  employees.html           員工專區（最新公告、申訴入口）
   contact.html             聯絡我們
+  complaints.html          申訴管道
   safety.html              職安衛政策
   projects/                工程實績內頁（beigang、changsheng、jishui、nanke、xishu）
   albums/                  活動相簿
 assets/
   css/
-    home.css               首頁樣式
-    subpage.css            內頁共用樣式（工程實績、福利、申訴、相簿）
+    site.css               主要分頁共用樣式（index 與上方六個主選單頁）
+    subpage.css            內頁共用樣式（工程內頁、申訴、相簿）
     contact.css            聯絡頁樣式
     safety.css             職安衛頁樣式
   js/
-    home.js                首頁互動（選單、獎項篩選、燈箱）
+    site.js                選單、獎項篩選、燈箱，以及舊版 index.html#錨點導向
   images/
     brand/                 標誌
     awards/                獲獎紀錄
@@ -27,6 +31,9 @@ assets/
     construction/          施工現場照片
     news/                  活動花絮
 ```
+
+主選單六頁的頁首與頁尾內容相同；新增或調整選單項目時，六個檔案需一併修改，並在目前頁面的連結加上 `aria-current="page"`。
+
 
 所有連結皆為相對路徑；新增頁面時依所在層級調整 `../` 前綴。
 

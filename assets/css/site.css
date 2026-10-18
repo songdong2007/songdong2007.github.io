@@ -40,6 +40,14 @@ body {
   line-height: 1.85;
   letter-spacing: 0.02em;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 內容較短的分頁仍讓頁尾貼齊視窗底部 */
+main {
+  flex: 1 0 auto;
 }
 
 a {
@@ -278,9 +286,14 @@ img {
   color: #ffffff;
 }
 
-.nav-menu a:hover::after {
+.nav-menu a:hover::after,
+.nav-menu a[aria-current="page"]::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+.nav-menu a[aria-current="page"] {
+  color: #ffffff;
 }
 
 .nav-cta {
@@ -478,8 +491,7 @@ img {
 .home-benefits dd { margin: 0; color: var(--text); }
 .home-benefits .benefit-detail { color: var(--muted); font-size: 14px; margin-top: 12px; }
 .home-activities { border-top: 1px solid var(--line); }
-.activities-disclosure summary { color: var(--navy); padding-block: 16px; font-weight: 700; cursor: pointer; }
-.activities-disclosure .activity-grid { margin-top: 24px; }
+.home-activities .activity-grid { margin-top: 24px; }
 @media (max-width: 700px) { .home-benefits .benefits-list { grid-template-columns: 1fr; } }
 
 .about-story .lead-para {
@@ -1395,7 +1407,7 @@ a.news-item:focus-visible {
 .home-benefits .benefit-row { border-color: color-mix(in srgb, var(--navy) 20%, var(--paper)); }
 .home-benefits .leave-details[open] { background: var(--paper); padding: 12px; border-radius: 4px; }
 .home-activities { background: var(--dark); border-top-color: var(--dark); }
-.home-activities .section-topic, .home-activities .activities-disclosure summary { color: var(--gold); }
+.home-activities .section-topic { color: var(--gold); }
 .home-activities .activity-entry figcaption { color: var(--paper); }
 .home-activities .album-cover-meta { color: color-mix(in srgb, var(--paper) 78%, var(--dark)); }
 .home-activities .activity-entry img { border-color: color-mix(in srgb, var(--paper) 25%, var(--dark)); }

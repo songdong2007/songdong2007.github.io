@@ -3,60 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>員工福利｜松東營造 SONG DONG</title>
-  <meta name="description" content="松東營造員工福利：年終獎金保底1.5個月；員工年資滿一年，每年一次出國假3天及新臺幣3萬元補助，另提供供餐住宿、健康檢查與教育訓練補助。">
-  <meta name="theme-color" content="#10283f">
-  <link rel="stylesheet" href="../assets/css/subpage.css">
-  <style>
-    .benefits-content { padding: 64px 0 72px; }
-    .benefits-intro { max-width: 70ch; margin-bottom: 40px; }
-    .benefits-intro h2 { color: var(--navy); font-size: clamp(24px,3vw,30px); line-height: 1.4; margin-bottom: 16px; }
-    .benefits-list { margin: 0; }
-    .benefit-row { display: grid; grid-template-columns: minmax(0,.38fr) minmax(0,.62fr); gap: 40px; padding: 32px 0; border-top: 1px solid var(--line); }
-    .benefit-row:last-child { border-bottom: 1px solid var(--line); }
-    .benefit-row dt { color: var(--navy); font-size: 22px; font-weight: 700; }
-    .benefit-row dd { margin: 0; min-width: 0; max-width: 65ch; }
-    .benefit-row p + p { margin-top: 10px; }
-    .benefit-detail { color: var(--muted); font-size: 14px; }
-    .benefit-row strong { color: var(--navy); font-weight: 700; }
-    .benefits-contact { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-top: 40px; }
-    .benefits-contact h2 { color: var(--navy); font-size: 24px; margin-bottom: 8px; }
-    .benefits-contact p { color: var(--muted); max-width: 60ch; }
-    .benefits-contact a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; background: var(--navy); color: var(--paper); border-radius: 4px; font-weight: 700; }
-    .benefits-contact a:hover { background: var(--dark); }
-    @media (max-width: 760px) { .benefits-content { padding-block: 40px 48px; } .benefit-row { grid-template-columns: 1fr; gap: 12px; padding-block: 24px; } .benefits-intro { margin-bottom: 28px; } }
-  </style>
-</head>
-<body>
-  <header class="site-header">
-    <nav class="container nav-wrap" aria-label="主要導覽">
 
+  <title>員工福利｜松東營造 SONG DONG</title>
+
+  <meta
+    name="description"
+    content="松東營造員工福利：年終獎金保底1.5個月；員工年資滿一年，每年一次出國假3天及新臺幣3萬元補助，另提供供餐住宿、健康檢查與教育訓練補助。"
+  >
+  <meta name="theme-color" content="#10283f">
+
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+
+<body id="top">
+
+  <!-- ========================================================================
+       頂部導覽列
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-wrap">
       <a href="../index.html" class="brand" aria-label="松東營造首頁">
         <img
           src="../assets/images/brand/logo.png"
-          alt=""
-          width="62"
-          height="50"
+          alt="松東營造標誌"
+          width="58"
+          height="48"
+          loading="eager"
         >
-
-        <span>
+        <div class="brand-text">
           <strong class="brand-name">松東營造</strong>
           <span class="brand-en">SONG DONG</span>
-        </span>
+        </div>
       </a>
 
-      <a href="../index.html" class="back-link">
-        ← 返回首頁
-      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-menu"
+        aria-label="切換選單"
+      >
+        選單 ☰
+      </button>
 
-    </nav>
+      <ul class="nav-menu" id="main-menu">
+        <li><a href="../index.html">關於松東</a></li>
+        <li><a href="./projects.html">工程實績</a></li>
+        <li><a href="./awards.html">獲獎紀錄</a></li>
+        <li><a href="./benefits.html" aria-current="page">員工福利</a></li>
+        <li><a href="./activities.html">員工花絮</a></li>
+        <li><a href="./employees.html">員工專區</a></li>
+      </ul>
+    </div>
   </header>
+
   <main>
-    <section class="hero" aria-labelledby="page-title"><div class="container"><h1 id="page-title">員工福利</h1><p>了解來松東上班享有的獎金、出國假與補助，以及生活與學習支持。</p></div></section>
-    <div class="container benefits-content">
-      <section aria-labelledby="benefits-title">
-        <div class="benefits-intro"><h2 id="benefits-title">在松東工作，享有這些福利。</h2><p>薪資採職等分級制度，並提供年終獎金、年度出國假與補助，以及供餐住宿、健康檢查與教育訓練補助。</p></div>
-        <dl class="benefits-list">
+    <section class="section home-benefits" id="benefits" aria-labelledby="benefits-heading">
+      <div class="container"><div class="benefits-heading"><h1 class="section-topic" id="benefits-heading">員工福利</h1><p class="section-desc">從獎金、年度出國假與補助，到生活、健康與學習支持，了解來松東上班享有的福利。</p></div><dl class="benefits-list">
           <div class="benefit-row"><dt>勞健保</dt><dd><p>全體員工加入<strong>勞工保險與全民健康保險</strong>。</p></dd></div>
           <div class="benefit-row"><dt>職工福利委員會</dt><dd><p>設有<strong>職工福利委員會</strong>。</p></dd></div>
           <div class="benefit-row"><dt>年終獎金</dt><dd><p>年終獎金<strong>保底1.5個月</strong>。</p></dd></div>
@@ -67,22 +70,64 @@
           <div class="benefit-row"><dt>供餐住宿</dt><dd><p>提供<strong>供餐與住宿</strong>，並設有<strong>休閒設備及運動器材</strong>。</p></dd></div>
           <div class="benefit-row"><dt>健康檢查</dt><dd><p>提供員工健康檢查，關心同仁健康。</p></dd></div>
           <div class="benefit-row"><dt>教育訓練補助</dt><dd><p>提供教育訓練補助，支持員工學習與專業成長。</p></dd></div>
-        </dl>
-      </section>
-      <section class="benefits-contact" aria-labelledby="join-title"><div><h2 id="join-title">加入松東，了解更多工作機會。</h2><p>如欲了解職缺、福利申請方式及適用細節，歡迎與我們聯繫。</p></div><a href="./contact.html">洽詢職缺與福利</a></section>
-    </div>
+        </dl></div>
+    </section>
   </main>
-  <footer class="footer">
-    <div class="container footer-wrap">
 
-      <div>
-        <strong>松東營造股份有限公司</strong>
-        <small>© 2026 SONG DONG. All rights reserved.</small>
+  <!-- ========================================================================
+       頁尾 (Footer)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 公司識別與精神 -->
+        <div class="footer-brand">
+          <strong>松東營造股份有限公司</strong>
+          <span>SONG DONG CONSTRUCTION CO., LTD.</span>
+          <p>
+            立足雲林，投入全台公共基礎設施、道路工程、橋梁改建與水利防汛工程。以嚴謹專業的營造工藝，守護大眾每一日的通行安全。
+          </p>
+        </div>
+
+        <!-- 聯絡與登記資訊 -->
+        <div class="footer-col">
+          <h4>公司官方資訊</h4>
+          <ul class="footer-info-list">
+            <li><strong>統一編號：</strong>94804902</li>
+            <li><strong>公司電話：</strong>05-7857898</li>
+            <li><strong>創立年份：</strong>1982 年</li>
+            <li><strong>總部地址：</strong>雲林縣水林鄉土厝村大庄44-36號</li>
+          </ul>
+        </div>
+
+        <!-- 快速導覽 -->
+        <div class="footer-col">
+          <h4>站內導覽</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">關於松東</a></li>
+            <li><a href="./projects.html">工程實績</a></li>
+            <li><a href="./awards.html">獲獎紀錄</a></li>
+            <li><a href="./benefits.html" aria-current="page">員工福利</a></li>
+            <li><a href="./activities.html">員工花絮</a></li>
+            <li><a href="./employees.html">員工專區</a></li>
+            <li><a href="./contact.html">聯絡松東營造 ↗</a></li>
+            <li><a href="./complaints.html">申訴與意見反映專區</a></li>
+          </ul>
+        </div>
       </div>
 
-      <a href="../index.html">返回首頁 →</a>
-
+      <div class="footer-bottom">
+        <div>© 2026 松東營造股份有限公司 SONG DONG CONSTRUCTION. All rights reserved.</div>
+        <div>
+          <a href="#top">回到頁首 ↑</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- ========================================================================
+       原生輕量 JavaScript 互動邏輯
+       ======================================================================== -->
+  <script src="../assets/js/site.js"></script>
 </body>
 </html>

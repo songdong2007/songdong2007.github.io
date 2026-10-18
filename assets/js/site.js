@@ -1,6 +1,17 @@
 (function () {
   "use strict";
 
+  /* 舊版單頁錨點（index.html#awards 等）導向拆分後的分頁 */
+  const legacySections = {
+    gallery: "projects", services: "projects", awards: "awards", benefits: "benefits",
+    activities: "activities", news: "employees"
+  };
+  const legacyTarget = legacySections[window.location.hash.slice(1)];
+  if (legacyTarget && document.querySelector(".hero")) {
+    window.location.replace("./pages/" + legacyTarget + ".html");
+    return;
+  }
+
   /* 獲獎紀錄分類 */
   const awardFilters = document.querySelector('.award-filters');
   if (awardFilters) {
