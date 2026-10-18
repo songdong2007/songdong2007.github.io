@@ -757,7 +757,12 @@ a.news-item:focus-visible {
 .award-filters button:hover { border-color: var(--navy); }
 .award-filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--paper); }
 .award-filter-status { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-@media(max-width:600px) { .award-filters { gap: 8px; } .award-filters button { padding: 10px 12px; font-size: 13px; } }
+/* 手機：分類改為兩欄等寬，最後一個單數項目橫跨整列 */
+@media(max-width:600px) {
+  .award-filters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .award-filters button { padding: 10px 12px; font-size: 14px; text-align: left; }
+  .award-filters button:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
 
 .awards-grid {
   display: grid;
