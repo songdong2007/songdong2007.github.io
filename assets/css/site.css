@@ -1375,11 +1375,19 @@ a.news-item:focus-visible {
 .hero-contact-link { display: inline-flex; align-items: center; gap: 20px; min-height: 44px; font-weight: 700; text-decoration: underline; text-underline-offset: 5px; }
 /* 組織層級以文字與結構線呈現 */
 .organization-section { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 40px; }
-.organization-chart { width: 100%; max-width: 960px; margin-inline: auto; padding: 28px 0 12px; }
+.organization-chart { width: 100%; max-width: 960px; margin: 28px auto 0; padding: 32px; border: 1px solid var(--line); border-radius: 8px; background: color-mix(in srgb, var(--gold) 5%, var(--paper)); }
 .organization-diagram { display: block; width: 100%; height: auto; }
-.organization-links { fill: none; stroke: var(--muted); stroke-width: 1; }
-.organization-boxes { fill: var(--navy); }
-.organization-labels { fill: var(--paper); font-size: 17px; font-weight: 500; }
+.organization-links { fill: none; stroke: var(--muted); stroke-width: 1.25; }
+.organization-boxes rect { fill: var(--paper); stroke: var(--navy); stroke-width: 1; }
+.organization-boxes .organization-chair { fill: var(--gold); stroke: var(--gold); }
+.organization-boxes .organization-director { fill: var(--navy); }
+.organization-boxes .organization-support { fill: color-mix(in srgb, var(--gold) 16%, var(--paper)); stroke: var(--gold); }
+.organization-boxes .organization-field { fill: var(--navy); }
+.organization-labels { fill: var(--navy); font-size: 17px; font-weight: 600; }
+.organization-labels .organization-director-label,
+.organization-labels .organization-field-label { fill: var(--paper); }
+.organization-labels .organization-chair-label { font-weight: 700; }
+@media (max-width: 600px) { .organization-chart { padding: 20px 4px; margin-top: 20px; } }
 /* Safari 不會讓子元素繼承 dominant-baseline，需直接設在 text／tspan 上 */
 .organization-labels text, .organization-labels tspan { text-anchor: middle; dominant-baseline: central; }
 /* 直排標籤逐字以 tspan 定位，不依賴 writing-mode（Safari 直排字距較寬會溢出方框） */
