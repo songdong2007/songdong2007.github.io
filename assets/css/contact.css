@@ -278,6 +278,38 @@ a:focus-visible {
   background: #ddbd86;
 }
 
+/* 面試資料小卡 */
+.interview-section { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 40px; }
+.interview-heading { margin-bottom: 24px; }
+.interview-heading h2 { color: var(--navy); font-size: clamp(26px, 3vw, 36px); line-height: 1.5; margin-bottom: 8px; }
+.interview-heading p { max-width: 65ch; }
+.interview-form { padding: 32px; border: 1px solid var(--line); border-radius: 8px; background: color-mix(in srgb, var(--gold) 5%, var(--paper)); }
+.interview-note { font-size: 14px; color: var(--text); margin-bottom: 24px; max-width: 75ch; }
+.interview-note a { text-decoration: underline; text-underline-offset: 4px; }
+.interview-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.interview-field { min-width: 0; }
+.interview-field-wide { grid-column: 1 / -1; }
+.interview-field label { display: block; color: var(--navy); font-weight: 600; margin-bottom: 8px; }
+.interview-field input, .interview-field textarea { display: block; width: 100%; min-height: 48px; padding: 12px; font: inherit; color: var(--text); background: var(--paper); border: 1px solid var(--muted); border-radius: 4px; }
+.interview-field textarea { resize: vertical; }
+.interview-field input::placeholder, .interview-field textarea::placeholder { color: var(--muted); opacity: 1; }
+.interview-field small { display: block; margin-top: 6px; color: var(--text); font-size: 13px; }
+.interview-consent { display: flex; align-items: flex-start; gap: 12px; margin: 28px 0 12px; cursor: pointer; }
+.interview-consent input { width: 20px; height: 20px; margin-top: 5px; flex-shrink: 0; accent-color: var(--navy); }
+.interview-submit { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; }
+.interview-submit button { font: inherit; font-weight: 700; border-radius: 4px; cursor: pointer; background: var(--navy); color: var(--paper); }
+.interview-submit button:hover { background: var(--dark); }
+.interview-submit button:disabled { opacity: .6; cursor: not-allowed; }
+.interview-submit p { font-size: 14px; max-width: 48ch; }
+.interview-form :is(input, textarea, button):focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.interview-local-note { margin-bottom: 20px; color: var(--navy); font-weight: 600; }
+@media (max-width: 600px) {
+  .interview-section { margin-top: 40px; padding-top: 28px; }
+  .interview-form { padding: 20px; }
+  .interview-fields { grid-template-columns: 1fr; gap: 20px; }
+  .interview-submit button { width: 100%; }
+}
+
 /* 地址區塊 */
 .location {
   margin-top: 54px;
