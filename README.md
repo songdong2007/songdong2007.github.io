@@ -10,7 +10,7 @@ pages/
   awards.html              獲獎紀錄
   benefits.html            員工福利
   activities.html          員工花絮
-  employees.html           員工專區（最新公告、申訴入口）
+  employees.html           員工天地（最新公告、申訴入口）
   contact.html             聯絡我們
   complaints.html          申訴管道
   safety.html              職安衛政策
