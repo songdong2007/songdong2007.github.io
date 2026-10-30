@@ -252,6 +252,12 @@
 @media(max-width:760px) { .project-content { padding-block: 36px; } .project-facts,.record-grid { grid-template-columns: 1fr; } .project-detail { margin-top: 36px; } }
 
 .project-detail p + p { margin-top: 18px; }
+.project-documentary { scroll-margin-top: 110px; }
+.project-video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--dark); border-radius: 4px; }
+.project-video:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+.project-documentary figcaption { margin-top: 12px; color: var(--text); font-size: 14px; }
+.project-video-link { margin-top: 12px; }
+.project-video-link a { display: inline-block; padding-block: 8px; color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
 .project-sources { margin-top: 24px; max-width: 70ch; }
 .project-sources h3 { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
 .project-sources ul { list-style: none; }
