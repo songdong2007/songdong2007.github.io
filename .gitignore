@@ -144,4 +144,5 @@ vite.config.ts.timestamp-*
 
 # Local video source and transcoding tools (publish only the web version)
 /南科FG區段徵收完整版_20261028.mp4
+/1222竣工.mp4
 /tmp/video-tools/
