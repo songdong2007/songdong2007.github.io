@@ -10,39 +10,21 @@
     name="description"
     content="加入松東營造，歡迎來電洽詢職缺與應徵方式。電話：05-7857898，地址：雲林縣水林鄉土厝村大庄44-36號。"
   >
-  <meta name="theme-color" content="#10283f">
+  <meta name="theme-color" content="#142e47">
 
-  <link rel="stylesheet" href="../assets/css/contact.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/detail-theme.css">
+<link rel="stylesheet" href="../assets/css/form-theme.css">
 </head>
 
-<body>
+<body id="top" data-page="contact">
 
   <!-- 導覽列 -->
-  <header class="site-header">
-    <nav class="container nav-wrap" aria-label="主要導覽">
+  <a class="skip-link" href="#main-content">跳至主要內容</a><header class="site-header"><nav class="container nav-wrap" aria-label="主要導覽"><a href="../index.html" class="brand" aria-label="松東營造首頁"><img src="../assets/images/brand/logo.png" alt="松東營造標誌" width="52" height="46"><span class="brand-text"><strong class="brand-name">松東營造</strong><span class="brand-en">SONG DONG</span></span></a><button class="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="開啟主要選單"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>選單</button><ul class="nav-menu" id="main-menu"><li class="menu-close-row"><button class="menu-close" type="button" aria-label="關閉主要選單">關閉 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></li><li><a href="../index.html">關於松東</a></li><li><a href="../pages/projects.html">工程實績</a></li><li><a href="../pages/awards.html">獲獎紀錄</a></li><li><a href="../pages/benefits.html">員工福利</a></li><li><a href="../pages/activities.html">員工花絮</a></li><li><a href="../pages/employees.html">員工天地</a></li></ul></nav></header><button class="menu-backdrop" type="button" aria-label="關閉主要選單" hidden tabindex="-1"></button>
 
-      <a href="../index.html" class="brand" aria-label="松東營造首頁">
-        <img
-          src="../assets/images/brand/logo.png"
-          alt=""
-          width="62"
-          height="50"
-        >
-
-        <span>
-          <strong class="brand-name">松東營造</strong>
-          <span class="brand-en">SONG DONG</span>
-        </span>
-      </a>
-
-      <a href="../index.html" class="back-link">
+  <main id="main-content"><div class="container page-back"><a href="../index.html" class="back-link">
         ← 返回首頁
-      </a>
-
-    </nav>
-  </header>
-
-  <main>
+      </a></div>
 
     <!-- 頁面標題 -->
     <section class="hero" aria-labelledby="page-title">
@@ -75,7 +57,23 @@
             <div class="company-name">
               松東營造股份有限公司
             </div>
-          </div>
+          <div class="contact-actions">
+              <a href="tel:057857898" class="btn">
+                來電洽詢職缺
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&amp;query=雲林縣水林鄉土厝村大庄44-36號"
+                class="btn btn-gold"
+                target="_blank"
+                rel="noopener"
+                aria-label="在 Google 地圖查看地址（新分頁）"
+              >
+                Google 地圖
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div></div>
 
           <div>
             <dl class="contact-card">
@@ -104,23 +102,7 @@
 
             </dl>
 
-            <div class="contact-actions">
-              <a href="tel:057857898" class="btn">
-                來電洽詢職缺
-                <span aria-hidden="true">↗</span>
-              </a>
 
-              <a
-                href="https://www.google.com/maps/search/?api=1&amp;query=雲林縣水林鄉土厝村大庄44-36號"
-                class="btn btn-gold"
-                target="_blank"
-                rel="noopener"
-                aria-label="在 Google 地圖查看地址（新分頁）"
-              >
-                Google 地圖
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
           </div>
 
         </div>
@@ -130,35 +112,35 @@
             <h2 id="interview-title">應徵資料表</h2>
             <p>留下基本資料與工作經歷，方便我們與你聯繫，進一步了解應徵意願。</p>
           </div>
-          <form class="interview-form" action="https://formsubmit.co/pm160058890606@gmail.com" method="POST" aria-labelledby="interview-title">
+          <div class="interview-layout"><form class="interview-form" action="https://formsubmit.co/pm160058890606@gmail.com" method="POST" aria-labelledby="interview-title">
             <p class="interview-note">標示「必填」的欄位請務必填寫，其餘可留白。</p>
             <input type="hidden" name="_subject" value="【松東營造】應徵資料表">
             <input type="hidden" name="_template" value="table">
             <input type="hidden" name="_url" value="https://songdong2007.github.io/pages/contact.html">
             <div class="interview-fields">
-              <div class="interview-field"><label for="applicant-name">姓名（必填）</label><input id="applicant-name" name="姓名" autocomplete="name" required maxlength="100"></div>
-              <div class="interview-field"><label for="applicant-phone">聯絡電話（必填）</label><input id="applicant-phone" name="聯絡電話" type="tel" autocomplete="tel" required maxlength="50"></div>
-              <div class="interview-field"><label for="applicant-position">應徵職務（必填）</label><input id="applicant-position" name="應徵職務" required maxlength="100" aria-describedby="position-hint"><small id="position-hint">填寫希望應徵的職務；尚未確定可填「希望了解職缺」。</small></div>
-              <div class="interview-field"><label for="applicant-email">電子信箱（選填）</label><input id="applicant-email" name="email" type="email" autocomplete="email" maxlength="254"></div>
-              <div class="interview-field"><label for="applicant-area">居住縣市／鄉鎮（選填）</label><input id="applicant-area" name="居住地區" maxlength="100"><small>填寫地區即可，無須提供完整住址。</small></div>
-              <div class="interview-field"><label for="applicant-time">方便聯絡時段（選填）</label><input id="applicant-time" name="方便聯絡時段" maxlength="100" placeholder="例如：平日 14:00～18:00"></div>
-              <div class="interview-field interview-field-wide"><label for="applicant-experience">工作經歷與專長（選填）</label><textarea id="applicant-experience" name="工作經歷與專長" rows="4" maxlength="3000" placeholder="可簡述曾任職務、工程經驗、證照或操作技能；無相關經驗也歡迎填寫。"></textarea></div>
-              <div class="interview-field interview-field-wide"><label for="applicant-message">其他補充（選填）</label><textarea id="applicant-message" name="其他補充" rows="3" maxlength="2000" placeholder="例如：可到職時間、希望工作地區，或想先了解的問題。"></textarea></div>
+              <div class="interview-field"><label for="applicant-name">姓名<span class="required-mark">（必填）</span></label><input id="applicant-name" name="姓名" autocomplete="name" required maxlength="100"></div>
+              <div class="interview-field"><label for="applicant-phone">聯絡電話<span class="required-mark">（必填）</span></label><input id="applicant-phone" name="聯絡電話" type="tel" autocomplete="tel" required maxlength="50"></div>
+              <div class="interview-field"><label for="applicant-position">應徵職務<span class="required-mark">（必填）</span></label><input id="applicant-position" name="應徵職務" required maxlength="100" aria-describedby="position-hint"><small id="position-hint">填寫希望應徵的職務；尚未確定可填「希望了解職缺」。</small></div>
+              <div class="interview-field"><label for="applicant-email">電子信箱<span class="optional-mark">（選填）</span></label><input id="applicant-email" name="email" type="email" autocomplete="email" maxlength="254"></div>
+              <div class="interview-field"><label for="applicant-area">居住縣市／鄉鎮<span class="optional-mark">（選填）</span></label><input id="applicant-area" name="居住地區" maxlength="100"><small>填寫地區即可，無須提供完整住址。</small></div>
+              <div class="interview-field"><label for="applicant-time">方便聯絡時段<span class="optional-mark">（選填）</span></label><input id="applicant-time" name="方便聯絡時段" maxlength="100" placeholder="例如：平日 14:00～18:00"></div>
+              <div class="interview-field interview-field-wide"><label for="applicant-experience">工作經歷與專長<span class="optional-mark">（選填）</span></label><textarea id="applicant-experience" name="工作經歷與專長" rows="4" maxlength="3000" placeholder="可簡述曾任職務、工程經驗、證照或操作技能；無相關經驗也歡迎填寫。"></textarea></div>
+              <div class="interview-field interview-field-wide"><label for="applicant-message">其他補充<span class="optional-mark">（選填）</span></label><textarea id="applicant-message" name="其他補充" rows="3" maxlength="2000" placeholder="例如：可到職時間、希望工作地區，或想先了解的問題。"></textarea></div>
             </div>
             <label class="interview-consent"><input type="checkbox" name="應徵資料使用同意" value="同意供松東營造招募聯繫及面試安排使用，並經FormSubmit傳送" required><span>我同意上述資料經 FormSubmit 轉寄予松東營造，供招募聯繫與面試安排使用。</span></label>
             <p class="interview-note">請勿填寫身分證字號、銀行帳號等與初步應徵無關的資料。表單資料由 FormSubmit 處理並保留 30 天；<a href="https://formsubmit.co/documentation" target="_blank" rel="noopener">查看服務說明（新分頁）</a>。</p>
             <p class="interview-local-note" id="interview-local-note" role="status" hidden>本機預覽無法送出表單，請於網站上線後填寫；也可來電 05-7857898 洽詢。</p>
             <div class="interview-submit"><button class="btn" type="submit">送出面試資料</button><p>送出後將前往驗證／確認頁面；面試時間以後續聯繫為準。</p></div>
-          </form>
-        </section>
-
-        <div class="location">
+          <p class="form-status" role="status" aria-live="polite"></p></form><aside class="interview-sidebar" aria-labelledby="interview-help-title"><h3 id="interview-help-title">加入松東營造</h3><a class="phone-link" href="tel:057857898">05-7857898</a><p>如欲了解工作內容、職缺條件或應徵流程，歡迎來電洽詢。</p><p>送出後將前往驗證／確認頁面；面試時間以後續聯繫為準。</p><div class="location">
           <h2>前往松東營造</h2>
           <p>
             地址：雲林縣水林鄉土厝村大庄44-36號。
             點選「Google 地圖」即可查看位置並使用導航功能。
           </p>
-        </div>
+        </div></aside></div>
+        </section>
+
+
 
       </div>
     </section>
@@ -166,18 +148,53 @@
   </main>
 
   <!-- 頁尾 -->
-  <footer class="footer">
-    <div class="container footer-wrap">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 公司識別與精神 -->
+        <div class="footer-brand">
+          <strong>松東營造股份有限公司</strong>
+          <span>SONG DONG CONSTRUCTION CO., LTD.</span>
+          <p>
+            立足雲林，投入全台公共基礎設施、道路工程、橋梁改建與水利防汛工程。以嚴謹專業的營造工藝，守護大眾每一日的通行安全。
+          </p>
+        </div>
 
-      <div>
-        <strong>松東營造股份有限公司</strong>
-        <small>© 2026 SONG DONG. All rights reserved.</small>
+        <!-- 聯絡與登記資訊 -->
+        <div class="footer-col">
+          <h2>公司官方資訊</h2>
+          <ul class="footer-info-list">
+            <li><strong>統一編號：</strong>94804902</li>
+            <li><strong>公司電話：</strong>05-7857898</li>
+            <li><strong>創立年份：</strong>1982 年</li>
+            <li><strong>總部地址：</strong>雲林縣水林鄉土厝村大庄44-36號</li>
+          </ul>
+        </div>
+
+        <!-- 快速導覽 -->
+        <div class="footer-col">
+          <h2>站內導覽</h2>
+          <ul class="footer-links">
+            <li><a href="../index.html">關於松東</a></li>
+            <li><a href="../pages/projects.html">工程實績</a></li>
+            <li><a href="../pages/awards.html">獲獎紀錄</a></li>
+            <li><a href="../pages/benefits.html">員工福利</a></li>
+            <li><a href="../pages/activities.html">員工花絮</a></li>
+            <li><a href="../pages/employees.html">員工天地</a></li>
+            <li><a href="../pages/contact.html">人才招募 ↗</a></li>
+            <li><a href="../pages/complaints.html">申訴與意見反映專區</a></li>
+          </ul>
+        </div>
       </div>
 
-      <a href="../index.html">返回首頁 →</a>
-
+      <div class="footer-bottom">
+        <div>© 2026 松東營造股份有限公司 SONG DONG CONSTRUCTION. All rights reserved.</div>
+        <div>
+          <a href="#top">回到頁首 ↑</a>
+        </div>
+      </div>
     </div>
-  </footer>
+  <div class="container"><a class="footer-return" href="../index.html">返回首頁 →</a></div></footer>
 
   <script>
     if (window.location.protocol === 'file:') {
@@ -185,5 +202,6 @@
       document.querySelector('.interview-form button[type="submit"]').disabled = true;
     }
   </script>
+<script src="../assets/js/ui.js"></script>
 </body>
 </html>

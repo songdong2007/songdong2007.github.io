@@ -10,58 +10,24 @@
     name="description"
     content="松東營造員工天地：最新公告與申訴、意見反映管道。"
   >
-  <meta name="theme-color" content="#10283f">
+  <meta name="theme-color" content="#142e47">
 
-  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/site-theme.css">
 </head>
 
-<body id="top">
+<body id="top" data-page="employees">
 
   <!-- ========================================================================
        頂部導覽列
        ======================================================================== -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="../index.html" class="brand" aria-label="松東營造首頁">
-        <img
-          src="../assets/images/brand/logo.png"
-          alt="松東營造標誌"
-          width="58"
-          height="48"
-          loading="eager"
-        >
-        <div class="brand-text">
-          <strong class="brand-name">松東營造</strong>
-          <span class="brand-en">SONG DONG</span>
-        </div>
-      </a>
+  <a class="skip-link" href="#main-content">跳至主要內容</a><header class="site-header"><nav class="container nav-wrap" aria-label="主要導覽"><a href="../index.html" class="brand" aria-label="松東營造首頁"><img src="../assets/images/brand/logo.png" alt="松東營造標誌" width="52" height="46"><span class="brand-text"><strong class="brand-name">松東營造</strong><span class="brand-en">SONG DONG</span></span></a><button class="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="開啟主要選單"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>選單</button><ul class="nav-menu" id="main-menu"><li class="menu-close-row"><button class="menu-close" type="button" aria-label="關閉主要選單">關閉 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></li><li><a href="../index.html">關於松東</a></li><li><a href="../pages/projects.html">工程實績</a></li><li><a href="../pages/awards.html">獲獎紀錄</a></li><li><a href="../pages/benefits.html">員工福利</a></li><li><a href="../pages/activities.html">員工花絮</a></li><li><a href="../pages/employees.html" aria-current="page">員工天地</a></li></ul></nav></header><button class="menu-backdrop" type="button" aria-label="關閉主要選單" hidden tabindex="-1"></button>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="main-menu"
-        aria-label="切換選單"
-      >
-        選單 ☰
-      </button>
-
-      <ul class="nav-menu" id="main-menu">
-        <li><a href="../index.html">關於松東</a></li>
-        <li><a href="./projects.html">工程實績</a></li>
-        <li><a href="./awards.html">獲獎紀錄</a></li>
-        <li><a href="./benefits.html">員工福利</a></li>
-        <li><a href="./activities.html">員工花絮</a></li>
-        <li><a href="./employees.html" aria-current="page">員工天地</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
+  <main id="main-content">
     <section class="section employee-section" id="news" aria-labelledby="news-heading">
         <div class="container">
           <div class="section-header"><h1 class="section-topic" id="news-heading">員工天地</h1><p class="section-desc">查閱公司最新公告，並透過申訴管道反映工作相關問題。</p></div>
-          <div class="employee-content-grid"><section aria-labelledby="latest-news-heading"><h3 class="employee-subheading" id="latest-news-heading">最新公告</h3>
+          <div class="employee-entry-grid" hidden><button class="employee-entry" type="button" data-employee-target="0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h4"/></svg><span>最新公告</span><span aria-hidden="true">→</span></button><button class="employee-entry" type="button" data-employee-target="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v12H9l-5 4V4ZM8 8h8M8 12h5"/></svg><span>申訴與意見反映</span><span aria-hidden="true">→</span></button></div><div class="message-tabs" role="tablist" aria-label="員工資訊" hidden><button type="button" role="tab" id="tab-news" aria-controls="employee-news" aria-selected="true">最新公告</button><button type="button" role="tab" id="tab-complaints" aria-controls="employee-complaints" aria-selected="false" tabindex="-1">申訴與意見反映</button></div><div class="employee-content-grid"><section class="employee-panel" id="employee-news" role="tabpanel" tabindex="0" aria-labelledby="tab-news"><h2 class="employee-subheading" id="latest-news-heading">最新公告</h2>
         <div class="news-list">
           <!-- 公告 1 -->
           <article class="news-item">
@@ -96,9 +62,7 @@
             <div class="news-arrow" aria-hidden="true">→</div>
           </a>
         </div>
-          </section>
-          <section class="employee-complaints" aria-labelledby="employee-complaints-title"><h3 class="employee-subheading" id="employee-complaints-title">申訴與意見反映</h3><p>供公司員工、工班人員及協力廠商使用。表單目前仍標示為測試階段，請先使用模擬資料。</p><a class="employee-complaint-link" href="./complaints.html">申訴專區（測試中） <span aria-hidden="true">→</span></a></section>
-          </div>
+          </section><section class="employee-complaints employee-panel" id="employee-complaints" role="tabpanel" tabindex="0" aria-labelledby="tab-complaints"><h2 class="employee-subheading" id="employee-complaints-title">申訴與意見反映</h2><p>供公司員工、工班人員及協力廠商使用。表單目前仍標示為測試階段，請先使用模擬資料。</p><a class="employee-complaint-link" href="./complaints.html">申訴專區（測試中） <span aria-hidden="true">→</span></a></section></div>
         </div>
       </section>
   </main>
@@ -120,7 +84,7 @@
 
         <!-- 聯絡與登記資訊 -->
         <div class="footer-col">
-          <h4>公司官方資訊</h4>
+          <h2>公司官方資訊</h2>
           <ul class="footer-info-list">
             <li><strong>統一編號：</strong>94804902</li>
             <li><strong>公司電話：</strong>05-7857898</li>
@@ -131,16 +95,16 @@
 
         <!-- 快速導覽 -->
         <div class="footer-col">
-          <h4>站內導覽</h4>
+          <h2>站內導覽</h2>
           <ul class="footer-links">
             <li><a href="../index.html">關於松東</a></li>
-            <li><a href="./projects.html">工程實績</a></li>
-            <li><a href="./awards.html">獲獎紀錄</a></li>
-            <li><a href="./benefits.html">員工福利</a></li>
-            <li><a href="./activities.html">員工花絮</a></li>
-            <li><a href="./employees.html" aria-current="page">員工天地</a></li>
-            <li><a href="./contact.html">聯絡松東營造 ↗</a></li>
-            <li><a href="./complaints.html">申訴與意見反映專區</a></li>
+            <li><a href="../pages/projects.html">工程實績</a></li>
+            <li><a href="../pages/awards.html">獲獎紀錄</a></li>
+            <li><a href="../pages/benefits.html">員工福利</a></li>
+            <li><a href="../pages/activities.html">員工花絮</a></li>
+            <li><a href="../pages/employees.html">員工天地</a></li>
+            <li><a href="../pages/contact.html">人才招募 ↗</a></li>
+            <li><a href="../pages/complaints.html">申訴與意見反映專區</a></li>
           </ul>
         </div>
       </div>
@@ -152,11 +116,11 @@
         </div>
       </div>
     </div>
-  </footer>
+  <div class="container"><a class="footer-return" href="../index.html">返回首頁 →</a></div></footer>
 
   <!-- ========================================================================
        原生輕量 JavaScript 互動邏輯
        ======================================================================== -->
-  <script src="../assets/js/site.js"></script>
+  <script src="../assets/js/ui.js"></script>
 </body>
 </html>

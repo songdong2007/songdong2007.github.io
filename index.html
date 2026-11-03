@@ -10,7 +10,7 @@
     name="description"
     content="松東營造股份有限公司創立於1982年，專注於道路、橋梁、水利防洪、邊坡整治及公共基礎建設。以誠信、品質與安全為基石，深耕在地，落實國家重大建設。"
   >
-  <meta name="theme-color" content="#10283f">
+  <meta name="theme-color" content="#142e47">
 
   <!-- Open Graph -->
   <meta property="og:title" content="松東營造股份有限公司｜SONG DONG CONSTRUCTION">
@@ -18,52 +18,18 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="./assets/images/construction/01.jpg">
 
-  <link rel="stylesheet" href="./assets/css/site.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+<link rel="stylesheet" href="./assets/css/site-theme.css">
 </head>
 
-<body id="top">
+<body id="top" data-page="home">
 
   <!-- ========================================================================
        頂部導覽列
        ======================================================================== -->
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="./index.html" class="brand" aria-label="松東營造首頁">
-        <img
-          src="./assets/images/brand/logo.png"
-          alt="松東營造標誌"
-          width="58"
-          height="48"
-          loading="eager"
-        >
-        <div class="brand-text">
-          <strong class="brand-name">松東營造</strong>
-          <span class="brand-en">SONG DONG</span>
-        </div>
-      </a>
+  <a class="skip-link" href="#main-content">跳至主要內容</a><header class="site-header"><nav class="container nav-wrap" aria-label="主要導覽"><a href="./index.html" class="brand" aria-label="松東營造首頁"><img src="./assets/images/brand/logo.png" alt="松東營造標誌" width="52" height="46"><span class="brand-text"><strong class="brand-name">松東營造</strong><span class="brand-en">SONG DONG</span></span></a><button class="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="開啟主要選單"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>選單</button><ul class="nav-menu" id="main-menu"><li class="menu-close-row"><button class="menu-close" type="button" aria-label="關閉主要選單">關閉 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></li><li><a href="./index.html" aria-current="page">關於松東</a></li><li><a href="./pages/projects.html">工程實績</a></li><li><a href="./pages/awards.html">獲獎紀錄</a></li><li><a href="./pages/benefits.html">員工福利</a></li><li><a href="./pages/activities.html">員工花絮</a></li><li><a href="./pages/employees.html">員工天地</a></li></ul></nav></header><button class="menu-backdrop" type="button" aria-label="關閉主要選單" hidden tabindex="-1"></button>
 
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="main-menu"
-        aria-label="切換選單"
-      >
-        選單 ☰
-      </button>
-
-      <ul class="nav-menu" id="main-menu">
-        <li><a href="./index.html" aria-current="page">關於松東</a></li>
-        <li><a href="./pages/projects.html">工程實績</a></li>
-        <li><a href="./pages/awards.html">獲獎紀錄</a></li>
-        <li><a href="./pages/benefits.html">員工福利</a></li>
-        <li><a href="./pages/activities.html">員工花絮</a></li>
-        <li><a href="./pages/employees.html">員工天地</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
+  <main id="main-content">
     <!-- ========================================================================
          主視覺 (Hero)
          ======================================================================== -->
@@ -137,7 +103,7 @@
         <section class="about-section" id="about" aria-labelledby="about-heading">
           <div class="about-story">
             <h2 class="section-topic" id="about-heading">關於松東</h2>
-            <h3 class="section-title section-subtitle">腳踏實地，築起每一份公眾信任。</h3>
+            <h2 class="section-title section-subtitle">腳踏實地，築起每一份公眾信任。</h2>
             <div class="section-desc" style="margin-bottom: 24px;">
               松東營造股份有限公司創立於1982年，發軔於雲林，長年投身國家公共基礎設施建設。
             </div>
@@ -150,12 +116,16 @@
               我們深知公共工程關乎民生安全與區域發展，因此在每一處鋼筋綁紮、每一立方混凝土澆置、每一段瀝青鋪築的工序中，皆嚴格落實施工規範與自主品管，以務實行動為社會構築安心生活環境。
             </p>
 
-            <dl class="about-company-info">
+
+
+          </div>
+        </section>
+        <aside class="company-facts-card" aria-label="公司資訊與薪資制度"><dl class="about-company-info">
               <div><dt>公司資本額</dt><dd>新臺幣<strong>4.3億元</strong></dd></div>
-              <div><dt>經營理念</dt><dd><p>誠信為本、品質至上、安全第一。以踏實的施工管理與自主品管，落實每一項工程承諾。</p><details class="about-values-details" id="values"><summary>閱讀完整經營理念</summary><div class="about-value"><h4>誠信為本</h4><p>嚴守工程合約規範，不偷工、不減料、不推諉。與發包單位、工程顧問與協力廠商建立彼此信賴的長久夥伴關係，實事求是履行每一項工程承諾。</p></div><div class="about-value"><h4>品質至上</h4><p>從鋼筋原料檢驗、混凝土拌合比抽驗到現場各單元查驗，落實「自主檢查、監造複驗」的三級品管標準。追求結構強度與施工細節的極致穩定。</p></div><div class="about-value"><h4>安全第一</h4><p>堅持「人命至上、工安無價」。每日作業前工具箱會議、個人防護裝備確實查核、工區周遭交通維持管制，全力實現零職災、零事故之工區標準。</p></div></details></dd></div>
-              <div><dt>薪資制度</dt><dd><p>薪資採<strong>職等分級制度</strong>，共分25個職等。</p><table class="job-grade-table"><caption>職等與職稱對照表</caption><thead><tr><th scope="col">職等範圍</th><th scope="col">職稱</th></tr></thead><tbody><tr><td>1～9職等</td><th scope="row">助理工程員</th></tr><tr><td>10～13職等</td><th scope="row">工程員</th></tr><tr><td>14～17職等</td><th scope="row">副工程師</th></tr><tr><td>18～25職等</td><th scope="row">正工程師</th></tr></tbody></table></dd></div>
-            </dl>
-            <div class="about-badges">
+              <div><dt>經營理念</dt><dd><p>誠信為本、品質至上、安全第一。以踏實的施工管理與自主品管，落實每一項工程承諾。</p><details class="about-values-details" id="values"><summary>閱讀完整經營理念</summary><div class="about-value"><h3>誠信為本</h3><p>嚴守工程合約規範，不偷工、不減料、不推諉。與發包單位、工程顧問與協力廠商建立彼此信賴的長久夥伴關係，實事求是履行每一項工程承諾。</p></div><div class="about-value"><h3>品質至上</h3><p>從鋼筋原料檢驗、混凝土拌合比抽驗到現場各單元查驗，落實「自主檢查、監造複驗」的三級品管標準。追求結構強度與施工細節的極致穩定。</p></div><div class="about-value"><h3>安全第一</h3><p>堅持「人命至上、工安無價」。每日作業前工具箱會議、個人防護裝備確實查核、工區周遭交通維持管制，全力實現零職災、零事故之工區標準。</p></div></details></dd></div>
+
+            <div><dt id="salary-heading">薪資制度</dt><dd><p>薪資採<strong>職等分級制度</strong>，共分25個職等。</p><table class="job-grade-table"><caption>職等與職稱對照表</caption><thead><tr><th scope="col">職等範圍</th><th scope="col">職稱</th></tr></thead><tbody><tr><td>1～9職等</td><th scope="row">助理工程員</th></tr><tr><td>10～13職等</td><th scope="row">工程員</th></tr><tr><td>14～17職等</td><th scope="row">副工程師</th></tr><tr><td>18～25職等</td><th scope="row">正工程師</th></tr></tbody></table></dd></div></dl></aside>
+      <div class="about-badges">
               <div class="badge-card">
                 <strong>專業團隊與重機具配置</strong>
                 <span>具備完整技術工班與各型土木工程重機具調度能力。</span>
@@ -164,12 +134,8 @@
                 <strong>嚴格工安與環境保護</strong>
                 <span>全面配合勞安法規，落實施工便道防塵與交通維持規劃。</span>
               </div>
-            </div>
-          </div>
-        </section>
-        <section class="organization-section" aria-labelledby="organization-heading">
-          <h2 class="section-topic" id="organization-heading">組織架構</h2>
-          <div class="organization-chart">
+            </div></div>
+    </div><section class="section organization-section" aria-labelledby="organization-heading"><div class="container"><h2 class="section-topic" id="organization-heading">組織架構</h2><div class="organization-chart">
             <svg class="organization-diagram" viewBox="0 0 660 440" role="img" aria-labelledby="org-title org-desc">
               <title id="org-title">松東營造組織架構</title>
               <desc id="org-desc">董事長下設總經理。總經理下設財務部、工務部、行政部、業務部、技術創新中心及職安中心，六個單位均連接施工大隊。</desc>
@@ -195,10 +161,7 @@
                 <text class="organization-field-label" x="322.5" y="383">施工大隊</text>
               </g>
             </svg>
-          </div>
-        </section>
-      </div>
-    </div>
+          </div></div></section>
   </main>
 
   <!-- ========================================================================
@@ -218,7 +181,7 @@
 
         <!-- 聯絡與登記資訊 -->
         <div class="footer-col">
-          <h4>公司官方資訊</h4>
+          <h2>公司官方資訊</h2>
           <ul class="footer-info-list">
             <li><strong>統一編號：</strong>94804902</li>
             <li><strong>公司電話：</strong>05-7857898</li>
@@ -229,9 +192,9 @@
 
         <!-- 快速導覽 -->
         <div class="footer-col">
-          <h4>站內導覽</h4>
+          <h2>站內導覽</h2>
           <ul class="footer-links">
-            <li><a href="./index.html" aria-current="page">關於松東</a></li>
+            <li><a href="./index.html">關於松東</a></li>
             <li><a href="./pages/projects.html">工程實績</a></li>
             <li><a href="./pages/awards.html">獲獎紀錄</a></li>
             <li><a href="./pages/benefits.html">員工福利</a></li>
@@ -255,6 +218,6 @@
   <!-- ========================================================================
        原生輕量 JavaScript 互動邏輯
        ======================================================================== -->
-  <script src="./assets/js/site.js"></script>
+  <script src="./assets/js/ui.js"></script>
 </body>
 </html>

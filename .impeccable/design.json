@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-03T00:00:00+08:00",
+  "title": "Design System: 松東營造",
+  "extensions": {
+    "colorMeta": {
+      "navy": {
+        "role": "primary",
+        "displayName": "深藍"
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "自然綠"
+      },
+      "copper": {
+        "role": "secondary",
+        "displayName": "暖銅"
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "淡綠"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "暖白"
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "白色"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "深藍灰"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "灰綠"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "淡綠灰細線"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "主標題",
+        "purpose": "桌面30–34px、手機25–28px；目前34px/28px。"
+      },
+      "headline": {
+        "displayName": "區段標題",
+        "purpose": "桌面23–26px、手機21–24px。"
+      },
+      "title": {
+        "displayName": "卡片標題",
+        "purpose": "桌面18–20px、手機17–19px。"
+      },
+      "body": {
+        "displayName": "內文",
+        "purpose": "15–16px，行高1.8–1.9。"
+      },
+      "label": {
+        "displayName": "輔助資訊",
+        "purpose": "日期、標籤與說明12–13px。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "card-low",
+        "value": "0 4px 18px color-mix(in srgb,var(--navy) 5%,transparent)",
+        "purpose": "卡片的低層次柔和陰影。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "state",
+        "value": "0.2s ease",
+        "purpose": "顏色、邊框、陰影與導覽抽屜轉場。"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "prefers-reduced-motion: reduce 時移除轉場、動畫與平滑捲動。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "navigation-and-forms",
+        "value": "900px"
+      },
+      {
+        "name": "project-overview",
+        "value": "800px"
+      },
+      {
+        "name": "single-column",
+        "value": "600px"
+      }
+    ],
+    "aliases": {
+      "--dark": "--navy",
+      "--gold": "--copper",
+      "--gold-deep": "--green",
+      "--gold-light": "--paper"
+    },
+    "derivedColors": {
+      "required-ink": "color-mix(in srgb,var(--copper) 70%,var(--navy))",
+      "line-dark": "color-mix(in srgb,var(--surface) 20%,var(--navy))"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "主要行動使用深藍底白字及可見焦點。",
+      "html": "<button class=\"ds-button\">查看工程</button>",
+      "css": ".ds-button{font:600 15px/1.85 var(--font-stack,\"Noto Sans TC\",sans-serif);padding:10px 22px;min-height:46px;background:var(--navy,#142E47);color:var(--surface,#FFFFFF);border:1px solid var(--navy,#142E47);border-radius:8px;cursor:pointer;transition:background-color .2s ease,box-shadow .2s ease}.ds-button:hover{background:var(--text,#203A51);box-shadow:0 4px 18px color-mix(in srgb,var(--navy,#142E47) 5%,transparent)}.ds-button:focus-visible{outline:3px solid var(--green,#527C78);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "工程的穩定、人情的溫度",
+    "overview": "現代、俐落、專業、自然，以真實工程紀錄和易讀資訊建立信任。白色與暖白主畫布搭配深藍結構、自然綠資訊提示及少量暖銅。",
+    "keyCharacteristics": [
+      "白色與暖白為主",
+      "真實照片與既有事實",
+      "8px圓角、細線與低陰影",
+      "首頁公司敘事左、整合資訊卡右、組織架構於徽章後全寬呈現"
+    ],
+    "rules": [
+      {
+        "name": "實際狀態",
+        "body": "保留原表單服務、欄位與測試狀態；不得假稱送達成功。",
+        "section": "components"
+      },
+      {
+        "name": "完整影像",
+        "body": "證書與相簿大圖完整顯示；封面保護人物頭部。",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "保留既有內容與事實。",
+      "維持白色福利卡為主，圖示極淡綠襯底；獎金極淡銅底、旅遊與補助淡綠底。"
+    ],
+    "donts": [
+      "使用科技藍紫漸層、發光色塊或大量毛玻璃。",
+      "將原始碼檢查當作已完成瀏覽器視覺驗收。"
+    ]
+  }
+}

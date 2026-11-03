@@ -1,94 +1,180 @@
 ---
 name: 松東營造設計系統 (Song Dong Design System)
-description: 穩健、沉穩、具工藝質感的傳統營造與公共工程品牌設計語言
+description: 現代、俐落、專業、自然；工程穩定感與人情溫度
 colors:
-  navy: "#10283f"
-  dark: "#081725"
-  gold: "#c7a469"
-  paper: "#f6f5f1"
-  text: "#263746"
-  muted: "#65717b"
-  line: "#dedfdc"
+  navy: "#142E47"
+  green: "#527C78"
+  paper: "#F7F6F2"
+  sage: "#EDF3F0"
+  copper: "#B78358"
+  surface: "#FFFFFF"
+  text: "#203A51"
+  muted: "#637572"
+  line: "color-mix(in srgb, #527C78 22%, #FFFFFF)"
 typography:
-  body:
-    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif'
-    fontSize: "16px"
-    lineHeight: "1.85"
+  display:
+    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
+    fontSize: "34px"
+    fontWeight: 700
+    lineHeight: 1.5
     letterSpacing: "0.02em"
-  heading:
-    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", sans-serif'
-    fontWeight: "700"
-    lineHeight: "1.3"
+  headline:
+    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
+    fontSize: "26px"
+    fontWeight: 700
+    lineHeight: 1.5
+  title:
+    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
+    fontSize: "20px"
+    fontWeight: 700
+    lineHeight: 1.5
+  body:
+    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.85
+    letterSpacing: "0.02em"
+  label:
+    fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
+    fontSize: "13px"
+    lineHeight: 1.85
 rounded:
   sm: "4px"
   md: "8px"
-  lg: "12px"
 spacing:
   xs: "8px"
   sm: "16px"
+  card-mobile: "20px"
   md: "24px"
   lg: "40px"
-  xl: "80px"
+  section: "52px"
 components:
   button-primary:
     backgroundColor: "{colors.navy}"
-    textColor: "#ffffff"
+    textColor: "{colors.surface}"
+    rounded: "{rounded.md}"
+    padding: "10px 22px"
+  button-primary-hover:
+    backgroundColor: "{colors.text}"
+    textColor: "{colors.surface}"
+  button-secondary:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.navy}"
+    rounded: "{rounded.md}"
+    padding: "10px 22px"
+  card:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.md}"
+    padding: "24px"
+  field:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.text}"
+    rounded: "{rounded.md}"
+    padding: "11px 13px"
+  tag:
+    backgroundColor: "{colors.sage}"
+    textColor: "{colors.green}"
     rounded: "{rounded.sm}"
-    padding: "12px 28px"
-  button-gold:
-    backgroundColor: "{colors.gold}"
-    textColor: "#ffffff"
-    rounded: "{rounded.sm}"
-    padding: "12px 28px"
+    padding: "4px 10px"
 ---
 
-## 1. Overview
-松東營造的視覺設計以「穩重、紮實、安全與工程信賴感」為核心。設計應傳遞實體產業與公共建設的扎實根基，而非虛擬科技公司的輕飄感。
+# Design System: 松東營造
 
-## 2. Colors
-- **主色 (Navy #10283f)**：象徵沉穩、專業、深邃與制度化管理，用於主要導覽、標題、深色區塊背景與主要按鈕。
-- **深色 (Dark #081725)**：用於頁尾 (Footer)、強化視覺對比的基底深色。
-- **強調色 (Gold #c7a469)**：象徵品質、榮譽與點睛細節，用於重點提示、邊框修飾、特色標籤。
-- **基底紙色 (Paper #f6f5f1)**：以微暖紙感取代純白（#ffffff），營造質樸、耐看、不刺眼的閱讀體驗。
-- **內文文字 (Text #263746)**：深青灰色彩，具備極佳易讀性與印刷墨色質感。
-- **次要文字 (Muted #65717b)**：用於時間、備註、副標題與佐證數據。
-- **分隔線 (Line #dedfdc)**：細微低調的結構劃分線。
+## Overview
 
-## 3. Typography
-- **字體選用**：以 `Noto Sans TC` 與正黑體系統字體為主，字重清晰分明（400 / 500 / 700）。
-- **行高與字距**：中文內文行高設定為 `1.85`，提供充裕的閱讀呼吸感；中文字距微調至 `0.02em` 提升印刷質感。
-- **標題層級**：標題嚴禁過長或無意義修飾詞，重點在於結構清楚、層次分明。
+**Creative North Star:「工程的穩定、人情的溫度」**
 
-## 4. Layout
-- **版心與格線**：最大寬度通常保持在 1200px ~ 1280px，留白大器均勻。
-- **工程實績展現**：以真實工程現場照片（道路、橋梁、鋼筋、混凝土施工過程）作為主視覺，圖文並茂，佐以明確的完工年份與工程標案名稱。
-- **區塊節奏**：深色與淺色交錯區塊，避免連續單調；但在單一區塊內維持純淨與對齊。
+現代、俐落、專業、自然的營造企業網站。以清晰結構、真實施工紀錄與易讀資訊呈現專業，透過暖白與自然綠色保留企業的人情味。照片、案名與既有事實是內容主體。
 
-## 5. Elevation & Depth
-- **拒絕無效懸浮**：營造業強調「落地生根」，卡片與區塊應以細邊框 (`1px solid var(--line)`) 或微弱位移陰影為主。
-- **陰影規範**：若使用陰影，需具備明確的下沉偏移與漫射（如 `0 4px 16px rgba(16, 40, 63, 0.06)`），嚴禁彩色光暈或擴散模糊。
+**Key Characteristics:** 白色與暖白主畫布、深藍結構、自然綠資訊提示、少量銅色、方正細框及低陰影。本文件依核准方向與現行原始碼整理，不代表已完成瀏覽器視覺驗收。
 
-## 6. Shapes
-- **微圓角**：卡片與按鈕以 `4px` 或 `8px` 為主，展現工整、方正與結構感。
-- **避免大膠囊圓角**：除了小型狀態 Tag 標籤外，不要在大按鈕或大卡片上使用 `rounded-3xl` 或 `rounded-full`。
+## Colors
 
-## 7. Components
-- **導覽列**：固定頂部，微透明或實色背景，具備明確聯絡電話與標誌。
-- **工程卡片**：真實照片佔比高，清楚標註工程名稱、地點、工期與負責工法。
-- **聯絡資訊塊**：醒目的統一編號、地址、電話，展現合法合規的實體企業信賴度。
+### Primary
 
-## 8. Anti-AI Slop Checklist (絕對禁止的 AI 刻板設計)
-- ❌ **絕對禁止 AI 萬年紫色/藍色漸層**（`indigo to purple`）與無意義的霓虹光球。
-- ❌ **絕對禁止無意義的科技毛玻璃**（濫用 `backdrop-blur` 和透明半透白邊框）。
-- ❌ **絕對禁止科技 SaaS 的 3 欄等寬抽象圖示卡片**（卡片放閃電、火箭、盾牌等向量空泛圖示）。
-- ❌ **絕對禁止假大空科技宣傳文案**（如「引領未來的全方位智能建築賦能平台」）。
-- ❌ **絕對禁止浮誇的彈跳動效**，過渡動效應控制在 0.2s ~ 0.3s 的線性/漸慢，保持穩重。
+- **navy 深藍**：頁首、頁尾與主要按鈕。
+- **green 自然綠**：圖示、標籤、年度、選取與焦點。
 
-## 9. 首頁章節配色
-- 關於松東與組織架構：紙色底，深藍標題。
-- 工程實績：深藍底，紙色內文與金色主標題、工程連結。
-- 獲獎紀錄：金色12%與紙色混合底，紙色照片卡片。
-- 員工福利：深藍5%與紙色混合底，深藍標題。
-- 員工花絮：深色底，金色標題、紙色圖說。
-- 員工天地：紙色底、淡金公告列，深藍申訴入口。
-- 所有混合色由既有品牌變數以color-mix產生，不增加品牌色相。
+### Secondary
+
+- **copper 暖銅**：標題短線、獎金福利與測試提示等少量點綴。
+- **sage 淡綠**：聯絡卡、生活福利、側欄與選取背景。
+
+### Neutral
+
+- **surface 白色、paper 暖白**：主要畫布、卡片與圖片襯底。
+- **text 深藍灰、muted 灰綠**：主要與次要文字。
+- **line 淡綠灰**：由 green 與 surface 混合的細框與分隔線。
+
+程式來源為 `assets/css/base.css` 的 `:root`。舊名稱相容映射：`--dark` → navy、`--gold` → copper、`--gold-deep` → green、`--gold-light` → paper。`--navy-dark`、`--line-dark` 為既有色彩混合值。必填提示使用 `color-mix(in srgb,var(--copper) 70%,var(--navy))`，提供較深的銅色文字；不新增獨立色票。
+
+## Typography
+
+使用 frontmatter 的繁體中文無襯線字型堆疊；內文行高 1.8–1.9（現行 1.85），主要字重 400、600、700。長段落通常限制在 65–75ch，數字資訊可用等寬數字。
+
+| 層級 | 桌面核准範圍 | 手機核准範圍 | 現行共用值 |
+| --- | --- | --- | --- |
+| 主標題 | 30–34px | 25–28px | 34px / 28px |
+| 區段標題 | 23–26px | 21–24px | 26px / 23px |
+| 卡片標題 | 18–20px | 17–19px | 20px / 18px |
+| 內文 | 15–16px | 15–16px | 16px |
+| 輔助資訊 | 12–13px | 12–13px | 依元件使用 |
+
+頁面級 `.section-topic` 採主標題尺寸，內部區段使用較小層級。手機輸入欄位文字維持 16px。
+
+## Layout
+
+內容最大寬度 1120px，桌面左右各 24px，600px 以下各 20px。桌面區段留白 40–56px（共用 52px），手機 28–36px（共用 32px）；卡片間距桌面 20–24px、手機 16–20px。
+
+900px 以下導覽改抽屜；600px 以下雙欄卡片改單欄。工程概述在 800px 以下、表單與說明在 900px 以下改單欄。首頁照片適度佔約半個視窗：目前桌面 45vh、限制 300–430px，手機 240px。人物照片須保護頭部構圖。
+
+首頁依最新參考圖整理：上方左欄為公司敘事，右欄為整合資本額、經營理念與薪資資訊的單一卡片；組織架構移到兩欄與下方徽章之後，獨立佔滿內容寬度。手機依內容順序垂直閱讀。
+
+## Elevation & Depth
+
+透過白色、暖白與淡綠表面分層，卡片使用淡邊框與輕微向下陰影。共用值為 `0 4px 18px color-mix(in srgb,var(--navy) 5%,transparent)`；工程卡片 hover 可略增陰影。避免硬邊偏移、發光與大片毛玻璃。
+
+轉場以 0.2s ease 的顏色、邊框、陰影及抽屜位移為主。`prefers-reduced-motion: reduce` 停止動畫、轉場和平滑捲動。所有互動保留可見鍵盤焦點。
+
+## Shapes
+
+卡片、按鈕、欄位、圖片與彈窗主要採 8px 圓角；標籤及縮圖內層採 4px。以 1px 細框建立方正結構。時間軸節點可為圓形，不將大圓角或膠囊形套用全站。
+
+## Components
+
+### Buttons
+
+深藍底白字主按鈕、白底深藍細框次按鈕。共用內距 10px 22px、最小高度 46px。Hover 微調底色，focus 清楚可見；手機主要表單動作可滿寬。
+
+### Navigation
+
+桌面頁首 sticky，捲動後高度由 88px 縮至 68px並縮小標誌。導覽白字、銅色底線標記目前頁面。手機右側深藍抽屜保留關閉按鈕、遮罩、Escape、焦點管理與開關狀態。頁尾延續深藍白字。
+
+### Cards / Containers
+
+- **工程實績**：雙欄工程照片卡片，呈現具體案名及既有工程資訊。
+- **工程詳細頁**：大主圖、概述與資料雙欄、縮圖切換相簿。大圖完整顯示，縮圖可裁切。
+- **獲獎紀錄**：年度由新到舊的時間軸，內含雙欄卡片；證書在一致暖白框內以 contain 完整顯示並可放大。
+- **薪資福利**：雙欄圖示卡片，以白色卡片為主，圖示置於極淡綠方形襯底；獎金卡使用極淡銅底，旅遊與補助項目才使用淡綠底，保留原有明細。
+- **員工活動**：雙欄一致封面，說明在照片下方；封面保護人物頭部，進入相簿後完整顯示照片。
+- **員工專區**：兩張入口卡片與內容分頁；綠色及底線標示選取狀態。
+
+### Inputs / Fields
+
+標籤在欄位上方，短欄位桌面雙欄、長欄位跨全寬，手機全單欄。欄位至少 48px 高，白底、細框及綠色 focus。必填使用深銅色、選填使用 muted。錯誤或結果放在按鈕附近，以文字清楚標示。
+
+招募頁左側介紹與動作、右側淡綠聯絡卡。應徵頁左表單右指引；申訴頁左表單右說明，保留銅色測試通知。保留全部既有欄位、附件、同意選項、動作、測試狀態及實際服務；未實際送達不得顯示送達成功。
+
+### Image Viewers
+
+深藍半透明遮罩、暖白襯底、明確關閉按鈕。完整大圖採 contain，保留圖片描述、鍵盤操作與焦點返回。
+
+## Do's and Don'ts
+
+- **Do** 保留原內容與事實，以真實工程、證書與活動照片建立信任。
+- **Do** 維持白與暖白主畫布、克制的自然色提示與清晰資訊層級。
+- **Do** 檢查人物頭部、證書完整性、手機閱讀順序及鍵盤操作。
+- **Don't** 使用科技藍紫漸層、發光色塊、氾濫毛玻璃或膠囊按鈕。
+- **Don't** 套用抽象圖示三欄 SaaS 樣板或空洞科技行銷文案。
+- **Don't** 將原始碼檢查表述為桌面與手機視覺驗收；目前瀏覽器／網址存取未能完成驗證。

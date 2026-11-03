@@ -7,73 +7,43 @@
   <meta name="referrer" content="origin">
   <title>申訴與意見反映專區｜松東營造</title>
   <meta name="description" content="提供公司員工、工班人員與協力廠商使用的申訴與意見反映表單，目前為模擬資料測試階段。">
-  <meta name="theme-color" content="#10283f">
-  <link rel="stylesheet" href="../assets/css/subpage.css">
-  <style>
-    .complaint-content { padding: 56px 0 72px; }
-    .complaint-layout { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: 56px; align-items: start; }
-    .complaint-intro h2, .complaint-form h2 { color: var(--navy); font-size: 26px; margin-bottom: 16px; }
-    .complaint-intro p { margin-bottom: 20px; }
-    .test-notice { padding: 24px; border: 1px solid var(--gold); border-radius: 4px; margin-bottom: 32px; }
-    .test-notice strong { display: block; color: var(--navy); font-size: 18px; margin-bottom: 8px; }
-    .test-notice p { max-width: 75ch; }
-    .complaint-intro dl { margin-top: 28px; }
-    .complaint-intro dt { color: var(--navy); font-weight: 700; margin-bottom: 6px; }
-    .complaint-intro dd { color: var(--muted); margin-bottom: 24px; }
-    .complaint-intro a, .privacy-note a { color: var(--navy); text-decoration: underline; text-underline-offset: 4px; }
-    .complaint-form { min-width: 0; }
-    .form-note { color: var(--muted); margin-bottom: 24px; font-size: 14px; }
-    .form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
-    .field { min-width: 0; }
-    .field-wide { grid-column: 1 / -1; }
-    .field label { display: block; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-    .field input, .field select, .field textarea { width: 100%; min-height: 48px; font: inherit; color: var(--text); background: var(--paper); border: 1px solid var(--muted); border-radius: 4px; padding: 10px 12px; }
-    .field textarea { min-height: 180px; resize: vertical; }
-    .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible, .consent input:focus-visible, .submit-button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
-    .field input::placeholder, .field textarea::placeholder { color: var(--muted); opacity: 1; }
-    .field small { display: block; color: var(--muted); margin-top: 6px; font-size: 13px; }
-    .consent { display: flex; gap: 12px; align-items: flex-start; margin-top: 24px; cursor: pointer; }
-    .consent input { margin-top: 7px; width: 20px; height: 20px; flex-shrink: 0; accent-color: var(--navy); }
-    .privacy-note { font-size: 14px; color: var(--muted); margin-top: 16px; }
-    .submit-button { min-height: 48px; padding: 12px 28px; margin-top: 24px; font: inherit; font-weight: 700; border: 1px solid var(--navy); border-radius: 4px; background: var(--navy); color: var(--paper); cursor: pointer; }
-    .submit-button:disabled { opacity: .6; cursor: not-allowed; }
-    #local-file-warning[hidden] { display: none; }
-    .submit-button:hover { background: var(--dark); }
-    @media (max-width: 900px) { .complaint-layout { grid-template-columns: 1fr; gap: 36px; } }
-    @media (max-width: 600px) { .complaint-content { padding-block: 36px 48px; } .form-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 30px; } }
-  </style>
+  <meta name="theme-color" content="#142e47">
+  <link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/detail-theme.css">
+<link rel="stylesheet" href="../assets/css/form-theme.css">
+
 </head>
-<body>
-  <header class="site-header">
-    <nav class="container nav-wrap" aria-label="主要導覽">
-
-      <a href="../index.html" class="brand" aria-label="松東營造首頁">
-        <img
-          src="../assets/images/brand/logo.png"
-          alt=""
-          width="62"
-          height="50"
-        >
-
-        <span>
-          <strong class="brand-name">松東營造</strong>
-          <span class="brand-en">SONG DONG</span>
-        </span>
-      </a>
-
-      <a href="../index.html" class="back-link">
+<body id="top" data-page="complaints">
+  <a class="skip-link" href="#main-content">跳至主要內容</a><header class="site-header"><nav class="container nav-wrap" aria-label="主要導覽"><a href="../index.html" class="brand" aria-label="松東營造首頁"><img src="../assets/images/brand/logo.png" alt="松東營造標誌" width="52" height="46"><span class="brand-text"><strong class="brand-name">松東營造</strong><span class="brand-en">SONG DONG</span></span></a><button class="menu-toggle" type="button" aria-controls="main-menu" aria-expanded="false" aria-label="開啟主要選單"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>選單</button><ul class="nav-menu" id="main-menu"><li class="menu-close-row"><button class="menu-close" type="button" aria-label="關閉主要選單">關閉 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button></li><li><a href="../index.html">關於松東</a></li><li><a href="../pages/projects.html">工程實績</a></li><li><a href="../pages/awards.html">獲獎紀錄</a></li><li><a href="../pages/benefits.html">員工福利</a></li><li><a href="../pages/activities.html">員工花絮</a></li><li><a href="../pages/employees.html">員工天地</a></li></ul></nav></header><button class="menu-backdrop" type="button" aria-label="關閉主要選單" hidden tabindex="-1"></button>
+  <main id="main-content"><div class="container page-back"><a href="../index.html" class="back-link">
         ← 返回首頁
-      </a>
-
-    </nav>
-  </header>
-  <main>
+      </a></div>
     <section class="hero" aria-labelledby="page-title"><div class="container"><h1 id="page-title">申訴與意見反映專區</h1><p>供公司員工、工班人員及協力廠商反映工作相關問題與意見。</p></div></section>
     <div class="container complaint-content">
       <aside class="test-notice" aria-labelledby="test-title"><strong id="test-title">表單測試中｜請使用模擬資料</strong><p>目前用於確認寄送流程，請勿填入真實申訴、個人敏感資料或機密附件。收件啟用與公司受理安排確認後，再正式開放使用。</p></aside>
       <aside id="local-file-warning" class="test-notice" role="alert" hidden><strong>請使用線上網頁測試表單</strong><p>目前開啟的是電腦中的HTML檔案，無法透過FormSubmit送出。請前往<a href="https://songdong2007.github.io/pages/complaints.html" style="text-decoration: underline;">線上申訴測試頁面</a>，再填寫模擬資料。</p></aside>
-      <div class="complaint-layout">
-        <section class="complaint-intro" aria-labelledby="instructions-title">
+      <div class="complaint-layout"><form class="complaint-form" action="https://formsubmit.co/pm160058890606@gmail.com" method="POST" enctype="multipart/form-data" aria-labelledby="form-title">
+          <!-- 更換收件信箱時，修改上方 action；新信箱需重新驗證。 -->
+          <h2 id="form-title">填寫測試表單</h2>
+          <p class="form-note">標示「必填」的欄位請務必填寫，其餘可留白。</p>
+          <input type="hidden" name="_subject" value="【測試】松東營造申訴與意見反映表單">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_url" value="https://songdong2007.github.io/pages/complaints.html">
+          <div class="form-grid">
+            <div class="field"><label for="reporter-role">身分<span class="required-mark">（必填）</span></label><select id="reporter-role" name="身分" required><option value="">請選擇身分</option><option value="公司員工">公司員工</option><option>工班人員</option><option>協力廠商</option><option>其他</option></select></div>
+            <div class="field"><label for="report-category">反映類別<span class="required-mark">（必填）</span></label><select id="report-category" name="反映類別" required><option value="">請選擇類別</option><option value="職場不當對待">職場不當對待</option><option>性騷擾</option><option>勞動權益</option><option>工地安全</option><option>其他意見</option></select></div>
+            <div class="field"><label for="report-site">工地或部門<span class="required-mark">（必填）</span></label><input id="report-site" name="工地或部門" required maxlength="200" placeholder="測試工地或部門"></div>
+            <div class="field"><label for="report-time">事件時間<span class="optional-mark">（選填）</span></label><input id="report-time" name="事件時間" maxlength="200" placeholder="例如：2026年10月上旬，或填寫大約時間"></div>
+            <div class="field field-wide"><label for="report-message">事情經過<span class="required-mark">（必填）</span></label><textarea id="report-message" name="事情經過" required maxlength="10000" placeholder="請以模擬資料描述事件經過、相關情況及希望如何處理。"></textarea></div>
+            <div class="field"><label for="reporter-name">姓名<span class="optional-mark">（選填）</span></label><input id="reporter-name" name="姓名" autocomplete="name" maxlength="100"></div>
+            <div class="field"><label for="reporter-phone">電話<span class="optional-mark">（選填）</span></label><input type="tel" id="reporter-phone" name="聯絡電話" autocomplete="tel" maxlength="50"></div>
+            <div class="field"><label for="reporter-email">電子信箱<span class="optional-mark">（選填）</span></label><input type="email" id="reporter-email" name="email" autocomplete="email" maxlength="254"><small>若希望透過電子郵件回覆，請填寫可收信的信箱。</small></div>
+            <div class="field field-wide"><label for="report-attachment">測試附件<span class="optional-mark">（選填）</span></label><input type="file" id="report-attachment" name="attachment" accept="image/jpeg,image/png,application/pdf" aria-describedby="attachment-hint"><small id="attachment-hint">可附一個JPG、PNG或PDF檔案，最大10 MB；僅上傳模擬資料。</small></div>
+          </div>
+          <label class="consent"><input type="checkbox" name="測試與資料傳送確認" value="已確認" required><span>我確認本次填寫為模擬資料，並同意透過FormSubmit傳送表單及附件至測試收件信箱。</span></label>
+          <p class="privacy-note">請先閱讀上述資料傳送說明。<a href="https://formsubmit.co/documentation">查看FormSubmit服務說明</a>。</p>
+          <button class="submit-button" type="submit">送出測試資料</button>
+        <p class="form-status" role="status" aria-live="polite"></p></form><section class="complaint-intro" aria-labelledby="instructions-title">
           <h2 id="instructions-title">填寫說明</h2>
           <p>可以反映職場不當對待、性騷擾、勞動權益、工地安全或其他工作相關問題。請盡量說明事件時間、地點及經過，方便了解情況。</p>
           <dl>
@@ -82,44 +52,56 @@
             <dt>目前的資料傳送方式</dt><dd>表單與附件經FormSubmit服務轉寄至測試收件信箱。該服務說明表單資料會保留30天；上傳附件不提供其封存API查詢。</dd>
           </dl>
           <p><a href="./safety.html">查閱職安宣導與安全指引</a></p>
-        </section>
-        <form class="complaint-form" action="https://formsubmit.co/pm160058890606@gmail.com" method="POST" enctype="multipart/form-data" aria-labelledby="form-title">
-          <!-- 更換收件信箱時，修改上方 action；新信箱需重新驗證。 -->
-          <h2 id="form-title">填寫測試表單</h2>
-          <p class="form-note">標示「必填」的欄位請務必填寫，其餘可留白。</p>
-          <input type="hidden" name="_subject" value="【測試】松東營造申訴與意見反映表單">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_url" value="https://songdong2007.github.io/pages/complaints.html">
-          <div class="form-grid">
-            <div class="field"><label for="reporter-role">身分（必填）</label><select id="reporter-role" name="身分" required><option value="">請選擇身分</option><option value="公司員工">公司員工</option><option>工班人員</option><option>協力廠商</option><option>其他</option></select></div>
-            <div class="field"><label for="report-category">反映類別（必填）</label><select id="report-category" name="反映類別" required><option value="">請選擇類別</option><option value="職場不當對待">職場不當對待</option><option>性騷擾</option><option>勞動權益</option><option>工地安全</option><option>其他意見</option></select></div>
-            <div class="field field-wide"><label for="report-site">工地或部門（必填）</label><input id="report-site" name="工地或部門" required maxlength="200" placeholder="測試工地或部門"></div>
-            <div class="field field-wide"><label for="report-time">事件時間（選填）</label><input id="report-time" name="事件時間" maxlength="200" placeholder="例如：2026年10月上旬，或填寫大約時間"></div>
-            <div class="field field-wide"><label for="report-message">事情經過（必填）</label><textarea id="report-message" name="事情經過" required maxlength="10000" placeholder="請以模擬資料描述事件經過、相關情況及希望如何處理。"></textarea></div>
-            <div class="field"><label for="reporter-name">姓名（選填）</label><input id="reporter-name" name="姓名" autocomplete="name" maxlength="100"></div>
-            <div class="field"><label for="reporter-phone">電話（選填）</label><input type="tel" id="reporter-phone" name="聯絡電話" autocomplete="tel" maxlength="50"></div>
-            <div class="field field-wide"><label for="reporter-email">電子信箱（選填）</label><input type="email" id="reporter-email" name="email" autocomplete="email" maxlength="254"><small>若希望透過電子郵件回覆，請填寫可收信的信箱。</small></div>
-            <div class="field field-wide"><label for="report-attachment">測試附件（選填）</label><input type="file" id="report-attachment" name="attachment" accept="image/jpeg,image/png,application/pdf" aria-describedby="attachment-hint"><small id="attachment-hint">可附一個JPG、PNG或PDF檔案，最大10 MB；僅上傳模擬資料。</small></div>
-          </div>
-          <label class="consent"><input type="checkbox" name="測試與資料傳送確認" value="已確認" required><span>我確認本次填寫為模擬資料，並同意透過FormSubmit傳送表單及附件至測試收件信箱。</span></label>
-          <p class="privacy-note">請先閱讀上述資料傳送說明。<a href="https://formsubmit.co/documentation">查看FormSubmit服務說明</a>。</p>
-          <button class="submit-button" type="submit">送出測試資料</button>
-        </form>
-      </div>
+        </section></div>
     </div>
   </main>
-  <footer class="footer">
-    <div class="container footer-wrap">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- 公司識別與精神 -->
+        <div class="footer-brand">
+          <strong>松東營造股份有限公司</strong>
+          <span>SONG DONG CONSTRUCTION CO., LTD.</span>
+          <p>
+            立足雲林，投入全台公共基礎設施、道路工程、橋梁改建與水利防汛工程。以嚴謹專業的營造工藝，守護大眾每一日的通行安全。
+          </p>
+        </div>
 
-      <div>
-        <strong>松東營造股份有限公司</strong>
-        <small>© 2026 SONG DONG. All rights reserved.</small>
+        <!-- 聯絡與登記資訊 -->
+        <div class="footer-col">
+          <h2>公司官方資訊</h2>
+          <ul class="footer-info-list">
+            <li><strong>統一編號：</strong>94804902</li>
+            <li><strong>公司電話：</strong>05-7857898</li>
+            <li><strong>創立年份：</strong>1982 年</li>
+            <li><strong>總部地址：</strong>雲林縣水林鄉土厝村大庄44-36號</li>
+          </ul>
+        </div>
+
+        <!-- 快速導覽 -->
+        <div class="footer-col">
+          <h2>站內導覽</h2>
+          <ul class="footer-links">
+            <li><a href="../index.html">關於松東</a></li>
+            <li><a href="../pages/projects.html">工程實績</a></li>
+            <li><a href="../pages/awards.html">獲獎紀錄</a></li>
+            <li><a href="../pages/benefits.html">員工福利</a></li>
+            <li><a href="../pages/activities.html">員工花絮</a></li>
+            <li><a href="../pages/employees.html">員工天地</a></li>
+            <li><a href="../pages/contact.html">人才招募 ↗</a></li>
+            <li><a href="../pages/complaints.html">申訴與意見反映專區</a></li>
+          </ul>
+        </div>
       </div>
 
-      <a href="../index.html">返回首頁 →</a>
-
+      <div class="footer-bottom">
+        <div>© 2026 松東營造股份有限公司 SONG DONG CONSTRUCTION. All rights reserved.</div>
+        <div>
+          <a href="#top">回到頁首 ↑</a>
+        </div>
+      </div>
     </div>
-  </footer>
+  <div class="container"><a class="footer-return" href="../index.html">返回首頁 →</a></div></footer>
   <script>
     (function () {
       if (window.location.protocol === 'file:') {
@@ -142,5 +124,6 @@
       });
     })();
   </script>
+<script src="../assets/js/ui.js"></script>
 </body>
 </html>
