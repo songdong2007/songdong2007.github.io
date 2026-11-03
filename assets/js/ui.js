@@ -34,7 +34,10 @@
     menuButton.addEventListener('click', () => setMenu(!menuOpen));
     $('.menu-close', menu).addEventListener('click', () => setMenu(false));
     backdrop.addEventListener('click', () => setMenu(false));
-    $$('a', menu).forEach(link => link.addEventListener('click', () => setMenu(false, false)));
+    $$('a', menu).forEach(link => link.addEventListener('click', () => {
+      // Let the anchor's native navigation run before making the drawer inert.
+      window.requestAnimationFrame(() => setMenu(false, false));
+    }));
     mobile.addEventListener('change', () => setMenu(false, false));
     setMenu(false, false);
   }
