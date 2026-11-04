@@ -149,3 +149,17 @@ vite.config.ts.timestamp-*
 /金安獎影片+墩柱鋼筋籠預組吊放影片.mp4
 /videos/
 /tmp/video-tools/
+
+# High-resolution photo sources retained locally; publish web copies and previews
+/assets/images/construction/13.jpg
+/assets/images/construction/14.jpg
+/assets/images/construction/15.jpg
+/assets/images/construction/16.jpg
+/assets/images/construction/17.jpg
+/assets/images/construction/18.jpg
+/assets/images/construction/19.jpg
+/assets/images/construction/20.jpg
+/assets/images/construction/21.jpg
+/assets/images/construction/22.jpg
+/assets/images/construction/23.JPG
+/assets/images/construction/24.png
