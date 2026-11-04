@@ -24,3 +24,17 @@
 .home-benefits{background:var(--surface)}.benefit-row{background:var(--surface);min-height:156px}.benefit-row.is-bonus{background:color-mix(in srgb,var(--copper) 4%,var(--surface))}.benefit-row.is-life{background:color-mix(in srgb,var(--sage) 38%,var(--surface))}.benefit-icon{width:46px;height:46px;padding:13px;border-radius:8px;background:var(--sage)}.is-bonus .benefit-icon{background:color-mix(in srgb,var(--copper) 14%,var(--surface))}.benefit-row dt{gap:18px;margin-bottom:8px}.benefit-row dd{padding-left:64px}.benefit-row dd>p:first-child strong{font-weight:600;color:var(--green)}.benefit-row.is-bonus dd>p:first-child strong{color:color-mix(in srgb,var(--copper) 70%,var(--navy))}
 .organization-section.section{padding-block:48px;background:var(--paper);border:0;border-radius:0}.organization-section .section-topic{font-size:30px}.organization-chart{background:var(--surface);padding:28px;border:1px solid var(--line);border-radius:var(--radius)}.organization-diagram{max-width:900px;display:block;margin-inline:auto}
 @media(max-width:600px){.company-facts-card{padding:20px}.organization-section.section{padding-block:32px}.organization-section .section-topic{font-size:26px;margin-inline:0}.organization-chart{padding:16px 4px}.benefit-row dt{gap:14px}.benefit-row dd{padding-left:0}.benefit-row{min-height:0}}
+
+/* Project status navigation uses page links, including without JavaScript. */
+.project-status-nav{display:flex;gap:24px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.project-status-nav a{position:relative;display:inline-flex;align-items:center;min-height:48px;padding:10px 4px 14px;color:var(--text);font-weight:600}
+.project-status-nav a:hover{color:var(--green)}
+.project-status-nav a[aria-current="page"]{color:var(--navy)}
+.project-status-nav a[aria-current="page"]::after{content:"";position:absolute;inset-inline:0;bottom:-1px;height:2px;background:var(--copper)}
+.project-status-heading{font-size:26px;margin-bottom:24px}
+.ongoing-project-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.ongoing-project{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.ongoing-project h3{font-size:20px;margin-bottom:20px}.ongoing-project-status{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);width:100%;font-size:14px;color:var(--text)}
+@media(max-width:600px){.project-status-nav{gap:24px;margin-bottom:24px}.project-status-heading{font-size:23px;margin-bottom:20px}.ongoing-project-list{grid-template-columns:1fr;gap:20px}.ongoing-project{padding:24px 20px}.ongoing-project h3{font-size:18px}}
+
+.project-lot{display:inline-block;white-space:nowrap}
