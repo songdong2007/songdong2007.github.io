@@ -38,3 +38,12 @@
 @media(max-width:600px){.project-status-nav{gap:24px;margin-bottom:24px}.project-status-heading{font-size:23px;margin-bottom:20px}.ongoing-project-list{grid-template-columns:1fr;gap:20px}.ongoing-project{padding:24px 20px}.ongoing-project h3{font-size:18px}}
 
 .project-lot{display:inline-block;white-space:nowrap}
+
+/* Ongoing project images retain their complete composition. */
+.ongoing-project{padding:0;overflow:hidden}
+.ongoing-project-photo{width:100%;background:var(--paper)}
+.ongoing-project-photo a{display:block;cursor:zoom-in}
+.ongoing-project-photo img{width:100%;aspect-ratio:16/9;object-fit:contain}
+.ongoing-project-photo figcaption{padding:10px 24px;font-size:13px;color:var(--text)}
+.ongoing-project-copy{display:flex;flex-direction:column;align-items:flex-start;flex:1;width:100%;padding:24px 28px 28px}
+@media(max-width:600px){.ongoing-project{padding:0}.ongoing-project-copy{padding:20px}.ongoing-project-photo figcaption{padding-inline:20px}}

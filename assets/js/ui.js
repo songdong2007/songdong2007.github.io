@@ -79,7 +79,7 @@
   document.addEventListener('click', event => {
     const award = event.target.closest('.award-card-image');
     if (award) { event.preventDefault(); openImage(award.dataset.full, award.dataset.title, award.dataset.desc); return; }
-    const link = event.target.closest('.record-grid a,.project-album-stage a,.activity-entry a,.album-photo a,.project-lead a');
+    const link = event.target.closest('.record-grid a,.project-album-stage a,.activity-entry a,.album-photo a,.project-lead a,.ongoing-project-photo a');
     if (!link) return;
     const image = $('img', link);
     if (!image || !/\.(jpe?g|png|webp)(\?.*)?$/i.test(link.href)) return;
