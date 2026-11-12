@@ -14,29 +14,29 @@ colors:
 typography:
   display:
     fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
-    fontSize: "34px"
+    fontSize: "36px"
     fontWeight: 700
     lineHeight: 1.5
     letterSpacing: "0.02em"
   headline:
     fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
-    fontSize: "26px"
+    fontSize: "28px"
     fontWeight: 700
     lineHeight: 1.5
   title:
     fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
-    fontSize: "20px"
+    fontSize: "21px"
     fontWeight: 700
     lineHeight: 1.5
   body:
     fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
-    fontSize: "16px"
+    fontSize: "17px"
     fontWeight: 400
-    lineHeight: 1.85
+    lineHeight: 1.9
     letterSpacing: "0.02em"
   label:
     fontFamily: '"Noto Sans TC", "Microsoft JhengHei", "PingFang TC", system-ui, sans-serif'
-    fontSize: "13px"
+    fontSize: "14px"
     lineHeight: 1.85
 rounded:
   sm: "4px"
@@ -47,7 +47,7 @@ spacing:
   card-mobile: "20px"
   md: "24px"
   lg: "40px"
-  section: "52px"
+  section: "56px"
 components:
   button-primary:
     backgroundColor: "{colors.navy}"
@@ -111,21 +111,21 @@ components:
 
 ## Typography
 
-使用 frontmatter 的繁體中文無襯線字型堆疊；內文行高 1.8–1.9（現行 1.85），主要字重 400、600、700。長段落通常限制在 65–75ch，數字資訊可用等寬數字。
+使用 frontmatter 的繁體中文無襯線字型堆疊；內文行高 1.9，主要字重 400、600、700。長段落通常限制在 65–75ch，數字資訊可用等寬數字。依使用者要求，全站字級小幅提高：內文與輔助文字增加 1px，大標題增加 2px，並配合區段與卡片留白維持舒適密度。
 
 | 層級 | 桌面核准範圍 | 手機核准範圍 | 現行共用值 |
 | --- | --- | --- | --- |
-| 主標題 | 30–34px | 25–28px | 34px / 28px |
-| 區段標題 | 23–26px | 21–24px | 26px / 23px |
-| 卡片標題 | 18–20px | 17–19px | 20px / 18px |
-| 內文 | 15–16px | 15–16px | 16px |
-| 輔助資訊 | 12–13px | 12–13px | 依元件使用 |
+| 主標題 | 32–36px | 28–30px | 36px / 30px |
+| 區段標題 | 24–28px | 22–26px | 28px / 24px |
+| 卡片標題 | 19–21px | 18–20px | 21px / 19px |
+| 內文 | 16–17px | 16–17px | 17px |
+| 輔助資訊 | 13–14px | 13–14px | 依元件使用 |
 
-頁面級 `.section-topic` 採主標題尺寸，內部區段使用較小層級。手機輸入欄位文字維持 16px。
+頁面級 `.section-topic` 採主標題尺寸，內部區段使用較小層級。手機輸入欄位文字維持 17px。
 
 ## Layout
 
-內容最大寬度 1120px，桌面左右各 24px，600px 以下各 20px。桌面區段留白 40–56px（共用 52px），手機 28–36px（共用 32px）；卡片間距桌面 20–24px、手機 16–20px。
+內容最大寬度 1120px，桌面左右各 24px，600px 以下各 20px。桌面區段留白 40–56px（共用 56px），手機 28–36px（共用 36px）；卡片間距桌面 20–24px、手機 16–20px。工程與福利卡片內距桌面 28px、手機 22px，搭配放大後的文字保持留白。
 
 900px 以下導覽改抽屜；600px 以下雙欄卡片改單欄。工程概述在 800px 以下、表單與說明在 900px 以下改單欄。首頁照片適度佔約半個視窗：目前桌面 45vh、限制 300–430px，手機 240px。人物照片須保護頭部構圖。
 
